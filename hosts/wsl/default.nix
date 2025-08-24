@@ -1,4 +1,11 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -16,4 +23,3 @@
     virtualisation.enable = true;
   };
 }
-

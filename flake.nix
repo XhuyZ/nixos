@@ -1,6 +1,6 @@
 {
   description = ''
-  XhuyZ
+    XhuyZ
   '';
   inputs = {
     home-manager = {
@@ -15,69 +15,80 @@
     agenix.url = "github:ryantm/agenix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
   };
-  outputs = { self, home-manager, nixpkgs, nixos-hardware, nixvim, my-nixvim, agenix, ... }@inputs:
+  outputs =
+    {
+      self,
+      home-manager,
+      nixpkgs,
+      nixos-hardware,
+      nixvim,
+      my-nixvim,
+      agenix,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       systems = [
         "x86_64-linux"
       ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
-    in {
-      packages =
-        forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    in
+    {
+      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       overlays = import ./hosts/overlays { inherit inputs; };
       nixosConfigurations = {
-        vps = nixpkgs.lib.nixosSystem {    
-            system = "x86_64-linux";
+        vps = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
-          modules = [ 
-          ./hosts/vps 
-          inputs.disko.nixosModules.disko
-          nixos-hardware.nixosModules.asus-fx504gd
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "backup";
-          }
+          modules = [
+            ./hosts/vps
+            inputs.disko.nixosModules.disko
+            nixos-hardware.nixosModules.asus-fx504gd
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "backup";
+            }
           ];
         };
-        laptop-asus = nixpkgs.lib.nixosSystem {    
-            system = "x86_64-linux";
+        laptop-asus = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
-          modules = [ 
-          ./hosts/laptop-asus
-          ./modules/duckdns.nix
-          inputs.disko.nixosModules.disko
-          nixos-hardware.nixosModules.asus-fx504gd
-          agenix.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "backup";
-          }
+          modules = [
+            ./hosts/laptop-asus
+            ./modules/duckdns.nix
+            inputs.disko.nixosModules.disko
+            nixos-hardware.nixosModules.asus-fx504gd
+            agenix.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "backup";
+            }
           ];
         };
-        laptop-thinkpad = nixpkgs.lib.nixosSystem {    
-            system = "x86_64-linux";
+        laptop-thinkpad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
-          modules = [ 
-          ./hosts/laptop-thinkpad
-          inputs.disko.nixosModules.disko
-          nixos-hardware.nixosModules.asus-fx504gd
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.backupFileExtension = "backup";
-          }
+          modules = [
+            ./hosts/laptop-thinkpad
+            inputs.disko.nixosModules.disko
+            nixos-hardware.nixosModules.asus-fx504gd
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "backup";
+            }
           ];
         };
-        wsl = nixpkgs.lib.nixosSystem {    
-            system = "x86_64-linux";
+        wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
-          modules = [ 
-          ./hosts/wsl
-          inputs.home-manager.nixosModules.home-manager
-          inputs.nixos-wsl.nixosModules.wsl
-          {
-            home-manager.backupFileExtension = "backup";
-          }
+          modules = [
+            ./hosts/wsl
+            inputs.my-nixvim.nixosModules.my-nixvim
+            inputs.home-manager.nixosModules.home-manager
+            inputs.nixos-wsl.nixosModules.wsl
+            {
+              home-manager.backupFileExtension = "backup";
+            }
           ];
         };
       };
@@ -86,28 +97,28 @@
         "xhuyz@develop" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ 
+          modules = [
             ./home/xhuyz/develop.nix
           ];
         };
         "xhuyz@laptop-asus" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ 
+          modules = [
             ./home/xhuyz/laptop-asus.nix
           ];
         };
         "xhuyz@laptop-thinkpad" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ 
+          modules = [
             ./home/xhuyz/laptop-thinkpad.nix
           ];
         };
         "xhuyz@wsl" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ 
+          modules = [
             ./home/xhuyz/wsl.nix
           ];
         };
