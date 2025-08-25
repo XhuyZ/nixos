@@ -83,7 +83,6 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/wsl
-            inputs.my-nixvim.nixosModules.my-nixvim
             inputs.home-manager.nixosModules.home-manager
             inputs.nixos-wsl.nixosModules.wsl
             {
