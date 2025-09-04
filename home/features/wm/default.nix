@@ -6,6 +6,7 @@
    ./obs.nix
    ./dbeaver.nix
    ./media.nix
+   ./gnome.nix
   ];
 
 }

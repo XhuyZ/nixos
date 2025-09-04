@@ -27,6 +27,7 @@
       dbeaver.enable = true;
       obs.enable = true;
       media.enable = true;
+      gnome.enable = true;
     };
   };
 }
