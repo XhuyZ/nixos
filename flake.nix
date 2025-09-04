@@ -42,6 +42,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/vps
+            ./lib
             inputs.disko.nixosModules.disko
             nixos-hardware.nixosModules.asus-fx504gd
             inputs.home-manager.nixosModules.home-manager
@@ -56,6 +57,7 @@
           modules = [
             ./hosts/laptop-asus
             ./modules/duckdns.nix
+            ./lib
             inputs.disko.nixosModules.disko
             nixos-hardware.nixosModules.asus-fx504gd
             agenix.nixosModules.default
@@ -70,6 +72,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/laptop-thinkpad
+            ./lib
             inputs.disko.nixosModules.disko
             nixos-hardware.nixosModules.asus-fx504gd
             inputs.home-manager.nixosModules.home-manager
