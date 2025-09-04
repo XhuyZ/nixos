@@ -11,19 +11,12 @@ in {
     mkEnableOption "GNOME desktop environment with custom configuration";
 
   config = mkIf cfg.enable {
-    # Enable GNOME desktop environment
-    services.xserver = {
-      enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-    };
-
     # Install GNOME extensions
     home.packages = with pkgs; [
       gnomeExtensions.dash-to-dock
       gnomeExtensions.just-perfection
       gnomeExtensions.logo-menu
-      gnomeExtensions.aylurs-widgets
+      # gnomeExtensions.aylurs-widgets
       gnomeExtensions.top-bar-organizer
       gnomeExtensions.space-bar
       gnomeExtensions.gtile
