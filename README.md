@@ -23,3 +23,4 @@ mkdir -p tmp
 sudo mkdir -p /mnt/tmp
 sudo TMPDIR=$PWD/tmp nixos-install --flake .#laptop-asus
 
+configuration.nix hostID : openssl rand -hex 4

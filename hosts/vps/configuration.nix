@@ -1,113 +1,72 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
-    ./hardware-configuration.nix
     ./disko-config.nix
+    ./hardware-configuration.nix
   ];
-  ## --- Bootloader (GRUB + UEFI only) ---
+  # Bootloader.
   boot.loader.grub = {
-    enable = true;
     efiSupport = true;
-    devices = [ "nodev" ];
-    efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
+    efiInstallAsRemovable = true;
   };
-  ## --- Kernel ---
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  ## --- Host & Time ---
-  networking.hostName = "laptop-asus";
+  networking.hostName = "vps"; # CHANGE ME.
+  networking.hostId = "2768272b";
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
 
-  ## --- Locale ---
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "vi_VN";
-    LC_IDENTIFICATION = "vi_VN";
-    LC_MEASUREMENT = "vi_VN";
-    LC_MONETARY = "vi_VN";
-    LC_NAME = "vi_VN";
-    LC_NUMERIC = "vi_VN";
-    LC_PAPER = "vi_VN";
-    LC_TELEPHONE = "vi_VN";
-    LC_TIME = "vi_VN";
-  };
 
-  ## --- Networking ---
-  networking.networkmanager.enable = true;
-
-  ## --- GUI: GNOME Desktop ---
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-  systemd.targets.sleep.enable = false;
-  systemd.targets.suspend.enable = false;
-  systemd.targets.hibernate.enable = false;
-  systemd.targets.hybrid-sleep.enable = false;
-
-
-  ## --- Printing ---
-  # services.printing.enable = true;
-
-  ## --- Sound (PipeWire) ---
-  # services.pulseaudio.enable = false;
-  # services.pipewire = {
+  environment.systemPackages = with pkgs; [neovim git];
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
   #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-  #   # jack.enable = true;
+  #   enableSSHSupport = true;
   # };
-  # security.rtkit.enable = true;
 
-#   ## --- User ---
-users.users = {
-  xhuyz = {
-    isNormalUser = true;
-    initialPassword = "<><>";
-    extraGroups = [ "wheel" "networkmanager" ]; 
-    packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
-  };
-};
-home-manager = {
-  useUserPackages = true;
-  extraSpecialArgs = { inherit inputs outputs; };
-  users.xhuyz =
-    import ../../home/xhuyz/${config.networking.hostName}.nix;
-};
-
-
-  ## --- Unfree packages ---
-  nixpkgs.config.allowUnfree = true;
-
-  ## --- System packages ---
-  environment.systemPackages = with pkgs; [
-    inputs.my-nixvim.packages.${system}.default
-    git
-    neofetch
-  ];
-
-  ## --- SSH ---
+  # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    settings.PermitRootLogin = "yes";
+    settings.PermitRootLogin = "no";
+    settings = {
+      PasswordAuthentication = false;
+    };
   };
+  # [[Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
-  ## --- Firewall ---
-  networking.firewall.allowedTCPPorts = [ 22 8080 ];
+  # Copy the NixOS configuration file and link it from the resulting system
+  # (/run/current-system/configuration.nix). This is useful in case you
+  # accidentally delete configuration.nix.
+  # system.copySystemConfiguration = true;
 
-  ## --- Sudo config ---
-  security.sudo.extraRules = [
-    {
-      groups = [ "sudo" ];
-      commands = [ "ALL" ];
-    }
-  ];
-
-  ## --- Required for upgrades ---
-  system.stateVersion = "25.05";
+  # This option defines the first version of NixOS you have installed on this particular machine,
+  # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
+  #
+  # Most users should NEVER change this value after the initial install, for any reason,
+  # even if you've upgraded your system to a new NixOS release.
+  #
+  # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
+  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
+  # to actually do that.
+  #
+  # This value being lower than the current NixOS release does NOT mean your system is
+  # out of date, out of support, or vulnerable.
+  #
+  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
+  # and migrated your data accordingly.
+  #
+  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
+
