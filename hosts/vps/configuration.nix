@@ -10,9 +10,11 @@
   # };
 
   # Bootloader version 2
-  boot.loader.grub = {
-    device = "/dev/vda"; # đa số VPS block device chính là /dev/vda
-  };
+boot.loader.grub = {
+  enable = true;
+  device = "/dev/vda";   # chỉ dòng này
+  efiSupport = false;
+};
 
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
