@@ -9,6 +9,11 @@
     initialPassword = "<><>";
     isNormalUser = true;
     description = "xhuyz";
+    # openssh.authorizedKeys.keys = [
+    #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUl+Ct7pxo23Ueo2pdKSMrpCGjeEkYKzkmuSDTi6p3C xhuyzdev@gmail.com"
+    # ];
+    };
+
     extraGroups = [
       "wheel"
       "networkmanager"

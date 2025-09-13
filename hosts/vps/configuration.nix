@@ -4,15 +4,29 @@
     ./hardware-configuration.nix
   ];
   # Bootloader.
+  # boot.loader.grub = {
+  #   efiSupport = true;
+  #   efiInstallAsRemovable = true;
+  # };
+
+  # Bootloader version 2
   boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
+    device = "/dev/vda"; # đa số VPS block device chính là /dev/vda
   };
 
-  networking.hostName = "vps"; # CHANGE ME.
-  networking.hostId = "2768272b";
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  # networking.hostName = "vps"; # CHANGE ME.
+  # networking.hostId = "2768272b";
+  # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   # Set your time zone.
+  
+  # networking version 2
+  networking = {
+    hostName = "vps";
+    useDHCP = true; 
+    firewall.allowedTCPPorts = [ 22 80 443 ];
+    firewall.enable = true;
+  };
+
   time.timeZone = "Asia/Ho_Chi_Minh";
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
