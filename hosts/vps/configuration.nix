@@ -52,10 +52,7 @@
       PasswordAuthentication = false;
     };
   };
-  # [[Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
   # networking.firewall.allowedUDPPorts = [ ... ]; Or disable the firewall altogether.
-  networking.firewall.enable = true;
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
