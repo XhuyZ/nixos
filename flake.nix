@@ -43,7 +43,7 @@
           modules = [
             ./hosts/vps
             inputs.disko.nixosModules.disko
-            nixos-hardware.nixosModules.asus-fx504gd
+            agenix.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "backup";

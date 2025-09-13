@@ -24,3 +24,7 @@ sudo mkdir -p /mnt/tmp
 sudo TMPDIR=$PWD/tmp nixos-install --flake .#laptop-asus
 
 configuration.nix hostID : openssl rand -hex 4
+
+
+# nixos-anywhere
+`sudo nix run github:nix-community/nixos-anywhere -- --flake .#vps root@157.66.101.42`

@@ -1,7 +1,7 @@
 {
   imports = [
-  ./neko.nix
-  ./grafana.nix
+  # ./neko.nix
+  # ./grafana.nix
   ];
 }
 
