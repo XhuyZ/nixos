@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../common/extraServices
+    ../common
     ./configuration.nix
     ./programs.nix
     # ./secrets.nix
