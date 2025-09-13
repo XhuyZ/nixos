@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./disko-config.nix
+    # ./disko-config.nix
     ./hardware-configuration.nix
   ];
   # Bootloader.
