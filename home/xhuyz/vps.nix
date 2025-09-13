@@ -19,13 +19,7 @@
       jq.enable = true;
       lazydocker.enable = true;
       k9s.enable = true;
-    };
-    wm = {
-      office.enable = true;
-      blender.enable = true;
-      kdenlive.enable = true;
-      dbeaver.enable = true;
-      obs.enable = true;
+      pinentry.enable = true;
     };
   };
 }
