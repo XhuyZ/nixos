@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    # ./disko-config.nix
+    ./disko-config.nix
     ./hardware-configuration.nix
   ];
   # Bootloader.
@@ -9,12 +9,12 @@
   #   efiInstallAsRemovable = true;
   # };
 
-  # Bootloader version 2
-boot.loader.grub = {
-  enable = true;
-  device = "/dev/vda";   # chỉ dòng này
-  efiSupport = false;
-};
+  # # Bootloader version 2
+  #   boot.loader.grub = {
+  #     enable = true;
+  #     device = "/dev/vda";   # chỉ dòng này
+  #     efiSupport = false;
+  #   };
 
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
