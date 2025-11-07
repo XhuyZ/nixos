@@ -6,6 +6,6 @@
     # ./traefik.nix
     # ./postgres.nix
     # ./traefik.nix
-    ./podman.nix
+    # ./podman.nix
   ];
 }
