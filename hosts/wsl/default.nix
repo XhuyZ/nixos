@@ -17,9 +17,6 @@
   ];
 
   extraServices = {
-    flatpak.enable = true;
-    ollama.enable = true;
     podman.enable = true;
-    virtualisation.enable = true;
   };
 }
