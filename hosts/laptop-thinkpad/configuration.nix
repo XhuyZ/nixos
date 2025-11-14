@@ -7,12 +7,12 @@
   ];
 
   ## --- Bootloader (GRUB + UEFI only) ---
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    devices = [ "nodev" ];
-    efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
-  };
+  # boot.loader.grub = {
+  #   enable = true;
+  #   efiSupport = true;
+  #   devices = [ "nodev" ];
+  #   efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
+  # };
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
