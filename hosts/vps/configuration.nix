@@ -4,17 +4,17 @@
     ./hardware-configuration.nix
   ];
   # Bootloader.
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
+  # boot.loader.grub = {
+  #   efiSupport = true;
+  #   efiInstallAsRemovable = true;
+  # };
 
-  # # Bootloader version 2
-  #   boot.loader.grub = {
-  #     enable = true;
-  #     device = "/dev/vda";   # chỉ dòng này
-  #     efiSupport = false;
-  #   };
+  # Bootloader version 2
+    boot.loader.grub = {
+      enable = true;
+      device = "/dev/sda";   # chỉ dòng này
+      efiSupport = false;
+    };
 
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
@@ -49,10 +49,10 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    settings.PermitRootLogin = "no";
-    settings = {
-      PasswordAuthentication = false;
-    };
+    # settings.PermitRootLogin = "no";
+    # settings = {
+    #   PasswordAuthentication = false;
+    # };
   };
   # networking.firewall.allowedUDPPorts = [ ... ]; Or disable the firewall altogether.
 
