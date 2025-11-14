@@ -20,6 +20,14 @@
   # networking.hostId = "2768272b";
   # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   # Set your time zone.
+  users.users = {
+  xhuyz = {
+    isNormalUser = true;
+    initialPassword = "<><>";
+    extraGroups = [ "wheel" "networkmanager" ]; 
+  };
+};
+
   
   # networking version 2
   networking = {
