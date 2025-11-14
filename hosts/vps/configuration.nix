@@ -12,7 +12,7 @@
   # Bootloader version 2
     boot.loader.grub = {
       enable = true;
-      device = "/dev/sda";   # chỉ dòng này
+      devices = [ "/dev/sda" ];
       efiSupport = false;
     };
 
