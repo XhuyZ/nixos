@@ -10,11 +10,11 @@
   # };
 
   # Bootloader version 2
-    boot.loader.grub = {
-      enable = true;
-      devices = [ "/dev/sda" ];
-      efiSupport = false;
-    };
+    # boot.loader.grub = {
+    #   enable = true;
+    #   devices = [ "/dev/sda" ];
+    #   efiSupport = false;
+    # };
 
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
