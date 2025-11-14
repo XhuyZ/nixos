@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./disko-config.nix
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
   ];
   # Bootloader.
   # boot.loader.grub = {
