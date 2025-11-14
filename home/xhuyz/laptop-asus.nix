@@ -21,13 +21,13 @@
       k9s.enable = true;
     };
     wm = {
-      office.enable = true;
-      blender.enable = true;
-      kdenlive.enable = true;
-      dbeaver.enable = true;
-      obs.enable = true;
-      media.enable = true;
-      gnome.enable = true;
+      office.enable = false;
+      blender.enable = false;
+      kdenlive.enable = false;
+      dbeaver.enable = false;
+      obs.enable = false;
+      media.enable = false;
+      gnome.enable = false;
     };
   };
 }
