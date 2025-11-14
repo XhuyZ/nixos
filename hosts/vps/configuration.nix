@@ -4,10 +4,10 @@
     ./hardware-configuration.nix
   ];
   # Bootloader.
-  # boot.loader.grub = {
-  #   efiSupport = true;
-  #   efiInstallAsRemovable = true;
-  # };
+  boot.loader.grub = {
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+  };
 
   # # Bootloader version 2
   #   boot.loader.grub = {
