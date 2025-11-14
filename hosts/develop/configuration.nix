@@ -9,12 +9,12 @@
   ## --- Flake support ---
 
   ## --- Bootloader (GRUB + UEFI only) ---
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    devices = [ "nodev" ]; # tốt cho remote
-    efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
-  };
+  # boot.loader.grub = {
+  #   enable = true;
+  #   efiSupport = true;
+  #   devices = [ "nodev" ]; # tốt cho remote
+  #   efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
+  # };
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
