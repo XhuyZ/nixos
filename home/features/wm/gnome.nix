@@ -74,17 +74,16 @@ in {
       # Workspace keybindings
       "org/gnome/desktop/wm/keybindings" = {
         # Workspace switching
-        switch-to-workspace-1 = ["<Control><Alt>1"];
-        switch-to-workspace-2 = ["<Control><Alt>2"];
-        switch-to-workspace-3 = ["<Control><Alt>3"];
-        switch-to-workspace-4 = ["<Control><Alt>4"];
-        switch-to-workspace-5 = ["<Control><Alt>5"];
-        switch-to-workspace-6 = ["<Control><Alt>6"];
-        switch-to-workspace-7 = ["<Control><Alt>7"];
-        switch-to-workspace-8 = ["<Control><Alt>8"];
-        switch-to-workspace-9 = ["<Control><Alt>9"];
-        switch-to-workspace-10 = ["<Control><Alt>0"];
-
+        switch-to-workspace-1  = ["<Super>1"];
+        switch-to-workspace-2  = ["<Super>2"];
+        switch-to-workspace-3  = ["<Super>3"];
+        switch-to-workspace-4  = ["<Super>4"];
+        switch-to-workspace-5  = ["<Super>5"];
+        switch-to-workspace-6  = ["<Super>6"];
+        switch-to-workspace-7  = ["<Super>7"];
+        switch-to-workspace-8  = ["<Super>8"];
+        switch-to-workspace-9  = ["<Super>9"];
+        switch-to-workspace-10 = ["<Super>10"];
         # Moving windows to workspaces
         move-to-workspace-1 = ["<Shift><Super>1"];
         move-to-workspace-2 = ["<Shift><Super>2"];

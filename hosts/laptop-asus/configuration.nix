@@ -5,13 +5,24 @@
     # ./hardware-configuration.nix
     ./disko-config.nix
   ];
-  ## --- Bootloader (GRUB + UEFI only) ---
-  boot.loader.grub = {
+  # ## --- Bootloader (GRUB + UEFI only) ---
+  # boot.loader.grub = {
+  #   enable = true;
+  #   efiSupport = true;
+  #   devices = [ "nodev" ];
+  #   efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
+  # };
+  boot.loader = {
+  efi.canTouchEfiVariables = false;
+
+  grub = {
     enable = true;
     efiSupport = true;
     devices = [ "nodev" ];
-    efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
+    efiInstallAsRemovable = true;
   };
+};
+
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -70,7 +81,6 @@ users.users = {
     isNormalUser = true;
     initialPassword = "<><>";
     extraGroups = [ "wheel" "networkmanager" ]; 
-    packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
   };
 };
 home-manager = {

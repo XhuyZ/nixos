@@ -14,6 +14,7 @@
     my-nixvim.url = "github:XhuyZ/nixvim";
     agenix.url = "github:ryantm/agenix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    mango.url = "github:DreamMaoMao/mango";
   };
   outputs =
     {
