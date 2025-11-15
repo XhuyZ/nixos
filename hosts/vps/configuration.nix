@@ -3,18 +3,9 @@
     ./disko-config.nix
     # ./hardware-configuration.nix
   ];
-  # Bootloader.
-  # boot.loader.grub = {
-  #   efiSupport = true;
-  #   efiInstallAsRemovable = true;
-  # };
+  boot.loader.grub.enable = true;
+  boot.loader.grub.devices = [ "/dev/sda" ];
 
-  # Bootloader version 2
-    # boot.loader.grub = {
-    #   enable = true;
-    #   devices = [ "/dev/sda" ];
-    #   efiSupport = false;
-    # };
 
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
