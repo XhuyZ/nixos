@@ -3,9 +3,6 @@
     ./disko-config.nix
     ./hardware-configuration.nix
   ];
-
-
-  # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
   # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   # Set your time zone.
