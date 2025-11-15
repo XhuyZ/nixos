@@ -1,8 +1,15 @@
 {pkgs, ...}: {
   imports = [
     ./disko-config.nix
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
+boot.loader.grub = {
+  enable = true;
+  efiSupport = false;
+  devices = [ "/dev/sda" ];
+};
+boot.loader.efi.canTouchEfiVariables = false;
+
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
   # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
