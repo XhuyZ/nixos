@@ -19,6 +19,7 @@
                 format = "ext4";
                 mountpoint = "/";
                 mountOptions = ["noatime" "nodiratime" "discard"];
+                label = "disk-main-root";
               };
             };
           };
