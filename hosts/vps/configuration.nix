@@ -1,8 +1,11 @@
 {config, pkgs , lib , ...}: {
   imports = [
     ./disko-config.nix
-    ./hardware-configuration.nix
   ];
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = false;
+  boot.loader.efi.efiSysMountPoint = "/boot";
+
   # networking.hostId = "2768272b";
   # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   # Set your time zone.

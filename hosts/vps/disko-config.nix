@@ -1,34 +1,39 @@
 {
   disko.devices = {
-    disk = {
-      main = {
-        type = "disk";
-        device = "/dev/sda";
+    disk.main = {
+      type = "disk";
+      device = "/dev/sda";
 
-        content = {
-          type = "gpt";
+      content = {
+        type = "gpt";
+        partitions = {
 
-          # GPT PARTITIONS
-          partitions = {
-            boot = {
-              size = "1M";
-              type = "EF02";
-              label = "disk-main-boot";
+          # EFI SYSTEM PARTITION (UEFI Boot)
+          esp = {
+            size = "512M";    # chuẩn cho UEFI
+            type = "EF00";    # EFI System Partition
+            label = "ESP";
+
+            content = {
+              type = "filesystem";
+              format = "vfat";      # EFI bắt buộc FAT32
+              mountpoint = "/boot"; # systemd-boot sẽ đọc ESP tại đây
             };
+          };
 
-            root = {
-              size = "100%";
-              label = "disk-main-root";  # ⬅ label đặt tại đây (đúng chỗ)
-              content = {
-                type = "filesystem";
-                format = "ext4";
-                mountpoint = "/";
-                mountOptions = [
-                  "noatime"
-                  "nodiratime"
-                  "discard"
-                ];
-              };
+          # ROOT PARTITION
+          root = {
+            size = "100%";
+            label = "disk-main-root";
+
+            content = {
+              type = "filesystem";
+              format = "ext4";
+              mountpoint = "/";
+              mountOptions = [
+                "noatime"
+                "nodiratime"
+              ];
             };
           };
         };
