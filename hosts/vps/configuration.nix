@@ -1,14 +1,16 @@
-{pkgs, ...}: {
+{pkgs, lib , ...}: {
   imports = [
     ./disko-config.nix
     ./hardware-configuration.nix
   ];
 boot.loader.grub = {
-  enable = true;
-  efiSupport = false;
-  devices = [ "/dev/sda" ];
-};
-boot.loader.efi.canTouchEfiVariables = false;
+    enable = true;
+    efiSupport = false;
+    devices = lib.mkForce [ "/dev/sda" ];
+  };
+
+  boot.loader.efi.canTouchEfiVariables = false;
+
 
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
