@@ -3,10 +3,6 @@
     ./disko-config.nix
     # ./hardware-configuration.nix
   ];
-  boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "/dev/sda" ];
-
-
   # networking.hostName = "vps"; # CHANGE ME.
   # networking.hostId = "2768272b";
   # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
