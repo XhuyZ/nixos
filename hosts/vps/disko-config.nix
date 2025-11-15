@@ -3,23 +3,24 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/sda"; # CHANGE ME
+        device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {
             boot = {
               size = "1M";
-              type = "EF02"; # for GRUB MBR
-              priority = 1;
+              type = "EF02"; 
+              label = "disk-main-boot";
             };
+
             root = {
               size = "100%";
+              label = "disk-main-root"; 
               content = {
                 type = "filesystem";
                 format = "ext4";
-                label = "nixos-root";
                 mountpoint = "/";
-                mountOptions = ["noatime" "nodiratime" "discard"];
+                mountOptions = [ "noatime" "nodiratime" "discard" ];
               };
             };
           };
@@ -28,4 +29,3 @@
     };
   };
 }
-
