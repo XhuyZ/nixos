@@ -17,6 +17,7 @@
               content = {
                 type = "filesystem";
                 format = "ext4";
+                label = "nixos-root";
                 mountpoint = "/";
                 mountOptions = ["noatime" "nodiratime" "discard"];
                 label = "disk-main-root";
