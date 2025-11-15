@@ -20,7 +20,6 @@
                 label = "nixos-root";
                 mountpoint = "/";
                 mountOptions = ["noatime" "nodiratime" "discard"];
-                label = "disk-main-root";
               };
             };
           };
