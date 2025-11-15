@@ -11,15 +11,15 @@
     programs = {
       nushell.enable = true;
       starship.enable = true;
-      kitty.enable = true;
       fastfetch.enable = true;
       gh.enable = true;
       cava.enable = true;
       btop.enable = true;
       jq.enable = true;
-      lazydocker.enable = true;
-      k9s.enable = true;
-      pinentry.enable = true;
+      kitty.enable = false;
+      lazydocker.enable = false;
+      k9s.enable = false;
+      pinentry.enable = false;
     };
   };
 }
