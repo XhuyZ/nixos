@@ -1,24 +1,34 @@
 {
   disko.devices = {
-    disk.main = {
-      type = "disk";
-      device = "/dev/sda";
-      content = {
-        type = "gpt";
-        partitions = {
-          boot = {
-            size = "1M";
-            type = "EF02";
-          };
+    disk = {
+      main = {
+        type = "disk";
+        device = "/dev/sda";
 
-          root = {
-            size = "100%";
-            content = {
-              type = "filesystem";
-              format = "ext4";
-              label = "nixos-root";   # filesystem label (CHUẨN)
-              mountpoint = "/";
-              mountOptions = [ "noatime" "nodiratime" "discard" ];
+        content = {
+          type = "gpt";
+
+          # GPT PARTITIONS
+          partitions = {
+            boot = {
+              size = "1M";
+              type = "EF02";
+              label = "disk-main-boot";
+            };
+
+            root = {
+              size = "100%";
+              label = "disk-main-root";  # ⬅ label đặt tại đây (đúng chỗ)
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/";
+                mountOptions = [
+                  "noatime"
+                  "nodiratime"
+                  "discard"
+                ];
+              };
             };
           };
         };
