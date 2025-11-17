@@ -1,4 +1,11 @@
-{pkgs, my-nixvim, system, inputs,  ...}: {
+{
+  pkgs,
+  my-nixvim,
+  system,
+  inputs,
+  ...
+}:
+{
   home.packages = with pkgs; [
     pkgs.neofetch
     pkgs.pfetch
@@ -16,7 +23,6 @@
     pkgs.lazysql
     pkgs.dbeaver-bin
     pkgs.gcc
-    ];
+    pkgs.nerd-fonts.caskaydia-cove
+  ];
 }
-
-
