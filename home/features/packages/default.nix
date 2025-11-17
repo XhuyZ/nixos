@@ -10,9 +10,7 @@
     pkgs.neofetch
     pkgs.pfetch
     pkgs.htop
-    pkgs.neovim
     pkgs.git
-    pkgs.vim
     pkgs.cmatrix
     pkgs.fzf
     pkgs.nushell
