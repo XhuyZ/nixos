@@ -1,6 +1,16 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   wsl.enable = true;
+  wsl.wslConf = {
+    interop.appendWindowsPath = false;
+  };
   wsl.defaultUser = "xhuyz";
   ## --- Host & Time ---
   networking.hostName = "wsl";
@@ -11,10 +21,9 @@
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
   home-manager = {
-  useUserPackages = true;
-  extraSpecialArgs = { inherit inputs outputs; };
-  users.xhuyz =
-    import ../../home/xhuyz/${config.networking.hostName}.nix;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+    users.xhuyz = import ../../home/xhuyz/${config.networking.hostName}.nix;
   };
   ## --- Unfree packages ---
   nixpkgs.config.allowUnfree = true;
@@ -32,7 +41,10 @@
   };
 
   ## --- Firewall ---
-  networking.firewall.allowedTCPPorts = [ 22 8080 ];
+  networking.firewall.allowedTCPPorts = [
+    22
+    8080
+  ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
@@ -44,4 +56,3 @@
 
   system.stateVersion = "25.05";
 }
-
