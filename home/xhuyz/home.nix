@@ -1,6 +1,12 @@
-{ inputs, config, lib, pkgs, ... }:
 {
-  home.stateVersion = "25.05"; 
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  home.stateVersion = "25.05";
   home.file = {
   };
   home.username = lib.mkDefault "xhuyz";
@@ -15,4 +21,3 @@
     vim = "${inputs.my-nixvim.packages.${pkgs.system}.default}/bin/nvim";
   };
 }
-
