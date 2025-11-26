@@ -66,6 +66,21 @@
             }
           ];
         };
+        laptop-thinkpad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/laptop-asus
+            ./modules/duckdns.nix
+            inputs.disko.nixosModules.disko
+            nixos-hardware.nixosModules.lenovo-thinkpad-t14s
+            agenix.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "backup";
+            }
+          ];
+        };
         wsl = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
