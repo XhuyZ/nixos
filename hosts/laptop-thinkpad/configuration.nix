@@ -1,10 +1,23 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
+    ./hardware-configuration.nix
     ./disko-config.nix
   ];
-   hardware.enableAllFirmware = true;
+  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
+  hardware.firmware = with pkgs; [
+    linux-firmware
+    sof-firmware
+  ];
   # ## --- Bootloader (GRUB + UEFI only) ---
   # boot.loader.grub = {
   #   enable = true;
@@ -13,17 +26,18 @@
   #   efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
   # };
   boot.loader = {
-  efi.canTouchEfiVariables = false;
+    efi.canTouchEfiVariables = false;
 
-  grub = {
-    enable = true;
-    efiSupport = true;
-    devices = [ "nodev" ];
-    efiInstallAsRemovable = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      devices = [ "nodev" ];
+      efiInstallAsRemovable = true;
+    };
   };
-};
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "iwlwifi" ];
 
   ## --- Host & Time ---
   networking.hostName = "laptop-thinkpad";
@@ -48,8 +62,8 @@
 
   ## --- GUI: GNOME Desktop --
   services.xserver.displayManager.gdm.enable = true;
-   services.xserver.desktopManager.gnome.enable = true;
-   services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -58,7 +72,6 @@
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
-
 
   ## --- Printing ---
   # services.printing.enable = true;
@@ -73,22 +86,23 @@
   };
   security.rtkit.enable = true;
 
-#   ## --- User ---
-users.users = {
-  xhuyz = {
-    isNormalUser = true;
-    initialPassword = "<><>";
-    extraGroups = [ "wheel" "networkmanager" ]; 
-    packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
+  #   ## --- User ---
+  users.users = {
+    xhuyz = {
+      isNormalUser = true;
+      initialPassword = "<><>";
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
+      packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
+    };
   };
-};
-home-manager = {
-  useUserPackages = true;
-  extraSpecialArgs = { inherit inputs outputs; };
-  users.xhuyz =
-    import ../../home/xhuyz/${config.networking.hostName}.nix;
-};
-
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+    users.xhuyz = import ../../home/xhuyz/${config.networking.hostName}.nix;
+  };
 
   ## --- Unfree packages ---
   nixpkgs.config.allowUnfree = true;
