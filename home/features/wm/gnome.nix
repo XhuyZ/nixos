@@ -16,10 +16,11 @@ in {
       gnomeExtensions.dash-to-dock
       gnomeExtensions.just-perfection
       gnomeExtensions.logo-menu
-      # gnomeExtensions.aylurs-widgets
       gnomeExtensions.top-bar-organizer
       gnomeExtensions.space-bar
       gnomeExtensions.gtile
+      gnomeExtensions.paperwm
+      
     ];
 
     # GNOME configuration via dconf
@@ -41,9 +42,9 @@ in {
           "top-bar-organizer@julian.gse.jsts.xyz"
           "space-bar@luchrioh"
           "gtile@vibou"
+          "paperwm@paperwm.github.com"
         ];
       };
-
       # Desktop interface
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
