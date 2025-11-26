@@ -1,5 +1,5 @@
 let
-  rawdisk1 = "/dev/sda";
+  rawdisk1 = "/dev/nvme0n1";
 in
 {
   disko.devices = {

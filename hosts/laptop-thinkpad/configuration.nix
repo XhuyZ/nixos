@@ -31,9 +31,6 @@
   networking.networkmanager.enable = true;
 
   ## --- GUI: GNOME Desktop ---
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -48,15 +45,14 @@
   # services.printing.enable = true;
 
   ## --- Sound (PipeWire) ---
-  # services.pulseaudio.enable = false;
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-  #   # jack.enable = true;
-  # };
-  # security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+  security.rtkit.enable = true;
 
 #   ## --- User ---
 users.users = {

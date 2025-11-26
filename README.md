@@ -11,11 +11,7 @@ set_network 0 psk ""
 enable_network 0
 exit
 ping google.com
-sudo mkfs.vfat -F32 /dev/nvme0n1p1
-sudo mkfs.ext4 /dev/nvme0n1p2
-sudo mount /dev/nvme0n1p2 /mnt
-sudo mkdir -p /mnt/boot
-sudo mount /dev/nvme0n1p1 /mnt/boot
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount /tmp/disk-config.nix
 cd ~
 git clone https://github.com/XhuyZ/nixos Flake
 cd Flake
