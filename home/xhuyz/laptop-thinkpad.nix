@@ -1,4 +1,11 @@
-{ config, pkgs, lib, inputs, outputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  outputs,
+  ...
+}:
 {
   imports = [
     ../common
@@ -21,15 +28,12 @@
       k9s.enable = true;
     };
     wm = {
-      office.enable = false;
-      blender.enable = false;
-      kdenlive.enable = false;
-      dbeaver.enable = false;
-      obs.enable = false;
-      media.enable = false;
+      office.enable = true;
+      blender.enable = true;
+      dbeaver.enable = true;
+      obs.enable = true;
+      media.enable = true;
       gnome.enable = true;
     };
   };
 }
-
-
