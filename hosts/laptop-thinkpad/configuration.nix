@@ -4,6 +4,7 @@
   imports = [
     ./disko-config.nix
   ];
+   hardware.enableAllFirmware = true;
   # ## --- Bootloader (GRUB + UEFI only) ---
   # boot.loader.grub = {
   #   enable = true;
