@@ -1,13 +1,15 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
-   ./office.nix
-   ./blender.nix
-   ./kdenlive.nix
-   ./obs.nix
-   ./dbeaver.nix
-   ./media.nix
-   ./gnome.nix
+    ./office.nix
+    ./blender.nix
+    ./kdenlive.nix
+    ./obs.nix
+    ./dbeaver.nix
+    ./media.nix
+    ./gnome.nix
+    ./qutebrowser.nix
+    ./zen-browser.nix
   ];
 
 }
-

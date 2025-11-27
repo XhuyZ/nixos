@@ -607,7 +607,8 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_7",
-        "nixvim": "nixvim_2"
+        "nixvim": "nixvim_2",
+        "zen-browser": "zen-browser"
       }
     },
     "scenefx": {
@@ -703,6 +704,29 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764217570,
+        "narHash": "sha256-vgqUC6lI/gW70uekA0bpNFU6yR0tcZRfLIZcxGfN76g=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "3dc281d86044322f9182b20abbc21db8824c130a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

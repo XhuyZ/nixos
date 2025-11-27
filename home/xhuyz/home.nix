@@ -14,6 +14,11 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+  imports = [
+    inputs.zen-browser.homeModules.beta
+    # or inputs.zen-browser.homeModules.twilight
+    # or inputs.zen-browser.homeModules.twilight-official
+  ];
 
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {

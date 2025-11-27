@@ -15,6 +15,13 @@
     agenix.url = "github:ryantm/agenix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     mango.url = "github:DreamMaoMao/mango";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
   };
   outputs =
     {

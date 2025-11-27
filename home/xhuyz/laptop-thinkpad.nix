@@ -34,6 +34,8 @@
       obs.enable = true;
       media.enable = true;
       gnome.enable = true;
+      qutebrowser.enable = true;
+      zen-browser.enable = true;
     };
   };
 }
