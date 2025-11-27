@@ -26,6 +26,7 @@
       jq.enable = true;
       lazydocker.enable = true;
       k9s.enable = true;
+      git.enable = true;
     };
     wm = {
       office.enable = true;
