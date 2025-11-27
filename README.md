@@ -25,4 +25,5 @@ configuration.nix hostID : openssl rand -hex 4
 # nixos-anywhere
 `sudo nix run github:nix-community/nixos-anywhere -- --flake .#vps root@157.66.101.42`
 
-{d7742d87-e61d-4b78-b8a1-b469842139fa}
+{d7742d87-e61d-4b78-b8a1-b469842139fa
+{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}
