@@ -55,7 +55,7 @@ in
               "wappalyzer@crunchlabz.com" = "wappalyzer";
               "{85860b32-02a8-431a-b2b1-40fbd64c9c69}" = "github-file-icons";
               "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = "vimium-ff";
-              "{uBlock@raymondhill.net}" = "uBlock Origin";
+              "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}" = "adblock-plus";
             };
           };
       };
