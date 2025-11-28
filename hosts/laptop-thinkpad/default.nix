@@ -3,7 +3,14 @@
 # sudo nixos-generate-config --dir ./hosts/m3tam3re
 #
 # Please make sure to change the first couple of lines in your configuration.nix:
-{ config, inputs, outputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 # {
 #   imports = [ # Include the results of the hardware scan.
@@ -28,4 +35,3 @@
   #   virtualisation.enable = false;
   # };
 }
-

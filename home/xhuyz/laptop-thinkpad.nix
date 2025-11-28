@@ -39,6 +39,7 @@
       qutebrowser.enable = true;
       zen-browser.enable = true;
       nixcord.enable = true;
+      redisinsight.enable = true;
     };
     devkit = {
       nodejs.enable = true;

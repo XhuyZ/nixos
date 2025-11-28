@@ -108,7 +108,9 @@
 
   ## --- Unfree packages ---
   nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config.permittedInsecurePackages = [
+    "gradle-7.6.6"
+  ];
   ## --- System packages ---
   environment.systemPackages = with pkgs; [
     inputs.my-nixvim.packages.${system}.default

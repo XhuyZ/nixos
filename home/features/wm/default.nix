@@ -11,6 +11,8 @@
     ./qutebrowser.nix
     ./zen-browser.nix
     ./nixcord.nix
+    ./redisinsight.nix
+    # ./conduktor.nix
   ];
 
 }

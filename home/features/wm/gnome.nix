@@ -22,7 +22,7 @@ in
       gnomeExtensions.space-bar
       gnomeExtensions.gtile
       gnomeExtensions.paperwm
-
+      gpaste
     ];
 
     # GNOME configuration via dconf
