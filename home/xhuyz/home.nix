@@ -17,6 +17,7 @@
   imports = [
     inputs.zen-browser.homeModules.beta
     inputs.stylix.homeModules.stylix
+    inputs.nixcord.homeModules.nixcord
     # or inputs.zen-browser.homeModules.twilight
     # or inputs.zen-browser.homeModules.twilight-official
   ];

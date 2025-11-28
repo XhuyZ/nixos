@@ -12,6 +12,7 @@
     ../features/programs
     ../features/packages
     ../features/wm
+    ../features/devkit
     ./home.nix
   ];
   features = {
@@ -37,6 +38,13 @@
       gnome.enable = true;
       qutebrowser.enable = true;
       zen-browser.enable = true;
+      nixcord.enable = true;
+    };
+    devkit = {
+      nodejs.enable = true;
+      dotnet_10.enable = true;
+      dotnet_9.enable = false;
+      dotnet_8.enable = false;
     };
   };
 }

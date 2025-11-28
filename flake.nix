@@ -26,6 +26,9 @@
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+    };
   };
   outputs =
     {

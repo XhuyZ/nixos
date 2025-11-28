@@ -10,6 +10,7 @@
     ./gnome.nix
     ./qutebrowser.nix
     ./zen-browser.nix
+    ./nixcord.nix
   ];
 
 }
