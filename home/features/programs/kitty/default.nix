@@ -20,7 +20,7 @@ in
         enableBashIntegration = true;
       };
       font = {
-        name = "CaskaydiaCove Nerd Font Mono";
+        name = lib.mkForce "CaskaydiaCove Nerd Font Mono";
       };
       settings = {
         copy_on_select = "yes";

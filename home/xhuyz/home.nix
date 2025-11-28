@@ -16,10 +16,14 @@
   };
   imports = [
     inputs.zen-browser.homeModules.beta
+    inputs.stylix.homeModules.stylix
     # or inputs.zen-browser.homeModules.twilight
     # or inputs.zen-browser.homeModules.twilight-official
   ];
-
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
+  stylix.image = ../../assets/wallpaper16-9.jpg;
+  stylix.polarity = "dark";
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {
     nvim = "${inputs.my-nixvim.packages.${pkgs.system}.default}/bin/nvim";
