@@ -47,22 +47,6 @@ in
           "paperwm@paperwm.github.com"
         ];
       };
-      # Desktop interface
-      # "org/gnome/desktop/interface" = {
-      #   color-scheme = "prefer-dark";
-      #   enable-hot-corners = false;
-      # };
-
-      # Background and screensaver
-      # "org/gnome/desktop/background" = {
-      #   picture-uri = "file:///usr/share/backgrounds/gnome/adwaita-l.webp";
-      #   picture-uri-dark = "file:///usr/share/backgrounds/gnome/adwaita-d.webp";
-      # };
-      #
-      # "org/gnome/desktop/screensaver" = {
-      #   picture-uri = "file:///usr/share/backgrounds/gnome/adwaita-l.webp";
-      #   picture-uri-dark = "file:///usr/share/backgrounds/gnome/adwaita-d.webp";
-      # };
 
       # Touchpad
       "org/gnome/desktop/peripherals/touchpad" = {
