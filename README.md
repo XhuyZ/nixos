@@ -14,10 +14,6 @@ ping google.com
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount /tmp/disk-config.nix
 cd ~
 git clone https://github.com/XhuyZ/nixos Flake
-cd Flake
-mkdir -p tmp
-sudo mkdir -p /mnt/tmp
-sudo TMPDIR=$PWD/tmp nixos-install --flake .#laptop-asus
 
 configuration.nix hostID : openssl rand -hex 4
 

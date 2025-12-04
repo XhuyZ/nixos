@@ -27,7 +27,7 @@ jobs:
           name: nix-cache
 
       - name: Flake Check
-        run: nix flake check --show-trace
+        run: nix flake check --no-write-lock-file --show-trace
 
   build-systems:
     needs: flake-check
