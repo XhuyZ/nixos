@@ -29,6 +29,7 @@
       k9s.enable = true;
       git.enable = true;
       fcitx5.enable = true;
+      copyq.enable = true;
     };
     wm = {
       office.enable = true;
