@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     programs.git = {
       enable = true;
-      extraConfig = {
+      settings = {
         user.name = "XhuyZ";
         user.email = "xhuyzdev@gmail.com";
         init.defaultBranch = "main";

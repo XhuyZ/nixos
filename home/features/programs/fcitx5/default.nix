@@ -18,7 +18,6 @@ in
       fcitx5.addons = with pkgs; [
         fcitx5-gtk
         fcitx5-bamboo # Vietnamese Telex / VNI
-        fcitx5-configtool
       ];
     };
   };

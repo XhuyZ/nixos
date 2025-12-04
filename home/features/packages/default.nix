@@ -16,7 +16,6 @@
     pkgs.nushell
     pkgs.libgcc
     pkgs.tree
-    pkgs.zig_0_12
     pkgs.starship
     pkgs.lazysql
     pkgs.dbeaver-bin
