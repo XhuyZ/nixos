@@ -3,6 +3,8 @@
 My multi host NixOS configuration
 ok
 
+![Preview Screenshot](/assets/pic.png)
+
 systemctl start wpa_supplicant
 wpa_cli
 add_network
@@ -19,4 +21,3 @@ configuration.nix hostID : openssl rand -hex 4
 
 {d7742d87-e61d-4b78-b8a1-b469842139fa
 {d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}
-
