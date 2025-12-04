@@ -12,5 +12,6 @@
     ./lazydocker/default.nix
     ./k9s/default.nix
     ./git/default.nix
+    ./fcitx5/default.nix
   ];
 }

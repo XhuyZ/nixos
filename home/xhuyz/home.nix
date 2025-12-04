@@ -13,6 +13,9 @@
   home.homeDirectory = lib.mkDefault "/home/${config.home.username}";
   home.sessionVariables = {
     EDITOR = "nvim";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
   imports = [
     inputs.zen-browser.homeModules.beta
