@@ -17,19 +17,49 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v23
         with:
-          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            sandbox = relaxed
 
-      - name: Setup Cache (Cachix optional)
+      - name: Setup Cache (Cachix)
         uses: cachix/cachix-action@v14
         with:
           name: nix-cache
 
-      - name: Run `nix flake check`
+      - name: Flake Check
         run: nix flake check --show-trace
 
-      - name: Build NixOS systems
+  build-systems:
+    needs: flake-check
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        system:
+          - laptop-asus
+          - laptop-thinkpad
+          - wsl
+          - vps
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v23
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            sandbox = relaxed
+
+      - name: Setup Cache (Cachix)
+        uses: cachix/cachix-action@v14
+        with:
+          name: nix-cache
+
+      - name: Build NixOS System
         run: |
-          nix build .#nixosConfigurations.laptop-asus.config.system.build.toplevel
-          nix build .#nixosConfigurations.laptop-thinkpad.config.system.build.toplevel
-          nix build .#nixosConfigurations.wsl.config.system.build.toplevel
-          nix build .#nixosConfigurations.vps.config.system.build.toplevel
+          nix build \
+            .#nixosConfigurations.${{ matrix.system }}.config.system.build.toplevel \
+            --print-build-logs
