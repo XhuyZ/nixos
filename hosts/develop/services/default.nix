@@ -4,7 +4,7 @@
     # ./traefik.nix
     ./mysql.nix
     ./podman.nix
-    ./virtualisation.nix
+    # ./virtualisation.nix
     # ./traefik.nix
     ./postgres.nix
   ];

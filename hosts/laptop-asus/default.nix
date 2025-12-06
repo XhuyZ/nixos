@@ -1,4 +1,11 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -13,6 +20,6 @@
     flatpak.enable = true;
     ollama.enable = true;
     podman.enable = true;
-    virtualisation.enable = true;
+    # virtualisation.enable = true;
   };
 }

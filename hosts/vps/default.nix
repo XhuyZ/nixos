@@ -1,4 +1,11 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -12,6 +19,6 @@
 
   extraServices = {
     podman.enable = true;
-    virtualisation.enable = true;
+    # virtualisation.enable = true;
   };
 }

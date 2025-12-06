@@ -3,6 +3,7 @@
     XhuyZ
   '';
   inputs = {
+    nixpkgs-25-05.url = "github:NixOS/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +35,7 @@
     {
       self,
       home-manager,
+      nixpkgs-25-05,
       nixpkgs,
       nixos-hardware,
       nixvim,
@@ -52,34 +54,34 @@
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       overlays = import ./hosts/overlays { inherit inputs; };
       nixosConfigurations = {
-        vps = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/vps
-            inputs.disko.nixosModules.disko
-            agenix.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "backup";
-            }
-          ];
-        };
-        laptop-asus = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/laptop-asus
-            ./modules/duckdns.nix
-            inputs.disko.nixosModules.disko
-            nixos-hardware.nixosModules.asus-fx504gd
-            agenix.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "backup";
-            }
-          ];
-        };
+        # vps = nixpkgs.lib.nixosSystem {
+        #   system = "x86_64-linux";
+        #   specialArgs = { inherit inputs outputs; };
+        #   modules = [
+        #     ./hosts/vps
+        #     inputs.disko.nixosModules.disko
+        #     agenix.nixosModules.default
+        #     inputs.home-manager.nixosModules.home-manager
+        #     {
+        #       home-manager.backupFileExtension = "backup";
+        #     }
+        #   ];
+        # };
+        # laptop-asus = nixpkgs.lib.nixosSystem {
+        #   system = "x86_64-linux";
+        #   specialArgs = { inherit inputs outputs; };
+        #   modules = [
+        #     ./hosts/laptop-asus
+        #     ./modules/duckdns.nix
+        #     inputs.disko.nixosModules.disko
+        #     nixos-hardware.nixosModules.asus-fx504gd
+        #     agenix.nixosModules.default
+        #     inputs.home-manager.nixosModules.home-manager
+        #     {
+        #       home-manager.backupFileExtension = "backup";
+        #     }
+        #   ];
+        # };
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
