@@ -23,7 +23,7 @@
     inputs.nixcord.homeModules.nixcord
   ];
   stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
   stylix.image = ../../assets/wallpaper16-9.jpg;
   stylix.polarity = "dark";
   stylix.targets.zen-browser.profileNames = [

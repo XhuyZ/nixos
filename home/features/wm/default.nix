@@ -13,6 +13,9 @@
     ./nixcord.nix
     ./redisinsight.nix
     # ./conduktor.nix
+    ./chromium.nix
+    ./chrome.nix
+    ./firefox.nix
   ];
 
 }

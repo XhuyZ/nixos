@@ -33,15 +33,18 @@
     };
     wm = {
       office.enable = true;
-      blender.enable = true;
+      blender.enable = false;
       dbeaver.enable = true;
       obs.enable = true;
       media.enable = true;
       gnome.enable = true;
-      qutebrowser.enable = true;
+      qutebrowser.enable = false;
       zen-browser.enable = true;
       nixcord.enable = true;
-      redisinsight.enable = true;
+      redisinsight.enable = false;
+      chromium.enable = true;
+      chrome.enable = true;
+      firefox.enable = true;
     };
     devkit = {
       nodejs.enable = true;
