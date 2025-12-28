@@ -55,7 +55,7 @@ in
 
       # Window manager
       "org/gnome/desktop/wm/preferences" = {
-        num-workspaces = 10;
+        num-workspaces = 5;
       };
 
       # Workspace keybindings
@@ -66,11 +66,11 @@ in
         switch-to-workspace-3 = [ "<Super>3" ];
         switch-to-workspace-4 = [ "<Super>4" ];
         switch-to-workspace-5 = [ "<Super>5" ];
-        switch-to-workspace-6 = [ "<Super>6" ];
-        switch-to-workspace-7 = [ "<Super>7" ];
-        switch-to-workspace-8 = [ "<Super>8" ];
-        switch-to-workspace-9 = [ "<Super>9" ];
-        switch-to-workspace-10 = [ "<Super>10" ];
+        # switch-to-workspace-6 = [ "<Super>6" ];
+        # switch-to-workspace-7 = [ "<Super>7" ];
+        # switch-to-workspace-8 = [ "<Super>8" ];
+        # switch-to-workspace-9 = [ "<Super>9" ];
+        # switch-to-workspace-10 = [ "<Super>10" ];
         # Moving windows to workspaces
         # move-to-workspace-1 = [ "<Shift><Super>1" ];
         # move-to-workspace-2 = [ "<Shift><Super>2" ];
