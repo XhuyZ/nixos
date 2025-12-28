@@ -1,11 +1,12 @@
 {
   imports = [
-    ./containers
+    # ./containers
     # ./traefik.nix
-    ./mysql.nix
+    # ./mysql.nix
+    # ./podman.nix
+    # ./virtualisation.nix
     # ./traefik.nix
-    ./postgres.nix
-    # ./traefik.nix
+    # ./postgres.nix
+    # ./cliphist.nix
   ];
 }
-

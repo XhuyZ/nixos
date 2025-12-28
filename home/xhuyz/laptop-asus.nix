@@ -1,10 +1,18 @@
-{ config, pkgs, lib, inputs, outputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  outputs,
+  ...
+}:
 {
   imports = [
     ../common
     ../features/programs
     ../features/packages
     ../features/wm
+    ../features/devkit
     ./home.nix
   ];
   features = {
@@ -19,17 +27,30 @@
       jq.enable = true;
       lazydocker.enable = true;
       k9s.enable = true;
+      git.enable = true;
+      fcitx5.enable = true;
+      copyq.enable = true;
     };
     wm = {
-      office.enable = false;
+      office.enable = true;
       blender.enable = false;
-      kdenlive.enable = false;
-      dbeaver.enable = false;
-      obs.enable = false;
-      media.enable = false;
+      dbeaver.enable = true;
+      obs.enable = true;
+      media.enable = true;
       gnome.enable = true;
+      qutebrowser.enable = false;
+      zen-browser.enable = true;
+      nixcord.enable = true;
+      redisinsight.enable = false;
+      chromium.enable = true;
+      chrome.enable = true;
+      firefox.enable = true;
+    };
+    devkit = {
+      nodejs.enable = true;
+      dotnet_10.enable = true;
+      dotnet_9.enable = false;
+      dotnet_8.enable = false;
     };
   };
 }
-
-

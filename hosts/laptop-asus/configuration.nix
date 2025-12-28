@@ -1,9 +1,22 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
     ./disko-config.nix
+  ];
+  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
+  hardware.firmware = with pkgs; [
+    linux-firmware
+    sof-firmware
   ];
   # ## --- Bootloader (GRUB + UEFI only) ---
   # boot.loader.grub = {
@@ -13,21 +26,21 @@
   #   efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
   # };
   boot.loader = {
-  efi.canTouchEfiVariables = false;
+    efi.canTouchEfiVariables = false;
 
-  grub = {
-    enable = true;
-    efiSupport = true;
-    devices = [ "nodev" ];
-    efiInstallAsRemovable = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      devices = [ "nodev" ];
+      efiInstallAsRemovable = true;
+    };
   };
-};
-
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "iwlwifi" ];
 
   ## --- Host & Time ---
-  networking.hostName = "laptop-asus";
+  networking.hostName = "laptop-thinkpad";
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   ## --- Locale ---
@@ -47,19 +60,20 @@
   ## --- Networking ---
   networking.networkmanager.enable = true;
 
-  # ## --- GUI: GNOME Desktop ---
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-  # services.xserver.displayManager.gdm.wayland = true;
+  ## --- GUI: GNOME Desktop --
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.wayland = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
+  services.libinput.enable = true;
+
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
-
 
   ## --- Printing ---
   # services.printing.enable = true;
@@ -69,31 +83,34 @@
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
   };
   security.rtkit.enable = true;
 
-#   ## --- User ---
-users.users = {
-  xhuyz = {
-    isNormalUser = true;
-    initialPassword = "<><>";
-    extraGroups = [ "wheel" "networkmanager" ]; 
+  #   ## --- User ---
+  users.users = {
+    xhuyz = {
+      isNormalUser = true;
+      initialPassword = "<><>";
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
+      packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
+    };
   };
-};
-home-manager = {
-  useUserPackages = true;
-  extraSpecialArgs = { inherit inputs outputs; };
-  users.xhuyz =
-    import ../../home/xhuyz/${config.networking.hostName}.nix;
-};
-
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+    users.xhuyz = import ../../home/xhuyz/${config.networking.hostName}.nix;
+  };
 
   ## --- Unfree packages ---
   nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config.permittedInsecurePackages = [
+    "gradle-7.6.6"
+  ];
   ## --- System packages ---
   environment.systemPackages = with pkgs; [
     inputs.my-nixvim.packages.${system}.default
@@ -108,7 +125,7 @@ home-manager = {
   };
 
   ## --- Firewall ---
-  networking.firewall.allowedTCPPorts = [ 22 8080 ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
@@ -119,5 +136,5 @@ home-manager = {
   ];
 
   ## --- Required for upgrades ---
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }

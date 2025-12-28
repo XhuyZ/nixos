@@ -1,7 +1,7 @@
 {
   imports = [
-  ./neko.nix
-  ./grafana.nix
+    # Import some nix modules
   ];
 }
+
 
