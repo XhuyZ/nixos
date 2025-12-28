@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   # Bring custom packages from pkgs directory
   additions = final: _prev: import ../../pkgs { pkgs = final; };
 
@@ -12,10 +13,8 @@
   # Stable package set
   stable-packages = final: _prev: {
     stable = import inputs.nixpkgs {
-      system = final.system;
+      system = final.stdenv.hostPlatform.system;
       config.allowUnfree = true;
     };
   };
 }
-
-
