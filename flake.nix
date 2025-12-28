@@ -45,13 +45,21 @@
     }@inputs:
     let
       inherit (self) outputs;
-      systems = [
-        "x86_64-linux"
-      ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
+      # systems = [
+      #   "x86_64-linux"
+      # ];
+      # forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      # packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      packages =
+        let
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        in
+        {
+          default = import ./pkgs pkgs;
+        };
+
       overlays = import ./hosts/overlays { inherit inputs; };
       nixosConfigurations = {
         laptop-asus = nixpkgs.lib.nixosSystem {
