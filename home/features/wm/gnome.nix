@@ -96,22 +96,22 @@ in
         # switch-to-application-10 = [ "<Super>0" ];
 
         # Directional workspace switching
-        move-to-workspace-right = [
-          "<Shift><Super>Right"
-          "<Shift><Super>l"
-        ];
-        move-to-workspace-left = [
-          "<Shift><Super>Left"
-          "<Shift><Super>h"
-        ];
-        switch-to-workspace-right = [
-          "<Control><Alt>Right"
-          "<Control><Alt>l"
-        ];
-        switch-to-workspace-left = [
-          "<Control><Alt>Left"
-          "<Control><Alt>h"
-        ];
+        # move-to-workspace-right = [
+        #   "<Shift><Super>Right"
+        #   "<Shift><Super>l"
+        # ];
+        # move-to-workspace-left = [
+        #   "<Shift><Super>Left"
+        #   "<Shift><Super>h"
+        # ];
+        # switch-to-workspace-right = [
+        #   "<Control><Alt>Right"
+        #   "<Control><Alt>l"
+        # ];
+        # switch-to-workspace-left = [
+        #   "<Control><Alt>Left"
+        #   "<Control><Alt>h"
+        # ];
 
         # Application switching
         switch-applications = [ "<Super><Tab>" ];
