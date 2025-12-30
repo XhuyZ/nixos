@@ -4,9 +4,11 @@
   pkgs,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.extraServices.podman;
-in {
+in
+{
   options.extraServices.podman.enable = mkEnableOption "enable podman";
 
   config = mkIf cfg.enable {
@@ -31,4 +33,3 @@ in {
     ];
   };
 }
-

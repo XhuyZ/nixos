@@ -8,5 +8,6 @@
     # ./traefik.nix
     # ./postgres.nix
     # ./cliphist.nix
+    ./podman.nix
   ];
 }
