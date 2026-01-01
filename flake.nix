@@ -56,7 +56,7 @@
       overlays = import ./hosts/overlays { inherit inputs; };
       nixosConfigurations = {
         laptop-asus = nixpkgs.lib.nixosSystem {
-          # system = "x86_64-linux";
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/laptop-asus
@@ -71,7 +71,7 @@
           ];
         };
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
-          # system = "x86_64-linux";
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/laptop-thinkpad
@@ -86,7 +86,7 @@
           ];
         };
         wsl = nixpkgs.lib.nixosSystem {
-          # system = "x86_64-linux";
+          system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/wsl
