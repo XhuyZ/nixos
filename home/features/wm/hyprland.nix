@@ -4,7 +4,9 @@
   pkgs,
   ...
 }:
+
 with lib;
+
 let
   cfg = config.features.wm.hyprland;
 in
@@ -15,6 +17,9 @@ in
     home.packages = with pkgs; [
       hyprland
     ];
-    programs.hyprland.enable = true;
+
+    wayland.windowManager.hyprland = {
+      enable = true;
+    };
   };
 }
