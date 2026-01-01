@@ -16,6 +16,7 @@
     ./chromium.nix
     ./chrome.nix
     ./firefox.nix
+    ./rider.nix
   ];
 
 }
