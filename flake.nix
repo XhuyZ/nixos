@@ -52,7 +52,7 @@
     in
     {
       # packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-      packages =
+      packages.x86_64-linux =
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
         in
@@ -93,7 +93,7 @@
           ];
         };
         wsl = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          # system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/wsl
