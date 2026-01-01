@@ -17,6 +17,7 @@
     ./chrome.nix
     ./firefox.nix
     ./rider.nix
+    ./hyprland.nix
   ];
 
 }

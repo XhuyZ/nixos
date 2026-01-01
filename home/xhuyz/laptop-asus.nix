@@ -46,6 +46,7 @@
       chrome.enable = true;
       firefox.enable = true;
       rider.enable = true;
+      hyprland.enable = true;
     };
     devkit = {
       nodejs.enable = true;
