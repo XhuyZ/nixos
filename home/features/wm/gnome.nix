@@ -15,14 +15,14 @@ in
   config = mkIf cfg.enable {
     # Install GNOME extensions
     home.packages = with pkgs; [
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.just-perfection
-      gnomeExtensions.logo-menu
-      gnomeExtensions.top-bar-organizer
-      gnomeExtensions.space-bar
-      gnomeExtensions.gtile
+      # gnomeExtensions.dash-to-dock
+      # gnomeExtensions.just-perfection
+      # gnomeExtensions.logo-menu
+      # gnomeExtensions.top-bar-organizer
+      # gnomeExtensions.space-bar
+      # gnomeExtensions.gtile
       gnomeExtensions.paperwm
-      gpaste
+      # gpaste
     ];
 
     # GNOME configuration via dconf
@@ -35,15 +35,15 @@ in
         ];
         disable-user-extensions = false;
         enabled-extensions = [
-          "native-window-placement@gnome-shell-extensions.gcampax.github.com"
-          "drive-menu@gnome-shell-extensions.gcampax.github.com"
-          "dash-to-dock@micxgx.gmail.com"
-          "just-perfection-desktop@just-perfection"
-          "Logo-menu@aryan_k"
-          "aylurs-widgets@aylur"
-          "top-bar-organizer@julian.gse.jsts.xyz"
-          "space-bar@luchrioh"
-          "gtile@vibou"
+          # "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+          # "drive-menu@gnome-shell-extensions.gcampax.github.com"
+          # "dash-to-dock@micxgx.gmail.com"
+          # "just-perfection-desktop@just-perfection"
+          # "Logo-menu@aryan_k"
+          # "aylurs-widgets@aylur"
+          # "top-bar-organizer@julian.gse.jsts.xyz"
+          # "space-bar@luchrioh"
+          # "gtile@vibou"
           "paperwm@paperwm.github.com"
         ];
       };
@@ -119,84 +119,84 @@ in
       };
 
       # Mutter settings
-      "org/gnome/mutter" = {
-        edge-tiling = false;
-        dynamic-workspaces = false;
-      };
-
-      # Extension configurations
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        autohide = true;
-        dock-fixed = false;
-        dock-position = "BOTTOM";
-        pressure-threshold = 200.0;
-        require-pressure-to-show = true;
-        show-favorites = true;
-        hot-keys = false;
-      };
-
-      "org/gnome/shell/extensions/just-perfection" = {
-        panel-size = 48;
-        activities-button = false;
-      };
-
-      "org/gnome/shell/extensions/Logo-menu" = {
-        hide-softwarecentre = true;
-        menu-button-icon-click-type = 3;
-        menu-button-icon-image = 23;
-        menu-button-terminal = "gnome-terminal";
-      };
-
-      "org/gnome/shell/extensions/aylurs-widgets" = {
-        background-clock = false;
-        battery-bar = false;
-        dash-board = false;
-        date-menu-date-format = "%H:%M  %B %m";
-        date-menu-hide-clocks = true;
-        date-menu-hide-system-levels = true;
-        date-menu-hide-user = true;
-        date-menu-indicator-position = 2;
-        media-player = false;
-        media-player-prefer = "firefox";
-        notification-indicator = false;
-        power-menu = false;
-        quick-toggles = false;
-        workspace-indicator = false;
-      };
-
-      "org/gnome/shell/extensions/top-bar-organizer" = {
-        left-box-order = [
-          "menuButton"
-          "activities"
-          "dateMenu"
-          "appMenu"
-        ];
-        center-box-order = [ "Space Bar" ];
-        right-box-order = [
-          "keyboard"
-          "EmojisMenu"
-          "wireless-hid"
-          "drive-menu"
-          "vitalsMenu"
-          "screenRecording"
-          "screenSharing"
-          "dwellClick"
-          "a11y"
-          "quickSettings"
-        ];
-      };
-
-      "org/gnome/shell/extensions/space-bar/shortcuts" = {
-        enable-activate-workspace-shortcuts = false;
-      };
-
-      "org/gnome/shell/extensions/space-bar/behavior" = {
-        show-empty-workspaces = false;
-      };
-
-      "org/gnome/shell/extensions/gtile" = {
-        show-icon = false;
-      };
+      # "org/gnome/mutter" = {
+      #   edge-tiling = false;
+      #   dynamic-workspaces = false;
+      # };
+      #
+      # # Extension configurations
+      # "org/gnome/shell/extensions/dash-to-dock" = {
+      #   autohide = true;
+      #   dock-fixed = false;
+      #   dock-position = "BOTTOM";
+      #   pressure-threshold = 200.0;
+      #   require-pressure-to-show = true;
+      #   show-favorites = true;
+      #   hot-keys = false;
+      # };
+      #
+      # "org/gnome/shell/extensions/just-perfection" = {
+      #   panel-size = 48;
+      #   activities-button = false;
+      # };
+      #
+      # "org/gnome/shell/extensions/Logo-menu" = {
+      #   hide-softwarecentre = true;
+      #   menu-button-icon-click-type = 3;
+      #   menu-button-icon-image = 23;
+      #   menu-button-terminal = "gnome-terminal";
+      # };
+      #
+      # "org/gnome/shell/extensions/aylurs-widgets" = {
+      #   background-clock = false;
+      #   battery-bar = false;
+      #   dash-board = false;
+      #   date-menu-date-format = "%H:%M  %B %m";
+      #   date-menu-hide-clocks = true;
+      #   date-menu-hide-system-levels = true;
+      #   date-menu-hide-user = true;
+      #   date-menu-indicator-position = 2;
+      #   media-player = false;
+      #   media-player-prefer = "firefox";
+      #   notification-indicator = false;
+      #   power-menu = false;
+      #   quick-toggles = false;
+      #   workspace-indicator = false;
+      # };
+      #
+      # "org/gnome/shell/extensions/top-bar-organizer" = {
+      #   left-box-order = [
+      #     "menuButton"
+      #     "activities"
+      #     "dateMenu"
+      #     "appMenu"
+      #   ];
+      #   center-box-order = [ "Space Bar" ];
+      #   right-box-order = [
+      #     "keyboard"
+      #     "EmojisMenu"
+      #     "wireless-hid"
+      #     "drive-menu"
+      #     "vitalsMenu"
+      #     "screenRecording"
+      #     "screenSharing"
+      #     "dwellClick"
+      #     "a11y"
+      #     "quickSettings"
+      #   ];
+      # };
+      #
+      # "org/gnome/shell/extensions/space-bar/shortcuts" = {
+      #   enable-activate-workspace-shortcuts = false;
+      # };
+      #
+      # "org/gnome/shell/extensions/space-bar/behavior" = {
+      #   show-empty-workspaces = false;
+      # };
+      #
+      # "org/gnome/shell/extensions/gtile" = {
+      #   show-icon = false;
+      # };
     };
   };
 }

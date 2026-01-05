@@ -1,10 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_17;
-    extensions = with pkgs.postgresql17Packages; [
-      pgvector
-    ];
+    package = pkgs.postgresql_18;
+    # extensions = with pkgs.postgresql17Packages; [
+    #   pgvector
+    # ];
     authentication = ''
       local all all trust
       host all all 127.0.0.1/32 trust
@@ -20,4 +21,3 @@
     '';
   };
 }
-
