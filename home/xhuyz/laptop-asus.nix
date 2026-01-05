@@ -28,7 +28,7 @@
       lazydocker.enable = true;
       k9s.enable = true;
       git.enable = true;
-      fcitx5.enable = true;
+      # fcitx5.enable = true;
       copyq.enable = true;
     };
     wm = {
