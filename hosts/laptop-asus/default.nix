@@ -32,5 +32,6 @@
   extraServices = {
     ollama.enable = true;
     virtualisation.enable = true;
+    podman.enable = true;
   };
 }
