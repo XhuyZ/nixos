@@ -63,7 +63,7 @@ in
               $env.config.color_config.filesize = {|x| if $x == 0b { 'dark_gray' } else if $x < 1mb { 'cyan' } else { 'blue' } }
               $env.config.color_config.bool = {|x| if $x { 'green' } else { 'light_red' } }
               # mkdir ($nu.data-dir | path join "vendor/autoload")
-              starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+              # starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
               alias edit = sudo nvim /etc/nixos/configuration.nix
               alias xhuyz = sudo nixos-rebuild switch
               alias home = cd ~/.config/home-manager/
