@@ -15,36 +15,37 @@ in
     programs.nushell = {
       enable = true;
       envFile.text = ''
-        # $env.config.show_banner = false
-        # $env.NIX_PATH = "nixpkgs=channel:nixos-unstable"
-        # $env.NIX_LOG = "iunfo"
-        # $env.WEBKIT_DISABLE_COMPOSITING_MODE = "1"
-        # $env.TERMINAL = "kitty"
-        # $env.EDITOR = "nvim"
-        # $env.VISUAL = "zed"
-        # $env.FZF_DEFAULT_COMMAND = "fd --type f --exclude .git --follow --hidden"
-        # $env.FZF_DEFAULT_OPTS = "--preview='bat --color=always -n {}' --bind 'ctrl-/:toggle-preview' --header 'Press CTRL-Y to copy command into clipboard' --bind 'ctrl-/:toggle-preview' --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort' --color bg:#282a36,bg+:#44475a,fg:#f8f8f2,fg+:#f8f8f2,header:#6272a4,hl:#bd93f9,hl+:#bd93f9,info:#ffb86c,marker:#ff79c6,pointer:#ff79c6,prompt:#50fa7b,spinner:#ffb86c"
-        # $env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
-        # $env.FZF_DEFAULT_COMMAND = "fd --type f --exclude .git --follow --hidden"
-        # $env.SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh"
-        # $env.FLAKE = $"($env.HOME)/p/nixos/nixos-config"
-        # source /run/agenix/${config.home.username}-secrets
-        # $env.JAVA_HOME = "/usr/lib/jvm/java-8-temurin/"
-        # Set the Android SDK root
-        $env.ANDROID_SDK_ROOT = "/home/xhuyz/Android/Sdk"
-        # Append Android tools to PATH
-        $env.PATH = ($env.PATH | append [
-        "/home/xhuyz/Android/Sdk/cmdline-tools/bin/"
-        "/home/xhuyz/Android/Sdk/build-tools"
-        "/home/xhuyz/Android/Sdk/emulator"
-        "/home/xhuyz/Android/Sdk/platform-tools"
-        "/home/xhuyz/Android/Sdk/system-images"
-        ])
-        #install fcitx5 -gtk -qt 
-        $env.GTK_IM_MODULE = "fcitx"
-        $env.QT_IM_MODULE = "fcitx"
-        $env.XMODIFIERS = "@im=fcitx"
-        #gemini-api-key
+                $env.config.show_banner = false
+                # $env.NIX_PATH = "nixpkgs=channel:nixos-unstable"
+                # $env.NIX_LOG = "iunfo"
+                # $env.WEBKIT_DISABLE_COMPOSITING_MODE = "1"
+                $env.TERMINAL = "kitty"
+                $env.EDITOR = "nvim"
+        				$env.SHELL = "nu"
+                # $env.VISUAL = "zed"
+                # $env.FZF_DEFAULT_COMMAND = "fd --type f --exclude .git --follow --hidden"
+                # $env.FZF_DEFAULT_OPTS = "--preview='bat --color=always -n {}' --bind 'ctrl-/:toggle-preview' --header 'Press CTRL-Y to copy command into clipboard' --bind 'ctrl-/:toggle-preview' --bind 'ctrl-y:execute-silent(echo -n {2..} | wl-copy)+abort' --color bg:#282a36,bg+:#44475a,fg:#f8f8f2,fg+:#f8f8f2,header:#6272a4,hl:#bd93f9,hl+:#bd93f9,info:#ffb86c,marker:#ff79c6,pointer:#ff79c6,prompt:#50fa7b,spinner:#ffb86c"
+                # $env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
+                # $env.FZF_DEFAULT_COMMAND = "fd --type f --exclude .git --follow --hidden"
+                # $env.SSH_AUTH_SOCK = "/run/user/1000/gnupg/S.gpg-agent.ssh"
+                # $env.FLAKE = $"($env.HOME)/p/nixos/nixos-config"
+                # source /run/agenix/${config.home.username}-secrets
+                # $env.JAVA_HOME = "/usr/lib/jvm/java-8-temurin/"
+                # Set the Android SDK root
+                $env.ANDROID_SDK_ROOT = "/home/xhuyz/Android/Sdk"
+                # Append Android tools to PATH
+                $env.PATH = ($env.PATH | append [
+                "/home/xhuyz/Android/Sdk/cmdline-tools/bin/"
+                "/home/xhuyz/Android/Sdk/build-tools"
+                "/home/xhuyz/Android/Sdk/emulator"
+                "/home/xhuyz/Android/Sdk/platform-tools"
+                "/home/xhuyz/Android/Sdk/system-images"
+                ])
+                #install fcitx5 -gtk -qt 
+                $env.GTK_IM_MODULE = "fcitx"
+                $env.QT_IM_MODULE = "fcitx"
+                $env.XMODIFIERS = "@im=fcitx"
+                #gemini-api-key
       '';
       configFile.text = ''
                     print "\e[6 q"
