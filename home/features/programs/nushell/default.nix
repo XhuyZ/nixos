@@ -68,7 +68,7 @@ in
               alias home = cd ~/.config/home-manager/
               alias niriconfig = nvim ~/.config/niri/config.kdl
         #update system
-              alias xhuyz = sudo nixos-rebuild switch --flake ~/nixos .#laptop-thinkpad
+              alias xhuyz-asus = sudo nixos-rebuild switch --flake .#laptop-asus
         #fastfetch
               alias ff = fastfetch
         #service
