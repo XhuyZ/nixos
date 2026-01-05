@@ -26,6 +26,7 @@
     ./programs.nix
     # ./secrets.nix
     ./services
+    ../common/extraServices
   ];
 
   extraServices = {
