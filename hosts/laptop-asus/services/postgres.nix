@@ -2,7 +2,7 @@
 {
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql;
+    package = pkgs.postgresql_18;
     # extensions = with pkgs.postgresql17Packages; [
     #   pgvector
     # ];
