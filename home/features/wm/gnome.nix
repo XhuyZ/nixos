@@ -33,9 +33,9 @@ in
     };
 
     # Touchpad
-    "org/gnome/desktop/peripherals/touchpad" = {
-      disable-while-typing = false;
-    };
+    # "org/gnome/desktop/peripherals/touchpad" = {
+    #   disable-while-typing = false;
+    # };
 
     # Window manager
     "org/gnome/desktop/wm/preferences" = {
