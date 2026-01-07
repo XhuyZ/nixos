@@ -31,11 +31,7 @@
     "default"
   ];
   stylix.targets = {
-    gtk.enable = false;
     gnome.enable = false;
-    qt.enable = false;
-    fonts.enable = false;
-    iconTheme.enable = false;
   };
 
   programs.home-manager.enable = true;
