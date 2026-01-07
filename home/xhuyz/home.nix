@@ -36,7 +36,6 @@
     qt.enable = false;
     fonts.enable = false;
     iconTheme.enable = false;
-    cursor.enable = false;
   };
 
   programs.home-manager.enable = true;
