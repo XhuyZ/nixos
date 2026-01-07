@@ -30,9 +30,9 @@
   stylix.targets.zen-browser.profileNames = [
     "default"
   ];
-  stylix.targets = {
-    gnome.enable = false;
-  };
+  # stylix.targets = {
+  #   gnome.enable = false;
+  # };
 
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {
