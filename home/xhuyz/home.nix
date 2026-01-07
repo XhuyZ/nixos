@@ -34,7 +34,6 @@
     gtk.enable = false;
     gnome.enable = false;
     qt.enable = false;
-    console.enable = false;
     fonts.enable = false;
     iconTheme.enable = false;
     cursor.enable = false;
