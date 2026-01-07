@@ -16,6 +16,7 @@
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
+    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1";
   };
   imports = [
     inputs.zen-browser.homeModules.beta
