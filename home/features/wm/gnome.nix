@@ -38,9 +38,9 @@ in
     # };
 
     # Window manager
-    "org/gnome/desktop/wm/preferences" = {
-      num-workspaces = 5;
-    };
+    # "org/gnome/desktop/wm/preferences" = {
+    #   num-workspaces = 5;
+    # };
 
     # Workspace keybindings
     # "org/gnome/desktop/wm/keybindings" = {
