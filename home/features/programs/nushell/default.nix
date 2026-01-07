@@ -70,6 +70,7 @@ in
               alias niriconfig = nvim ~/.config/niri/config.kdl
         #update system
               alias xhuyz-asus = sudo nixos-rebuild switch --flake .#laptop-asus
+              alias xhuyz-thinkpad = sudo nixos-rebuild switch --flake .#laptop-thinkpad
         #fastfetch
               alias ff = fastfetch
         #service
