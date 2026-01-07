@@ -43,15 +43,15 @@ in
     };
 
     # Workspace keybindings
-    "org/gnome/desktop/wm/keybindings" = {
-      # Workspace switching
-      switch-to-workspace-1 = [ "<Super>1" ];
-      switch-to-workspace-2 = [ "<Super>2" ];
-      switch-to-workspace-3 = [ "<Super>3" ];
-      switch-to-workspace-4 = [ "<Super>4" ];
-      switch-to-workspace-5 = [ "<Super>5" ];
-      switch-applications = [ "<Super><Tab>" ];
-      switch-applications-backward = [ "<Shift><Super><Tab>" ];
-    };
+    # "org/gnome/desktop/wm/keybindings" = {
+    #   # Workspace switching
+    #   switch-to-workspace-1 = [ "<Super>1" ];
+    #   switch-to-workspace-2 = [ "<Super>2" ];
+    #   switch-to-workspace-3 = [ "<Super>3" ];
+    #   switch-to-workspace-4 = [ "<Super>4" ];
+    #   switch-to-workspace-5 = [ "<Super>5" ];
+    #   switch-applications = [ "<Super><Tab>" ];
+    #   switch-applications-backward = [ "<Shift><Super><Tab>" ];
+    # };
   };
 }
