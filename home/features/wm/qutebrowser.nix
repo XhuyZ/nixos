@@ -25,7 +25,7 @@ in
           hints = {
             # bg = "#000000";
             bg = lib.mkForce "#000000";
-            fg = "#ffffff";
+            fg = lib.mkForce "#ffffff";
           };
           tabs.bar.bg = "#000000";
         };
