@@ -18,13 +18,8 @@
     linux-firmware
     sof-firmware
   ];
-  # ## --- Bootloader (GRUB + UEFI only) ---
-  # boot.loader.grub = {
-  #   enable = true;
-  #   efiSupport = true;
-  #   devices = [ "nodev" ];
-  #   efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
-  # };
+  hardware.graphics.enable = true;
+  hardware.nvidia.open = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
 
@@ -69,6 +64,8 @@
     variant = "";
   };
   services.libinput.enable = true;
+  ## --- NVIDIA
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
