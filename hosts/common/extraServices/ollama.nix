@@ -12,6 +12,10 @@ in
   options.extraServices.ollama.enable = mkEnableOption "enable ollama";
 
   config = mkIf cfg.enable {
+    services.open-webui = {
+      enable = true;
+      port = "11111";
+    };
     services.ollama = {
       enable = true;
       acceleration =
