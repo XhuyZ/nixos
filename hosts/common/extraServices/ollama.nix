@@ -20,17 +20,20 @@ in
         # else if config.services.xserver.videoDrivers == [ "nvidia" ] then
         #   "cuda"
         # else null
-        null;
+        "cpu";
       host = "[::]";
       openFirewall = true;
       environmentVariables = {
         OLLAMA_ORIGINS = "https://msty.studio";
         OLLAMA_HOST = "0.0.0.0";
+        OLLAMA_NUM_THREADS = "12";
       };
     };
     nixpkgs.config = {
-      rocmSupport = config.services.xserver.videoDrivers == [ "amdgpu" ];
-      cudaSupport = config.services.xserver.videoDrivers == [ "nvidia" ];
+      # rocmSupport = config.services.xserver.videoDrivers == [ "amdgpu" ];
+      # cudaSupport = config.services.xserver.videoDrivers == [ "nvidia" ];
+      cudaSupport = false;
+      rocmSupport = false;
     };
   };
 }
