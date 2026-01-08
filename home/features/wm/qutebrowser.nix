@@ -23,7 +23,8 @@ in
       settings = {
         colors = {
           hints = {
-            bg = "#000000";
+            # bg = "#000000";
+            bg = lib.mkForce "#000000";
             fg = "#ffffff";
           };
           tabs.bar.bg = "#000000";
