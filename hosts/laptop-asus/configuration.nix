@@ -33,7 +33,6 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  hardware.opengl.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
 
