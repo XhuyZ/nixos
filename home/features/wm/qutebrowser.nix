@@ -14,22 +14,28 @@ in
   config = mkIf cfg.enable {
     programs.qutebrowser = {
       enable = true;
-      loadAutoconfig = false;
+
       searchEngines = {
-        w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";
+        w = "https://en.wikipedia.org/wiki/Special:Search?search={}";
         aw = "https://wiki.archlinux.org/?search={}";
         nw = "https://wiki.nixos.org/index.php?search={}";
-        g = "https://www.google.com/search?hl=en&amp;q={}";
+        g = "https://www.google.com/search?q={}";
       };
+
       settings = {
         colors = {
           hints = {
-            # bg = "#000000";
-            bg = "#000000";
-            fg = "#ffffff";
+            bg = mkForce "#000000";
+            fg = mkForce "#ffffff";
           };
-          tabs.bar.bg = "#000000";
+
+          tabs = {
+            bar = {
+              bg = mkForce "#000000";
+            };
+          };
         };
+
         tabs.tabs_are_windows = true;
       };
     };
