@@ -23,7 +23,7 @@
   # hardware.nvidia.open = true;
   hardware.nvidia = {
     open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.nvidia_535;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
     prime = {
       offload.enable = true;
