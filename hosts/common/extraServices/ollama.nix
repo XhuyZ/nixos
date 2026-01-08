@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     services.open-webui = {
       enable = true;
-      port = "11111";
+      port = 11111;
     };
     services.ollama = {
       enable = true;
