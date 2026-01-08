@@ -19,6 +19,7 @@
     sof-firmware
   ];
   hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
   # hardware.nvidia.open = true;
   hardware.nvidia = {
     open = false;
@@ -31,6 +32,7 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
+  hardware.opengl.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
 
@@ -76,7 +78,6 @@
   };
   services.libinput.enable = true;
   ## --- NVIDIA
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
