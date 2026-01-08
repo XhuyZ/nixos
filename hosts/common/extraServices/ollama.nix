@@ -4,20 +4,23 @@
   pkgs,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.extraServices.ollama;
-in {
+in
+{
   options.extraServices.ollama.enable = mkEnableOption "enable ollama";
 
   config = mkIf cfg.enable {
     services.ollama = {
       enable = true;
       acceleration =
-        if config.services.xserver.videoDrivers == ["amdgpu"]
-        then "rocm"
-        else if config.services.xserver.videoDrivers == ["nvidia"]
-        then "cuda"
-        else null;
+        # if config.services.xserver.videoDrivers == [ "amdgpu" ] then
+        #   "rocm"
+        # else if config.services.xserver.videoDrivers == [ "nvidia" ] then
+        #   "cuda"
+        # else null
+        "cpu";
       host = "[::]";
       openFirewall = true;
       environmentVariables = {
@@ -26,9 +29,8 @@ in {
       };
     };
     nixpkgs.config = {
-      rocmSupport = config.services.xserver.videoDrivers == ["amdgpu"];
-      cudaSupport = config.services.xserver.videoDrivers == ["nvidia"];
+      rocmSupport = config.services.xserver.videoDrivers == [ "amdgpu" ];
+      cudaSupport = config.services.xserver.videoDrivers == [ "nvidia" ];
     };
   };
 }
-
