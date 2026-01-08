@@ -27,9 +27,9 @@
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
   stylix.image = ../../assets/wallpaper16-9-3.png;
   stylix.polarity = "dark";
-  stylix.targets.zen-browser.profileNames = [
-    "default"
-  ];
+  # stylix.targets.zen-browser.profileNames = [
+  #   "default"
+  # ];
   stylix.targets = {
     gtk.enable = false;
   };
