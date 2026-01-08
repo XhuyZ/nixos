@@ -20,7 +20,7 @@ in
         # else if config.services.xserver.videoDrivers == [ "nvidia" ] then
         #   "cuda"
         # else null
-        "cpu";
+        null;
       host = "[::]";
       openFirewall = true;
       environmentVariables = {
