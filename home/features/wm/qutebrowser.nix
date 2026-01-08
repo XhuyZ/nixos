@@ -14,6 +14,7 @@ in
   config = mkIf cfg.enable {
     programs.qutebrowser = {
       enable = true;
+      loadAutoConfig = false;
       searchEngines = {
         w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";
         aw = "https://wiki.archlinux.org/?search={}";
@@ -24,8 +25,8 @@ in
         colors = {
           hints = {
             # bg = "#000000";
-            bg = lib.mkForce "#000000";
-            fg = lib.mkForce "#ffffff";
+            bg = "#000000";
+            fg = "#ffffff";
           };
           tabs.bar.bg = "#000000";
         };
