@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     programs.qutebrowser = {
       enable = true;
-      loadAutoConfig = false;
+      loadAutoconfig = false;
       searchEngines = {
         w = "https://en.wikipedia.org/wiki/Special:Search?search={}&amp;go=Go&amp;ns0=1";
         aw = "https://wiki.archlinux.org/?search={}";
