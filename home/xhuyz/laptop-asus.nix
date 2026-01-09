@@ -51,8 +51,8 @@
     devkit = {
       nodejs.enable = true;
       dotnet_10.enable = false;
-      dotnet_9.enable = true;
-      dotnet_8.enable = false;
+      dotnet_9.enable = false;
+      dotnet_8.enable = true;
     };
   };
 }

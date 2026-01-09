@@ -14,6 +14,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       dotnetCorePackages.sdk_8_0-bin
+      dotnet-ef
     ];
   };
 }
