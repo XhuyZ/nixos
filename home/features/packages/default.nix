@@ -21,5 +21,6 @@
     pkgs.dbeaver-bin
     pkgs.gcc
     pkgs.nerd-fonts.caskaydia-cove
+    pkgs.aider-chat
   ];
 }
