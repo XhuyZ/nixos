@@ -33,6 +33,7 @@ in
         OLLAMA_ORIGINS = "https://msty.studio";
         OLLAMA_HOST = "0.0.0.0";
         OLLAMA_NUM_THREADS = "12";
+        OLLAMA_HOME = "/home/xhuyz/ollama-data";
       };
     };
     nixpkgs.config = {
