@@ -17,9 +17,6 @@ in
       port = 11111;
       host = "0.0.0.0";
       openFirewall = true;
-      environment = {
-        DATA_DIR = "/home/xhuyz/ollama-data/webui";
-      };
     };
     services.ollama = {
       enable = true;
