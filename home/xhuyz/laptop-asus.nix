@@ -32,12 +32,13 @@
       copyq.enable = true;
     };
     wm = {
+      gnome.enable = true;
+      mangowc.enable = true;
       office.enable = true;
       blender.enable = true;
       dbeaver.enable = true;
       obs.enable = true;
       media.enable = true;
-      gnome.enable = true;
       qutebrowser.enable = true;
       zen-browser.enable = true;
       nixcord.enable = true;

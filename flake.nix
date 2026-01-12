@@ -16,9 +16,9 @@
     my-nixvim.url = "github:XhuyZ/nixvim";
     agenix.url = "github:ryantm/agenix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    mango = {
+    mangowc = {
       url = "github:DreamMaoMao/mango";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -45,7 +45,7 @@
       nixvim,
       my-nixvim,
       agenix,
-      mango,
+      mangowc,
       ...
     }@inputs:
     let
@@ -73,10 +73,7 @@
             {
               home-manager.backupFileExtension = "backup";
             }
-            mango.nixosModules.mango
-            {
-              programs.mango.enable = true;
-            }
+            mangowc.nixosModules.mango
           ];
         };
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
@@ -92,10 +89,7 @@
             {
               home-manager.backupFileExtension = "backup";
             }
-            mango.nixosModules.mango
-            {
-              programs.mango.enable = true;
-            }
+            mangowc.nixosModules.mango
           ];
         };
         wsl = nixpkgs.lib.nixosSystem {

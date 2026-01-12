@@ -22,6 +22,7 @@
     inputs.zen-browser.homeModules.beta
     inputs.stylix.homeModules.stylix
     inputs.nixcord.homeModules.nixcord
+    inputs.mangowc.hmModules.mango
   ];
   stylix.enable = true;
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
