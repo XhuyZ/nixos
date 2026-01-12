@@ -22,5 +22,6 @@
     pkgs.gcc
     pkgs.nerd-fonts.caskaydia-cove
     pkgs.aider-chat
+    pkgs.sway-contrib.grimshot
   ];
 }
