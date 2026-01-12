@@ -73,7 +73,10 @@
             {
               home-manager.backupFileExtension = "backup";
             }
-            mango.nixosModules.default
+            mango.nixosModules.mango
+            {
+              programs.mango.enable = true;
+            }
           ];
         };
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
@@ -89,7 +92,10 @@
             {
               home-manager.backupFileExtension = "backup";
             }
-            mango.nixosModules.default
+            mango.nixosModules.mango
+            {
+              programs.mango.enable = true;
+            }
           ];
         };
         wsl = nixpkgs.lib.nixosSystem {
