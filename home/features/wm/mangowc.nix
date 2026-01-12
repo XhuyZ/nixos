@@ -28,6 +28,8 @@ in
         	tagrule=id:9,layout_name:scroller
         	#Keys
         	bind=SUPER,T,spawn,kitty
+        	bind=SUPER,B,spawn,zen
+        	bind=SUPER,E,spawn,nautilus
         	bind=SUPER,Backspace,spawn,wlogout
         	bind=SUPER,Q,killclient,
         	bind=SUPER,r,spawn,rofi -show drun
