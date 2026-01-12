@@ -9,13 +9,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     disko.url = "github:nix-community/disko";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixvim.url = "github:nix-community/nixvim";
     my-nixvim.url = "github:XhuyZ/nixvim";
     agenix.url = "github:ryantm/agenix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    mango.url = "github:DreamMaoMao/mango";
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -41,6 +45,7 @@
       nixvim,
       my-nixvim,
       agenix,
+      mango,
       ...
     }@inputs:
     let
@@ -68,6 +73,10 @@
             {
               home-manager.backupFileExtension = "backup";
             }
+            mango.nixosModules.mango
+            {
+              programs.mango.enable = true;
+            }
           ];
         };
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
@@ -82,6 +91,10 @@
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.backupFileExtension = "backup";
+            }
+            mango.nixosModules.mango
+            {
+              programs.mango.enable = true;
             }
           ];
         };
