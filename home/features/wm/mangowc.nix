@@ -27,8 +27,8 @@ in
         	tagrule=id:8,layout_name:vertical_scroller
         	tagrule=id:9,layout_name:scroller
         	#Keys
-        	bind=SUPER,Return,spawn,kitty
-        	bind=SUPER+SHIFT,c,killclient,
+        	bind=SUPER,T,spawn,kitty
+        	bind=SUPER,Q,killclient,
         	bind=SUPER,r,spawn,rofi -show drun
         	bind=SUPER+SHIFT,r,reload_config
         	bind=SUPER+SHIFT,e,quit,

@@ -19,6 +19,7 @@
     ./rider.nix
     ./hyprland.nix
     ./mangowc.nix
+    ./waybar.nix
   ];
 
 }

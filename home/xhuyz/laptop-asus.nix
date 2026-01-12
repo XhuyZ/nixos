@@ -33,6 +33,7 @@
     };
     wm = {
       gnome.enable = true;
+      waybar.enable = true;
       mangowc.enable = true;
       office.enable = true;
       blender.enable = true;
