@@ -400,20 +400,20 @@
         "type": "github"
       }
     },
-    "mango": {
+    "mangowc": {
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "nixpkgs"
         ],
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1767622364,
-        "narHash": "sha256-e+Q/ybTo6c3abKi3c6doty4rlVbsw6/+fLkZt6zliXo=",
+        "lastModified": 1767838401,
+        "narHash": "sha256-eyp6ZplrPoSU5FC2SJSfdMhuIImbWjws+bT1E7+evR8=",
         "owner": "DreamMaoMao",
         "repo": "mango",
-        "rev": "5a714b756278896d74aae892a58ed740b4c2d27b",
+        "rev": "4efb8c5e06debc3a32a711e3508593cfd1e1fb48",
         "type": "github"
       },
       "original": {
@@ -782,7 +782,7 @@
         "agenix": "agenix",
         "disko": "disko",
         "home-manager": "home-manager_2",
-        "mango": "mango",
+        "mangowc": "mangowc",
         "my-nixvim": "my-nixvim",
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
@@ -798,7 +798,7 @@
     "scenefx": {
       "inputs": {
         "nixpkgs": [
-          "mango",
+          "mangowc",
           "nixpkgs"
         ]
       },

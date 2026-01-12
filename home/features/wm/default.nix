@@ -18,6 +18,7 @@
     ./firefox.nix
     ./rider.nix
     ./hyprland.nix
+    ./mangowc.nix
   ];
 
 }
