@@ -35,6 +35,7 @@
       gnome.enable = true;
       waybar.enable = true;
       mangowc.enable = true;
+      wlogout.enable = true;
       office.enable = true;
       blender.enable = true;
       dbeaver.enable = true;

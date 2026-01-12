@@ -20,6 +20,7 @@
     ./hyprland.nix
     ./mangowc.nix
     ./waybar.nix
+    ./wlogout.nix
   ];
 
 }
