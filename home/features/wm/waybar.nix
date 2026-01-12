@@ -16,7 +16,6 @@ in
       enable = true;
       systemd.enable = true;
       style = ''
-        				@import "/home/clemmie/.cache/wal/colors-waybar.css";
         				
         				* {
         						border: none;
