@@ -10,5 +10,6 @@
     # ./cliphist.nix
     ./podman.nix
     ./postgres.nix
+    ./display-manager.nix
   ];
 }

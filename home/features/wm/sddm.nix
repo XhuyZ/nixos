@@ -13,14 +13,15 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-
+      sddm-sugar-dark
+      sddm-astronaut
     ];
     services.displayManager = {
       enable = true;
       sddm = {
         enable = true;
         wayland = {
-          enable = false;
+          enable = true;
         };
         theme = "sddm-astronaut-theme";
       };
