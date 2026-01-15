@@ -12,5 +12,6 @@
     ./postgres.nix
     # ./display-manager.nix
     ./greetd.nix
+    ./tlp.nix
   ];
 }
