@@ -7,10 +7,10 @@
 }:
 with lib;
 let
-  cfg = config.features.cli.kitty;
+  cfg = config.features.terminal.kitty;
 in
 {
-  options.features.cli.kitty.enable = mkEnableOption "Enable Kitty terminal emulator";
+  options.features.terminal.kitty.enable = mkEnableOption "Enable Kitty terminal emulator";
 
   config = mkIf cfg.enable {
     programs.kitty = {

@@ -9,6 +9,7 @@
 {
   imports = [
     ../common
+    ../features/terminal
     ../features/cli
     ../features/packages
     ../features/wm
@@ -16,10 +17,12 @@
     ./home.nix
   ];
   features = {
-    cli = {
+    terminal = {
       nushell.enable = true;
       starship.enable = true;
       kitty.enable = true;
+    };
+    cli = {
       fastfetch.enable = true;
       gh.enable = true;
       cava.enable = true;
