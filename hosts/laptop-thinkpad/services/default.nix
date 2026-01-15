@@ -9,5 +9,6 @@
     # ./postgres.nix
     # ./cliphist.nix
     ./podman.nix
+    ./postgres.nix
   ];
 }
