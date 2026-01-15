@@ -71,8 +71,6 @@ in
             "cpu"
             "memory"
             "pulseaudio"
-            "custom/screenshot"
-            "custom/screenshot2"
             "battery"
             "clock"
           ];
