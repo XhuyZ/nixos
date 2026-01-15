@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.features.programs.nushell;
+  cfg = config.features.cli.nushell;
 in
 {
-  options.features.programs.nushell.enable = mkEnableOption "enable nushell";
+  options.features.cli.nushell.enable = mkEnableOption "enable nushell";
 
   config = mkIf cfg.enable {
     programs.nushell = {

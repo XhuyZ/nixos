@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.features.programs.gh;
+  cfg = config.features.cli.gh;
 in
 {
-  options.features.programs.gh.enable = mkEnableOption "enable github-cli prompt";
+  options.features.cli.gh.enable = mkEnableOption "enable github-cli prompt";
 
   config = mkIf cfg.enable {
     programs.gh = {

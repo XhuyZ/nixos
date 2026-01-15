@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.features.programs.copyq;
+  cfg = config.features.cli.copyq;
 in
 {
-  options.features.programs.copyq.enable = mkEnableOption "Clipboard";
+  options.features.cli.copyq.enable = mkEnableOption "Clipboard";
 
   config = mkIf cfg.enable {
     services.copyq.enable = true;

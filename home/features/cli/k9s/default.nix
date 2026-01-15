@@ -8,10 +8,10 @@
 let
   inherit (lib) mkIf;
 
-  cfg = config.features.programs.k9s;
+  cfg = config.features.cli.k9s;
 in
 {
-  options.features.programs.k9s = {
+  options.cli.programs.k9s = {
     enable = lib.mkEnableOption "k9s";
   };
 

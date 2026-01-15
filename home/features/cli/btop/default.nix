@@ -4,12 +4,14 @@
   pkgs,
   ...
 }:
-with lib; let
-  cfg = config.features.programs.btop;
-in {
-  options.features.programs.btop.enable = mkEnableOption "enable btop";
+with lib;
+let
+  cfg = config.features.cli.btop;
+in
+{
+  options.features.cli.btop.enable = mkEnableOption "enable btop";
 
-    config = mkIf cfg.enable {
+  config = mkIf cfg.enable {
     programs.btop = {
       enable = true;
       package = pkgs.btop;
@@ -229,6 +231,3 @@ in {
     };
   };
 }
-
-
-

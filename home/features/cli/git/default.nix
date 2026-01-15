@@ -6,7 +6,7 @@
 }:
 with lib;
 let
-  cfg = config.features.programs.git;
+  cfg = config.features.cli.git;
 in
 {
   options.features.programs.git.enable = mkEnableOption "enable git config";

@@ -4,10 +4,12 @@
   pkgs,
   ...
 }:
-with lib; let
-  cfg = config.features.programs.lazydocker;
-in {
-  options.features.programs.lazydocker.enable = mkEnableOption "enable lazydocker";
+with lib;
+let
+  cfg = config.features.cli.lazydocker;
+in
+{
+  options.features.cli.lazydocker.enable = mkEnableOption "enable lazydocker";
 
   config = mkIf cfg.enable {
     home = {
@@ -27,6 +29,3 @@ in {
     };
   };
 }
-
-
-

@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.features.programs.fcitx5;
+  cfg = config.features.cli.fcitx5;
 in
 {
-  options.features.programs.fcitx5.enable = mkEnableOption "enable fcitx5 config";
+  options.features.cli.fcitx5.enable = mkEnableOption "enable fcitx5 config";
 
   config = mkIf cfg.enable {
     i18n.inputMethod = {

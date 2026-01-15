@@ -9,14 +9,14 @@
 {
   imports = [
     ../common
-    ../features/programs
+    ../features/cli
     ../features/packages
     ../features/wm
     ../features/devkit
     ./home.nix
   ];
   features = {
-    programs = {
+    cli = {
       nushell.enable = true;
       starship.enable = true;
       kitty.enable = true;

@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.features.programs.gpaste;
+  cfg = config.features.cli.gpaste;
 in
 {
-  options.features.programs.gpaste.enable = mkEnableOption "enable gpaste";
+  options.features.cli.gpaste.enable = mkEnableOption "enable gpaste";
 
   config = mkIf cfg.enable {
     programs.gpaste = {
