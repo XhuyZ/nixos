@@ -9,7 +9,7 @@ let
   cfg = config.features.cli.git;
 in
 {
-  options.features.programs.git.enable = mkEnableOption "enable git config";
+  options.features.cli.git.enable = mkEnableOption "enable git config";
 
   config = mkIf cfg.enable {
     programs.git = {
