@@ -45,7 +45,6 @@
       zen-browser.enable = true;
       nixcord.enable = true;
       redisinsight.enable = true;
-      chromium.enable = true;
       chrome.enable = true;
       firefox.enable = true;
       rider.enable = true;
