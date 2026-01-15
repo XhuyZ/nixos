@@ -42,7 +42,8 @@ in
         											bind=SUPER,r,spawn,rofi -show drun
         											bind=SUPER+SHIFT,r,reload_config
         											bind=SUPER+SHIFT,e,quit,
-
+        											bind=F5,brightnessctl set 5%-
+        											bind=F6,brightnessctl set +5%
         											bind=SUPER,Left,focusdir,left
         											bind=SUPER,Down,focusdir,down
         											bind=SUPER,Up,focusdir,up
