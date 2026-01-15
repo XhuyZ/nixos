@@ -6,7 +6,7 @@
 }:
 with lib;
 let
-  cfg = config.features.programs.jq;
+  cfg = config.features.cli.jq;
 in
 {
   options.features.cli.jq.enable = mkEnableOption "enable jq";
