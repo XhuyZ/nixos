@@ -14,6 +14,7 @@
     ../features/packages
     ../features/wm
     ../features/devkit
+    ../features/gui
     ./home.nix
   ];
   features = {
