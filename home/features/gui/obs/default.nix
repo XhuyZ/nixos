@@ -9,7 +9,7 @@ let
   cfg = config.features.gui.obs;
 in
 {
-  options.features.wm.gui.enable = mkEnableOption "OBS Studio";
+  options.features.gui.obs.enable = mkEnableOption "OBS Studio";
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
