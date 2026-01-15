@@ -10,6 +10,7 @@
     # ./cliphist.nix
     ./podman.nix
     ./postgres.nix
-    ./display-manager.nix
+    # ./display-manager.nix
+    ./greetd.nix
   ];
 }
