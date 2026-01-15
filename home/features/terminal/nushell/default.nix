@@ -9,7 +9,7 @@ let
   cfg = config.features.terminal.nushell;
 in
 {
-  options.features.cli.terminal.enable = mkEnableOption "enable nushell";
+  options.features.terminal.nushell.enable = mkEnableOption "enable nushell";
 
   config = mkIf cfg.enable {
     programs.nushell = {
