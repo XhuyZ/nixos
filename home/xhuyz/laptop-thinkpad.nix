@@ -36,6 +36,7 @@
       mangowc.enable = true;
       waybar.enable = true;
       wlogout.enable = true;
+      rofi.enable = true;
       office.enable = true;
       blender.enable = false;
       dbeaver.enable = true;
