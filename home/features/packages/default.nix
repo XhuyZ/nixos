@@ -10,15 +10,11 @@
     pkgs.neofetch
     pkgs.pfetch
     pkgs.htop
-    pkgs.git
     pkgs.cmatrix
     pkgs.fzf
-    pkgs.nushell
     pkgs.libgcc
     pkgs.tree
-    pkgs.starship
     pkgs.lazysql
-    pkgs.dbeaver-bin
     pkgs.gcc
     pkgs.nerd-fonts.caskaydia-cove
     pkgs.aider-chat
