@@ -40,14 +40,15 @@ in
                                         											bind=SUPER,Backspace,spawn,wlogout
                                         											bind=SUPER,Q,killclient,
                                         											bind=ALT,Return,togglefullscreen,
+                                        											bind=SUPER+SHIFT,L,spawn,swaylock
 
                                         											bind=SUPER,r,spawn,rofi -show drun
                                         											bind=SUPER+SHIFT,r,reload_config
                                         											bind=SUPER+SHIFT,e,quit,
                                         											bind=SUPER,F5,spawn,brightnessctl set 5%-
                                         											bind=SUPER,F6,spawn,brightnessctl set 5%+
-        																											bind=SUPER,F2,spawn,mwpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-        																											bind=SUPER,F3,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        																											bind=SUPER,F2,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        																											bind=SUPER,F3,spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
         																											bind=SUPER,F1,spawn,wpctl set-mute   @DEFAULT_AUDIO_SINK@ toggle
                                         											bind=SUPER,H,focusdir,left
                                         											bind=SUPER,J,focusdir,down

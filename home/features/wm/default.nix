@@ -23,6 +23,7 @@
     ./wlogout.nix
     ./rofi.nix
     # ./sddm.nix
+    ./swaylock.nix
   ];
 
 }

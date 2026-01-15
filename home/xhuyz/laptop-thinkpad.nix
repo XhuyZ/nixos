@@ -32,7 +32,7 @@
       copyq.enable = true;
     };
     wm = {
-      gnome.enable = true;
+      gnome.enable = false;
       mangowc.enable = true;
       waybar.enable = true;
       wlogout.enable = true;
@@ -49,6 +49,7 @@
       chromium.enable = true;
       chrome.enable = true;
       firefox.enable = true;
+      swaylock.enable = true;
     };
     devkit = {
       nodejs.enable = true;
