@@ -14,6 +14,7 @@
     ../features/packages
     ../features/wm
     ../features/devkit
+    ../features/gui
     ./home.nix
   ];
   features = {
@@ -34,11 +35,7 @@
       fcitx5.enable = true;
       copyq.enable = true;
     };
-    wm = {
-      gnome.enable = true;
-      waybar.enable = true;
-      mangowc.enable = true;
-      wlogout.enable = true;
+    gui = {
       office.enable = true;
       blender.enable = true;
       dbeaver.enable = true;
@@ -52,6 +49,12 @@
       chrome.enable = true;
       firefox.enable = true;
       rider.enable = true;
+    };
+    wm = {
+      gnome.enable = true;
+      waybar.enable = true;
+      mangowc.enable = true;
+      wlogout.enable = true;
       hyprland.enable = true;
     };
     devkit = {

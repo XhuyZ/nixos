@@ -34,24 +34,27 @@
       fcitx5.enable = true;
       copyq.enable = true;
     };
+    gui = {
+      office.enable = true;
+      blender.enable = false;
+      dbeaver.enable = true;
+      obs.enable = true;
+      media.enable = false;
+      qutebrowser.enable = false;
+      zen-browser.enable = true;
+      nixcord.enable = true;
+      redisinsight.enable = false;
+      chromium.enable = false;
+      chrome.enable = true;
+      firefox.enable = true;
+      rider.enable = true;
+    };
     wm = {
       gnome.enable = false;
       mangowc.enable = true;
       waybar.enable = true;
       wlogout.enable = true;
       rofi.enable = true;
-      office.enable = true;
-      blender.enable = false;
-      dbeaver.enable = true;
-      obs.enable = true;
-      media.enable = true;
-      qutebrowser.enable = false;
-      zen-browser.enable = true;
-      nixcord.enable = true;
-      redisinsight.enable = false;
-      chromium.enable = true;
-      chrome.enable = true;
-      firefox.enable = true;
       swaylock.enable = true;
     };
     devkit = {
