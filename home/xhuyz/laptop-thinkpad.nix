@@ -49,6 +49,7 @@
       chromium.enable = true;
       chrome.enable = true;
       firefox.enable = true;
+      sddm.enable = true;
     };
     devkit = {
       nodejs.enable = true;

@@ -22,6 +22,7 @@
     ./waybar.nix
     ./wlogout.nix
     ./rofi.nix
+    ./sddm.nix
   ];
 
 }
