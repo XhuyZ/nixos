@@ -23,7 +23,6 @@
       starship.enable = true;
     };
     cli = {
-      starship.enable = true;
       fastfetch.enable = true;
       gh.enable = true;
       cava.enable = true;
