@@ -11,7 +11,7 @@ let
   cfg = config.features.cli.k9s;
 in
 {
-  options.cli.programs.k9s = {
+  options.features.cli.k9s = {
     enable = lib.mkEnableOption "k9s";
   };
 
