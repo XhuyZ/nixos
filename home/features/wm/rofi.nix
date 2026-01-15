@@ -16,6 +16,11 @@ in
       enable = true;
       terminal = "kitty";
       location = "center";
+      modes = [
+        "drun"
+        "window"
+        "ssh"
+      ];
     };
   };
 }

@@ -35,7 +35,8 @@ in
                                 											bind=SUPER,T,spawn,kitty
                                 											bind=SUPER,B,spawn,zen
                                 											bind=SUPER,E,spawn,nautilus
-                                											bind=SUPER,A,spawn,rofi
+                                											bind=SUPER,A,spawn,rofi -show drun
+                                											bind=SUPER,Tab,spawn,rofi -show window
                                 											bind=SUPER,Backspace,spawn,wlogout
                                 											bind=SUPER,Q,killclient,
                                 											bind=SUPER,r,spawn,rofi -show drun
