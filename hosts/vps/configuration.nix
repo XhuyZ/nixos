@@ -52,7 +52,7 @@
     LC_TIME = "vi_VN";
   };
   environment.systemPackages = with pkgs; [
-    agenix.packages.x86_64-linux.default
+    agenix.packages.${system}.default
     inputs.my-nixvim.packages.${system}.default
     git
     neofetch
