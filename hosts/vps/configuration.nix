@@ -18,7 +18,7 @@
     efiInstallAsRemovable = true;
   };
 
-  # networking.hostName = "new-vps"; # CHANGE ME.
+  networking.hostName = "vps"; # CHANGE ME.
   home-manager = {
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs outputs; };
