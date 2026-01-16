@@ -35,7 +35,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users.xhuyz = import ../../home/xhuyz/${config.networking.hostName}.nix;
   };
-  networking.hostId = "xHUYz35@"; # CHANGE ME
+  networking.hostId = "c0ffee01"; # CHANGE ME
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   time.timeZone = "Asia/Ho_Chi_Minh";
 
