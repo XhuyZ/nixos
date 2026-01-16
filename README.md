@@ -1,23 +1,53 @@
-# nixos
+# My multi-host NixOS configuration
 
-My multi host NixOS configuration
-ok
+(laptop-thinkpad, laptop-asus, wsl, vm)
 
-![Preview Screenshot](/assets/pic.png)
+This repository contains my personal NixOS flake used to manage multiple machines, each optimized for a different workflow and purpose.
 
-systemctl start wpa_supplicant
-wpa_cli
-add_network
-set_network 0 ssid ""
-set_network 0 psk ""
-enable_network 0
-exit
-ping google.com
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount /tmp/disk-config.nix
-cd ~
-git clone https://github.com/XhuyZ/nixos Flake
+---
 
-configuration.nix hostID : openssl rand -hex 4
+## Laptop-asus
 
-{d7742d87-e61d-4b78-b8a1-b469842139fa
-{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}
+![Preview Screenshot](/assets/laptop-asus.png)
+
+**Role:** Heavy-duty workstation / main machine
+
+- **GPU:** NVIDIA
+- **Desktop:** GNOME + PaperWM
+- **Focus:** Performance and feature-rich desktop experience
+
+This host is designed for **heavy workloads**, including:
+
+- Large desktop applications
+- IDEs and development tools
+- Large Language Models (LLMs)
+- Multiple systemd services running in parallel
+- Incus-based virtual machines (VMs)
+- Long-running and resource-intensive tasks
+
+GNOME provides a stable and polished desktop environment, while PaperWM adds a structured, tiling-style workflow suitable for complex multitasking.
+
+---
+
+## Laptop-thinkpad
+
+![Preview Screenshot](/assets/laptop-thinkpad.png)
+
+**Role:** Productivity & work-from-home machine
+
+- **Window Manager:** MangoWM
+- **Bar:** Waybar
+- **Focus:** Workflow efficiency and minimalism
+
+This host is optimized for:
+
+- Keyboard-driven productivity
+- Lightweight and fast system
+- Remote work and daily development tasks
+- Clean and distraction-free workflow
+
+MangoWM + Waybar provides a minimal, responsive setup that prioritizes **speed, simplicity, and focus**, making it ideal for long working sessions without unnecessary overhead.
+
+---
+
+Each host shares the same NixOS foundation while remaining specialized for its intended use case.

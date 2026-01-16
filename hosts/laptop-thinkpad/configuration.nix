@@ -61,9 +61,9 @@
   networking.networkmanager.enable = true;
 
   ## --- GUI: GNOME Desktop --
-  services.displayManager.gdm.enable = true;
+  # services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.wayland = true;
+  # services.displayManager.gdm.wayland = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -96,6 +96,7 @@
       extraGroups = [
         "wheel"
         "networkmanager"
+        "video"
       ];
       packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };

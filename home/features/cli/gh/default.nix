@@ -1,0 +1,22 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib;
+let
+  cfg = config.features.cli.gh;
+in
+{
+  options.features.cli.gh.enable = mkEnableOption "enable github-cli prompt";
+
+  config = mkIf cfg.enable {
+    programs.gh = {
+      enable = true;
+      extensions = [
+        pkgs.gh-eco
+      ];
+    };
+  };
+}

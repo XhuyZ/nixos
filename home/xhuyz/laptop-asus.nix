@@ -9,17 +9,21 @@
 {
   imports = [
     ../common
-    ../features/programs
+    ../features/terminal
+    ../features/cli
     ../features/packages
     ../features/wm
     ../features/devkit
+    ../features/gui
     ./home.nix
   ];
   features = {
-    programs = {
+    terminal = {
       nushell.enable = true;
       starship.enable = true;
       kitty.enable = true;
+    };
+    cli = {
       fastfetch.enable = true;
       gh.enable = true;
       cava.enable = true;
@@ -31,11 +35,7 @@
       fcitx5.enable = true;
       copyq.enable = true;
     };
-    wm = {
-      gnome.enable = true;
-      waybar.enable = true;
-      mangowc.enable = true;
-      wlogout.enable = true;
+    gui = {
       office.enable = true;
       blender.enable = true;
       dbeaver.enable = true;
@@ -45,10 +45,15 @@
       zen-browser.enable = true;
       nixcord.enable = true;
       redisinsight.enable = true;
-      chromium.enable = true;
       chrome.enable = true;
       firefox.enable = true;
       rider.enable = true;
+    };
+    wm = {
+      gnome.enable = true;
+      waybar.enable = true;
+      mangowc.enable = true;
+      wlogout.enable = true;
       hyprland.enable = true;
     };
     devkit = {
