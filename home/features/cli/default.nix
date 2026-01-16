@@ -11,6 +11,6 @@
     ./git/default.nix
     ./fcitx5/default.nix
     ./copyq/default.nix
-    ./opencode/defautl.nix
+    ./opencode/default.nix
   ];
 }
