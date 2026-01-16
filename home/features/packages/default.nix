@@ -21,6 +21,6 @@
     pkgs.sway-contrib.grimshot
     pkgs.brightnessctl
     pkgs.swaybg
-
+    pkgs.nest-cli
   ];
 }
