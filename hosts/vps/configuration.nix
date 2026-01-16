@@ -12,6 +12,17 @@
     ./hardware-configuration.nix
   ];
 
+  users.users = {
+    xhuyz = {
+      isNormalUser = true;
+      initialPassword = "<><>";
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
+      packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+    };
+  };
   # Bootloader.
   boot.loader.grub = {
     efiSupport = true;
