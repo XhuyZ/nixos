@@ -14,10 +14,6 @@ in
   config = mkIf cfg.enable {
     programs.opencode = {
       enable = true;
-      environment = {
-        OPENCODE_PROVIDER = "ollama";
-        OLLAMA_BASE_URL = "http://127.0.0.1:11434";
-      };
       settings = {
         model = "deepseek-r1:8b";
         # autoshare = false;
