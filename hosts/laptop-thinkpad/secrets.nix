@@ -1,9 +1,11 @@
+{ config, ... }:
 {
   age = {
     secrets = {
-      thinkpad-ssh = {
-        file = ../../secrets/thinkpad.age;
-        owner = "xhuyz";
+      laptop-thinkpad-password = {
+        file = ../../secrets/laptop-thinkpad-password.age;
+        owner = "root";
+        mode = "0400";
       };
     };
   };

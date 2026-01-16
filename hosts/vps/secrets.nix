@@ -1,13 +1,11 @@
+{ config, ... }:
 {
   age = {
     secrets = {
-      # traefik = {
-      #   file = ../../secrets/traefik.age;
-      #   owner = "traefik";
-      # };
-      xhuyz-secrets = {
-        file = ../../secrets/xhuyz-secrets.age;
-        owner = "xhuyz";
+      vps-password = {
+        file = ../../secrets/vps-password.age;
+        owner = "root";
+        mode = "0400";
       };
     };
   };
