@@ -15,7 +15,6 @@ in
     programs.opencode = {
       enable = true;
       settings = {
-        theme = "opencode";
         model = "ollama/deepseek-r1:8b";
         # autoshare = false;
         # autoupdate = true;
