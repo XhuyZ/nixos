@@ -1,58 +1,61 @@
-{config, pkgs , lib , ...}: {
+{
+  config,
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./disko-config.nix
+    ./hardware-configuration.nix
   ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = false;
-  boot.loader.efi.efiSysMountPoint = "/boot";
 
-  # networking.hostId = "2768272b";
-  # networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-  # Set your time zone.
-  users.users = {
-  xhuyz = {
-    isNormalUser = true;
-    initialPassword = "<><>";
-    extraGroups = [ "wheel" "networkmanager" ]; 
-  };
-};
-
-  
-  # networking version 2
-  networking = {
-    hostName = "vps";
-    useDHCP = true; 
-    firewall.allowedTCPPorts = [ 22 80 443 ];
-    firewall.enable = true;
+  # Bootloader.
+  boot.loader.grub = {
+    efiSupport = true;
+    efiInstallAsRemovable = true;
   };
 
+  # networking.hostName = "new-vps"; # CHANGE ME.
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+    users.xhuyz = import ../../home/xhuyz/${config.networking.hostName}.nix;
+  };
+  networking.hostId = ""; # CHANGE ME
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   time.timeZone = "Asia/Ho_Chi_Minh";
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
-  environment.systemPackages = with pkgs; [neovim git neofetch];
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "vi_VN";
+    LC_IDENTIFICATION = "vi_VN";
+    LC_MEASUREMENT = "vi_VN";
+    LC_MONETARY = "vi_VN";
+    LC_NAME = "vi_VN";
+    LC_NUMERIC = "vi_VN";
+    LC_PAPER = "vi_VN";
+    LC_TELEPHONE = "vi_VN";
+    LC_TIME = "vi_VN";
+  };
+  environment.systemPackages = with pkgs; [
+    inputs.my-nixvim.packages.${system}.default
+    git
+    neofetch
+  ];
 
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    # settings.PermitRootLogin = "no";
-    # settings = {
-    #   PasswordAuthentication = false;
-    # };
+    settings.PermitRootLogin = "no";
   };
-  # networking.firewall.allowedUDPPorts = [ ... ]; Or disable the firewall altogether.
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  networking.firewall.allowedTCPPorts = [ 22 ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  system.stateVersion = "25.11"; # Did you read the comment?
 }
-

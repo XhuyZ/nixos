@@ -10,15 +10,16 @@
 {
   imports = [
     ../common
-    ../common/extraServices
     ./configuration.nix
     ./programs.nix
     # ./secrets.nix
     ./services
+    ../common/extraServices
   ];
 
   extraServices = {
-    podman.enable = true;
+    ollama.enable = true;
     # virtualisation.enable = true;
+    podman.enable = true;
   };
 }

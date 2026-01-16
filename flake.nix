@@ -60,6 +60,20 @@
 
       overlays = import ./hosts/overlays { inherit inputs; };
       nixosConfigurations = {
+        vps = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/vps
+            ./modules/duckdns.nix
+            inputs.disko.nixosModules.disko
+            agenix.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "backup";
+            }
+          ];
+        };
         laptop-asus = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
@@ -107,11 +121,11 @@
       };
       homeConfigurations = {
         # Change networking.hostName option if want to change the hostname of the current system
-        "xhuyz@develop" = home-manager.lib.homeManagerConfiguration {
+        "xhuyz@vps" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./home/xhuyz/develop.nix
+            ./home/xhuyz/vps.nix
           ];
         };
         "xhuyz@laptop-asus" = home-manager.lib.homeManagerConfiguration {
