@@ -123,7 +123,7 @@
   ## --- System packages ---
   environment.systemPackages = with pkgs; [
     inputs.my-nixvim.packages.${system}.default
-    agenix.packages.${system}.default
+    inputs.agenix.packages.${system}.default
     git
     neofetch
   ];
