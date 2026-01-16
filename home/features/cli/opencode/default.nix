@@ -12,13 +12,13 @@ in
   options.features.cli.opencode.enable = mkEnableOption "enable opencode";
 
   config = mkIf cfg.enable {
-    programcs.opencode = {
+    programs.opencode = {
       enable = true;
       settings = {
         theme = "opencode";
         model = "ollama/deepseek-r1:8b";
-        autoshare = false;
-        autoupdate = true;
+        # autoshare = false;
+        # autoupdate = true;
       };
       agents = {
         code-reviewer = ''
@@ -59,7 +59,6 @@ in
 
         Read the following file immediately as it's relevant to all workflows: @rules/general-guidelines.md.
       '';
-
     };
   };
 }
