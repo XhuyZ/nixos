@@ -18,13 +18,6 @@
     linux-firmware
     sof-firmware
   ];
-  # ## --- Bootloader (GRUB + UEFI only) ---
-  # boot.loader.grub = {
-  #   enable = true;
-  #   efiSupport = true;
-  #   devices = [ "nodev" ];
-  #   efiInstallAsRemovable = true; # đặt file ở EFI/BOOT/BOOTX64.EFI
-  # };
   boot.loader = {
     efi.canTouchEfiVariables = false;
 
@@ -61,9 +54,7 @@
   networking.networkmanager.enable = true;
 
   ## --- GUI: GNOME Desktop --
-  # services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  # services.displayManager.gdm.wayland = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -92,7 +83,7 @@
   users.users = {
     xhuyz = {
       isNormalUser = true;
-      initialPassword = "<><>";
+      hashedPasswordFile = config.age.secrets.laptop-thinkpad-password.path;
       extraGroups = [
         "wheel"
         "networkmanager"

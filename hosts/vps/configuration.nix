@@ -15,7 +15,7 @@
   users.users = {
     xhuyz = {
       isNormalUser = true;
-      initialPassword = "<><>";
+      hashedPasswordFile = config.age.secrets.vps.path;
       extraGroups = [
         "wheel"
         "networkmanager"
