@@ -11,6 +11,7 @@
   imports = [
     ./hardware-configuration.nix
     ./disko-config.nix
+    ./secrets.nix
   ];
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;

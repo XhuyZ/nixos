@@ -10,6 +10,7 @@
   imports = [
     ./disko-config.nix
     ./hardware-configuration.nix
+    ./secrets.nix
   ];
 
   users.users = {
