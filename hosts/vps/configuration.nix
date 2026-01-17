@@ -12,7 +12,7 @@
     ./hardware-configuration.nix
     ./secrets.nix
   ];
-
+  users.mutableUsers = false;
   users.users = {
     xhuyz = {
       isNormalUser = true;

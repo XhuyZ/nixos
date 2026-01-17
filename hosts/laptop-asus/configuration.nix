@@ -99,6 +99,7 @@
   security.rtkit.enable = true;
 
   #   ## --- User ---
+  users.mutableUsers = false;
   users.users = {
     xhuyz = {
       isNormalUser = true;
