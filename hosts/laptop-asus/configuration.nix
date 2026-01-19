@@ -103,7 +103,8 @@
   users.users = {
     xhuyz = {
       isNormalUser = true;
-      hashedPasswordFile = config.age.secrets.laptop-asus-password.path;
+      initialPassword = "<><>";
+      # hashedPasswordFile = config.age.secrets.laptop-asus-password.path;
       extraGroups = [
         "wheel"
         "networkmanager"
