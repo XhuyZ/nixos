@@ -21,6 +21,7 @@ in
         "window"
         "ssh"
       ];
+      configPath = "/home/xhuyz/nixos/home/wm/rofi/config.rasi";
     };
   };
 }

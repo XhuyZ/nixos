@@ -6,7 +6,7 @@
     ./hyprland.nix
     ./waybar.nix
     ./wlogout.nix
-    ./rofi.nix
+    ./rofi/default.nix
     ./swaylock.nix
   ];
 
