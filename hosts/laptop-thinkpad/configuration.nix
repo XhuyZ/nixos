@@ -86,7 +86,6 @@
     xhuyz = {
       isNormalUser = true;
       initialPassword = "<><>";
-      # hashedPasswordFile = config.age.secrets.laptop-thinkpad-password.path;
       extraGroups = [
         "wheel"
         "networkmanager"
