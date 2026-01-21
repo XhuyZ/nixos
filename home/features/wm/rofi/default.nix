@@ -21,7 +21,10 @@ in
         "window"
         "ssh"
       ];
-      configPath = "/home/xhuyz/nixos/home/features/wm/rofi/config.rasi";
+      plugins = [
+        pkgs.rofi-emoji
+        pkgs.rofi-bluetooth
+      ];
     };
   };
 }
