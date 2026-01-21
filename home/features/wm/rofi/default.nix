@@ -25,6 +25,7 @@ in
         pkgs.rofi-emoji
         pkgs.rofi-bluetooth
       ];
+      themes = builtins.readFile ./theme.rasi;
     };
   };
 }
