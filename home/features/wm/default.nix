@@ -2,8 +2,8 @@
 {
   imports = [
     ./gnome.nix
+    ./mangowc/default.nix
     ./hyprland.nix
-    ./mangowc.nix
     ./waybar.nix
     ./wlogout.nix
     ./rofi.nix
