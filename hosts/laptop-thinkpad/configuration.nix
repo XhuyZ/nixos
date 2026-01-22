@@ -19,6 +19,7 @@
     linux-firmware
     sof-firmware
   ];
+  hardware.bluetooth.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
 
