@@ -56,9 +56,6 @@
   networking.networkmanager.enable = true;
 
   ## --- GUI: GNOME Desktop --
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.wayland = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";

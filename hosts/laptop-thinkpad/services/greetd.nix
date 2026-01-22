@@ -5,7 +5,7 @@
     settings = rec {
       initial_session = {
         command = "mango";
-        user = "xhuyz";
+        # user = "xhuyz";
       };
       default_session = initial_session;
     };
