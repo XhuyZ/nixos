@@ -11,7 +11,7 @@
     ./podman.nix
     ./postgres.nix
     # ./display-manager.nix
-    ./greetd.nix
+    # ./greetd.nix
     # ./tlp.nix
   ];
 }
