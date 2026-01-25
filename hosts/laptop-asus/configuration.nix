@@ -137,7 +137,11 @@
   };
 
   ## --- Firewall ---
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [
+    22
+    9090
+    3000
+  ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
