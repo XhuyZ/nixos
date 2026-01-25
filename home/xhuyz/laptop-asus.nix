@@ -16,8 +16,12 @@
     ../features/devkit
     ../features/gui
     ./home.nix
+    ../features/desktop
   ];
   features = {
+    desktop = {
+      gnome.enable = true;
+    };
     terminal = {
       nushell.enable = true;
       starship.enable = true;
@@ -51,7 +55,6 @@
       rider.enable = true;
     };
     wm = {
-      gnome.enable = true;
       waybar.enable = true;
       mangowc.enable = true;
       wlogout.enable = true;

@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.features.wm.gnome;
+  cfg = config.features.desktop.gnome;
 in
 {
-  options.features.wm.gnome.enable =
+  options.features.desktop.gnome.enable =
     mkEnableOption "GNOME desktop environment with custom configuration";
 
   config = mkIf cfg.enable {

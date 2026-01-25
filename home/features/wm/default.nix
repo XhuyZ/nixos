@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./gnome.nix
     ./mangowc/default.nix
     ./hyprland.nix
     ./waybar.nix
