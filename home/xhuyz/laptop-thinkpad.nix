@@ -16,8 +16,12 @@
     ../features/devkit
     ../features/gui
     ./home.nix
+    ../features/desktop
   ];
   features = {
+    desktop = {
+      gnome.enable = false;
+    };
     terminal = {
       kitty.enable = true;
       nushell.enable = true;
