@@ -19,6 +19,7 @@ in
     ];
 
     # GNOME configuration via dconf
+    dconf.enable = true;
     dconf.settings = {
       # Shell configuration
       "org/gnome/shell" = {
