@@ -13,7 +13,6 @@ in
     mkEnableOption "GNOME desktop environment with custom configuration";
 
   config = mkIf cfg.enable {
-    programs.dconf.enable = true;
     # Install GNOME extensions
     home.packages = with pkgs; [
       gnomeExtensions.paperwm
