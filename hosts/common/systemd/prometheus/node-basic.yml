@@ -35,24 +35,3 @@ groups:
               node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}
             )
           )
-
-      # =========================
-      # systemd: CPU usage per service
-      # =========================
-      - record: node:systemd:cpu_usage:seconds
-        expr: |
-          rate(node_systemd_service_cpu_seconds_total[1m])
-
-      # =========================
-      # systemd: Memory usage per service
-      # =========================
-      - record: node:systemd:memory_usage:bytes
-        expr: |
-          node_systemd_service_memory_usage_bytes
-
-      # =========================
-      # systemd: failed units
-      # =========================
-      - record: node:systemd:failed_units
-        expr: |
-          node_systemd_unit_state{state="failed"} == 1
