@@ -16,7 +16,11 @@ in
   config = mkIf cfg.enable {
     services.prometheus = {
       enable = true;
+      port = 9090;
       globalConfig.scrape_interval = "10s"; # "1m"
+      ruleFiles = [
+        ./node-basic.yml
+      ];
       scrapeConfigs = [
         {
           job_name = "node";
