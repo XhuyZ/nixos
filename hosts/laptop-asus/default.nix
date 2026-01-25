@@ -9,7 +9,7 @@
 
   systemd = {
     ollama.enable = true;
-    virtualisation.enable = true;
+    qemu.enable = true;
     podman.enable = true;
     #adjust
     postgresql.enable = true;
