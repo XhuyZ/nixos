@@ -50,7 +50,6 @@
       rider.enable = true;
     };
     wm = {
-      gnome.enable = false;
       mangowc.enable = true;
       waybar.enable = true;
       wlogout.enable = true;
