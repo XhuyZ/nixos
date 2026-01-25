@@ -14,10 +14,10 @@
     ./programs.nix
     # ./secrets.nix
     ./services
-    ../common/extraServices
+    ../common/systemd
   ];
 
-  extraServices = {
+  systemd = {
     ollama.enable = true;
     # virtualisation.enable = true;
     podman.enable = true;

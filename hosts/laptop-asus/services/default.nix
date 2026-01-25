@@ -6,7 +6,6 @@
     # ./podman.nix
     # ./virtualisation.nix
     # ./traefik.nix
-    ./postgres.nix
     # ./cliphist.nix
   ];
 }

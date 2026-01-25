@@ -4,10 +4,12 @@
   pkgs,
   ...
 }:
-with lib; let
-  cfg = config.extraServices.podman;
-in {
-  options.extraServices.podman.enable = mkEnableOption "enable podman";
+with lib;
+let
+  cfg = config.systemd.podman;
+in
+{
+  options.systemd.podman.enable = mkEnableOption "enable podman";
 
   config = mkIf cfg.enable {
     virtualisation = {
@@ -31,4 +33,3 @@ in {
     ];
   };
 }
-

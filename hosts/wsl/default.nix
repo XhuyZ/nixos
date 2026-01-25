@@ -9,14 +9,14 @@
 
 {
   imports = [
-    ../common/extraServices
+    ../common/systemd
     ./configuration.nix
     ./programs.nix
     # ./secrets.nix
     ./services
   ];
 
-  extraServices = {
+  systemd = {
     podman.enable = true;
   };
 }

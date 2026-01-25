@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.extraServices.ollama;
+  cfg = config.systemd.ollama;
 in
 {
-  options.extraServices.ollama.enable = mkEnableOption "enable ollama";
+  options.systemd.ollama.enable = mkEnableOption "enable ollama";
 
   config = mkIf cfg.enable {
     services.open-webui = {

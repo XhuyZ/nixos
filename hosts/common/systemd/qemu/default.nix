@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.extraServices.virtualisation;
+  cfg = config.systemd.qemu;
 in
 {
-  options.extraServices.virtualisation.enable = mkEnableOption "enable virtualisation";
+  options.systemd.qemu.enable = mkEnableOption "enable virtualisation";
 
   config = mkIf cfg.enable {
     virtualisation = {

@@ -21,17 +21,16 @@
 #
 {
   imports = [
-    ../common
+    ../common/systemd
     ./configuration.nix
     ./programs.nix
     # ./secrets.nix
     ./services
   ];
 
-  extraServices = {
-    # flatpak.enable = false;
-    # ollama.enable = false;
+  systemd = {
     podman.enable = true;
-    # virtualisation.enable = false;
+    greetd.enable = true;
+    postgresql.enable = true;
   };
 }
