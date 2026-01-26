@@ -17,7 +17,7 @@ in
     services.prometheus = {
       enable = true;
       port = 9090;
-      globalConfig.scrape_interval = "10s"; # "1m"
+      globalConfig.scrape_interval = "2s"; # "1m"
       ruleFiles = [
         ./node-basic.yml
       ];
