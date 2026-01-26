@@ -8,5 +8,6 @@
     ./qemu/default.nix
     ./prometheus/default.nix
     ./greetd/default.nix
+    ./traefik/default.nix
   ];
 }

@@ -14,6 +14,9 @@ in
 {
   options.systemd.n8n.enable = mkEnableOption "enable n8n";
   config = mkIf cfg.enable {
-    services.n8n.enable = true;
+    services.n8n = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 }

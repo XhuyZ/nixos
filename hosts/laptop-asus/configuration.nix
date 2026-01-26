@@ -138,9 +138,18 @@
 
   ## --- Firewall ---
   networking.firewall.allowedTCPPorts = [
+    # ssh
     22
+    # open webui
+    11111
+    # prometheus
     9090
+    # grafana
     3000
+    # n8n
+    5678
+    # postgresql
+    5432
   ];
 
   ## --- Sudo config ---
