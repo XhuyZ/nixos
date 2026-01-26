@@ -26,6 +26,11 @@ in
     };
     services.ollama = {
       enable = true;
+      loadModels = [
+        "qwen2.5-coder:7b"
+        "qwen2.5-coder:3b"
+        "deepseek-r1:7b"
+      ];
       acceleration =
         # if config.services.xserver.videoDrivers == [ "amdgpu" ] then
         #   "rocm"
