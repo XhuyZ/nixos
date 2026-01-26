@@ -14,12 +14,6 @@ in
 {
   options.systemd.grafana.enable = mkEnableOption "enable grafana";
   config = mkIf cfg.enable {
-    systemd.services.grafana.serviceConfig = {
-      Environment = [
-        "GF_SECURITY_ADMIN_USER__FILE=${config.age.secrets.grafana-username.path}"
-        "GF_SECURITY_ADMIN_PASSWORD__FILE=${config.age.secrets.grafana-password.path}"
-      ];
-    };
     services.grafana = {
       enable = true;
       settings = {
@@ -40,6 +34,8 @@ in
         };
         security = {
           disable_initial_admin_creation = true;
+          admin_user = "xhuyz";
+          admin_password = "xhuyz";
         };
       };
 
