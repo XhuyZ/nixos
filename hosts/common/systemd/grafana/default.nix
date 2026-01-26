@@ -16,6 +16,25 @@ in
   config = mkIf cfg.enable {
     services.grafana = {
       enable = true;
+      provision = {
+        enable = true;
+        datasources = {
+          settings = {
+            apiVersion = 1;
+            datasources = [
+              {
+                name = "Prometheus";
+                type = "prometheus";
+                access = "proxy";
+                url = "http://127.0.0.1:9090";
+                isDefault = true;
+                editable = false;
+              }
+            ];
+          };
+        };
+
+      };
       settings = {
         user = {
           default_theme = "dark";
@@ -34,8 +53,6 @@ in
         };
         security = {
           disable_initial_admin_creation = true;
-          admin_user = "xhuyz";
-          admin_password = "xhuyz";
         };
       };
 
