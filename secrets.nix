@@ -6,7 +6,7 @@ let
   vps = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILjbaZU8KsJn70OssH7QGQ6ISOJJfykMjMLgUZzHzG1v";
 
   # USERS change from where using the agenix remote to
-  xhuyz = laptop-thinkpad;
+  xhuyz = laptop-asus;
   # xhuyz = laptop-asus;
   users = [ xhuyz ];
 
@@ -18,8 +18,6 @@ let
   ];
 in
 {
-  "secrets/laptop-thinkpad-password.age".publicKeys = systems ++ users;
-  "secrets/laptop-asus-password.age".publicKeys = systems ++ users;
-  "secrets/wsl-password.age".publicKeys = systems ++ users;
-  "secrets/vps-password.age".publicKeys = systems ++ users;
+  "secrets/grafana-username.age".publicKeys = systems ++ users;
+  "secrets/grafana-password.age".publicKeys = systems ++ users;
 }

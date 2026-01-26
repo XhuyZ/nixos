@@ -17,6 +17,11 @@ in
     services.grafana = {
       enable = true;
       settings = {
+        user = {
+          default_theme = "dark";
+          home_page = "";
+
+        };
         server = {
           http_addr = "127.0.0.1";
           http_port = 3000;
@@ -26,6 +31,11 @@ in
           # domain = "your.domain";
           # root_url = "https://your.domain/grafana/";
           # serve_from_sub_path = true;
+        };
+        security = {
+          disable_initial_admin_creation = true;
+          admin_user = "xhuyz";
+          admin_password = "xhuyz";
         };
       };
 

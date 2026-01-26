@@ -3,8 +3,12 @@
   age = {
     identityPaths = [ "/home/xhuyz/.ssh/id_ed25519" ];
     secrets = {
-      laptop-asus-password = {
-        file = ../../secrets/laptop-asus-password.age;
+      grafana-username = {
+        file = ../../secrets/grafana-username.age;
+        owner = "xhuyz";
+      };
+      grafana-password = {
+        file = ../../secrets/grafana-password.age;
         owner = "xhuyz";
       };
     };
