@@ -34,8 +34,8 @@ in
         };
         security = {
           disable_initial_admin_creation = true;
-          admin_user = "xhuyz";
-          admin_password = "xhuyz";
+          admin_user = config.age.secrets.grafana-username.path;
+          admin_password = config.age.secrets.grafana-password.path;
         };
       };
 
