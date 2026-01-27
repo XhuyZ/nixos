@@ -16,6 +16,7 @@ in
   config = mkIf cfg.enable {
     services.grafana = {
       enable = true;
+      openFirewall = true;
       provision = {
         enable = true;
         datasources = {
