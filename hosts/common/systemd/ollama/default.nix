@@ -18,7 +18,7 @@ in
       host = "0.0.0.0";
       openFirewall = true;
       environment = {
-        WEBUI_AUTH = "False";
+        # WEBUI_AUTH = "False";
         STATIC_DIR = "${config.services.open-webui.stateDir}/static";
         DATA_DIR = "${config.services.open-webui.stateDir}/data";
         HF_HOME = "${config.services.open-webui.stateDir}/hf_home";
