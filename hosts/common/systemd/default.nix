@@ -9,5 +9,6 @@
     ./prometheus/default.nix
     ./greetd/default.nix
     ./traefik/default.nix
+    ./incus/default.nix
   ];
 }
