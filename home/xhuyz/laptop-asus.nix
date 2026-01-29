@@ -20,7 +20,7 @@
   ];
   features = {
     desktop = {
-      gnome.enable = true;
+      # gnome.enable = true;
     };
     terminal = {
       nushell.enable = true;
