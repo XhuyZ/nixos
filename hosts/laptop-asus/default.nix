@@ -16,5 +16,6 @@
     grafana.enable = true;
     prometheus.enable = true;
     n8n.enable = true;
+    incus.enable = true;
   };
 }
