@@ -20,7 +20,7 @@
   ];
   features = {
     desktop = {
-      # gnome.enable = true;
+      gnome.enable = false;
     };
     terminal = {
       nushell.enable = true;
@@ -41,24 +41,24 @@
       opencode.enable = true;
     };
     gui = {
-      # office.enable = true;
-      # blender.enable = true;
-      # dbeaver.enable = true;
-      # obs.enable = true;
-      # media.enable = true;
-      # qutebrowser.enable = true;
-      # zen-browser.enable = true;
-      # nixcord.enable = true;
-      # redisinsight.enable = true;
-      # chrome.enable = true;
-      # firefox.enable = true;
-      # rider.enable = true;
+      office.enable = false;
+      blender.enable = false;
+      dbeaver.enable = false;
+      obs.enable = false;
+      media.enable = false;
+      qutebrowser.enable = false;
+      zen-browser.enable = false;
+      nixcord.enable = false;
+      redisinsight.enable = false;
+      chrome.enable = false;
+      firefox.enable = false;
+      rider.enable = false;
     };
     wm = {
-      waybar.enable = true;
-      mangowc.enable = true;
-      wlogout.enable = true;
-      hyprland.enable = true;
+      waybar.enable = false;
+      mangowc.enable = false;
+      wlogout.enable = false;
+      hyprland.enable = false;
     };
     devkit = {
       nodejs.enable = true;
