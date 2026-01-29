@@ -41,18 +41,18 @@
       opencode.enable = true;
     };
     gui = {
-      office.enable = true;
-      blender.enable = true;
-      dbeaver.enable = true;
-      obs.enable = true;
-      media.enable = true;
-      qutebrowser.enable = true;
-      zen-browser.enable = true;
-      nixcord.enable = true;
-      redisinsight.enable = true;
-      chrome.enable = true;
-      firefox.enable = true;
-      rider.enable = true;
+      # office.enable = true;
+      # blender.enable = true;
+      # dbeaver.enable = true;
+      # obs.enable = true;
+      # media.enable = true;
+      # qutebrowser.enable = true;
+      # zen-browser.enable = true;
+      # nixcord.enable = true;
+      # redisinsight.enable = true;
+      # chrome.enable = true;
+      # firefox.enable = true;
+      # rider.enable = true;
     };
     wm = {
       waybar.enable = true;
