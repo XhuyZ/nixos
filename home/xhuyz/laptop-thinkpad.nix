@@ -66,8 +66,8 @@
       dotnet_10.enable = true;
       dotnet_9.enable = false;
       dotnet_8.enable = false;
-			golang.enable =true;
-			rust.enable = true;
+      golang.enable = true;
+      rust.enable = true;
     };
   };
 }
