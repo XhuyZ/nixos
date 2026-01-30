@@ -10,5 +10,7 @@
     ./greetd/default.nix
     ./traefik/default.nix
     ./incus/default.nix
+    ./nginx/default.nix
+    ./wireguard/default.nix
   ];
 }
