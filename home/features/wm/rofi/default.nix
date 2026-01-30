@@ -16,6 +16,7 @@ in
       enable = true;
       terminal = "kitty";
       location = "center";
+      extraConfig = builtins.readFile ./config.rasi;
       modes = [
         "drun"
         "window"
