@@ -22,6 +22,6 @@
     pkgs.brightnessctl
     pkgs.swaybg
     pkgs.nest-cli
-    pkgs.teams-for-linux
+    pkgs.dig
   ];
 }

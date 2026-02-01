@@ -53,6 +53,7 @@
       chrome.enable = true;
       firefox.enable = true;
       rider.enable = true;
+      teams-for-linux.enable = true;
     };
     wm = {
       mangowc.enable = true;

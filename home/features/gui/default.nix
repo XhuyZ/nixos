@@ -13,6 +13,7 @@
     ./qutebrowser/default.nix
     ./redisinsight/default.nix
     ./rider/default.nix
+    ./teams-for-linux/default.nix
     ./zen-browser/default.nix
   ];
 }
