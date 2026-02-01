@@ -12,5 +12,7 @@
     ./incus/default.nix
     ./nginx/default.nix
     ./wireguard/default.nix
+    ./pihole/default.nix
+    ./coredns/default.nix
   ];
 }

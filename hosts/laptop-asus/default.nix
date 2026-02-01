@@ -19,5 +19,7 @@
     traefik.enable = false;
     wireguard.enable = true;
     nginx.enable = true;
+    pihole.enable = true;
+    coredns.enable = true;
   };
 }
