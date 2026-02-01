@@ -11,7 +11,6 @@
     ollama.enable = true;
     qemu.enable = true;
     podman.enable = true;
-    #adjust
     postgresql.enable = true;
     grafana.enable = true;
     prometheus.enable = true;
