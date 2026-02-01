@@ -12,7 +12,7 @@ in
   options.systemd.pihole.enable = mkEnableOption "enable pihole";
 
   config = mkIf cfg.enable {
-    services.pihole = {
+    services.pihole-ftl = {
       enable = true;
     };
   };
