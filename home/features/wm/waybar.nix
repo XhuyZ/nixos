@@ -109,9 +109,9 @@ in
             ];
           };
           "network" = {
-            "format-wifi" = "";
-            "format-ethernet" = "󰈀";
-            "format-disconnected" = "󰖪";
+            "format-wifi" = " ";
+            "format-ethernet" = "󰈀 ";
+            "format-disconnected" = "󰖪 ";
             "tooltip" = true;
             "on-click" = "nm-connection-editor";
           };
