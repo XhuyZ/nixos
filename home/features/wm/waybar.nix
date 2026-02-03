@@ -107,7 +107,7 @@ in
             ];
           };
           "network" = {
-            "format-wifi" = "   {signalStrength}%";
+            "format-wifi" = "";
             "format-ethernet" = "󰈀";
             "format-disconnected" = "󰖪";
             "tooltip" = true;
