@@ -23,5 +23,6 @@
     pkgs.swaybg
     pkgs.nest-cli
     pkgs.dig
+    pkgs.wlr-randr
   ];
 }
