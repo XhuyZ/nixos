@@ -15,6 +15,7 @@ in
     home.packages = with pkgs; [
       networkmanager_dmenu
       pw-volume
+      pavucontrol
     ];
     programs.waybar = {
       enable = true;
