@@ -14,6 +14,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       networkmanager_dmenu
+      pw-volume
     ];
     programs.waybar = {
       enable = true;
