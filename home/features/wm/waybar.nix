@@ -12,6 +12,9 @@ in
   options.features.wm.waybar.enable = mkEnableOption "waybar";
 
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      networkmanager_dmenu
+    ];
     programs.waybar = {
       enable = true;
       systemd.enable = true;
@@ -71,6 +74,7 @@ in
             "cpu"
             "memory"
             "pulseaudio"
+            "network"
             "battery"
             "clock"
           ];
@@ -101,6 +105,13 @@ in
               "▇"
               "█"
             ];
+          };
+          "network" = {
+            "format-wifi" = " {signalStrength}%";
+            "format-ethernet" = "󰈀";
+            "format-disconnected" = "󰖪";
+            "tooltip" = true;
+            "on-click" = "nm-connection-editor";
           };
 
           "memory" = {
