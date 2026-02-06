@@ -137,7 +137,9 @@
   ## --- Firewall ---
   networking.firewall.allowedTCPPorts = [
     # Http
+    # Udp
     80
+    53
     # ssh
     22
     # open webui
