@@ -55,10 +55,11 @@
       rider.enable = true;
     };
     wm = {
-      waybar.enable = true;
       mangowc.enable = true;
+      waybar.enable = true;
       wlogout.enable = true;
-      hyprland.enable = false;
+      rofi.enable = true;
+      swaylock.enable = true;
     };
     devkit = {
       nodejs.enable = true;
