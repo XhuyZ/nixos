@@ -58,7 +58,7 @@
       waybar.enable = true;
       mangowc.enable = true;
       wlogout.enable = true;
-      hyprland.enable = true;
+      hyprland.enable = false;
     };
     devkit = {
       nodejs.enable = true;
