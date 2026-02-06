@@ -1,21 +1,10 @@
-.:53 {
-    # DNS nội bộ kiểu "bịa tên cho homelab"
+. {
     hosts {
-        192.168.1.17  nginx.lab
-        192.168.1.17  grafana.lab
-        192.168.1.17  prometheus.lab
-        192.168.1.17  n8n.lab
-        192.168.1.17  dns.lab
-
+        127.0.0.1 app1.lab
+        127.0.0.1 app2.lab
         fallthrough
     }
-
-    # Cache để giảm latency
-    cache 30
-
-    # Forward DNS ra ngoài
-    forward . 1.1.1.1 8.8.8.8 {
-        max_concurrent 1000
-    }
+    log
+    errors
 }
 
