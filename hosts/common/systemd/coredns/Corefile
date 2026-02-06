@@ -4,7 +4,5 @@
         127.0.0.1 app2.lab
         fallthrough
     }
-    log
-    errors
 }
 
