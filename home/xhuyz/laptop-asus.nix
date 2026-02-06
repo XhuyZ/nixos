@@ -41,24 +41,24 @@
       opencode.enable = true;
     };
     gui = {
-      office.enable = false;
-      blender.enable = false;
-      dbeaver.enable = false;
-      obs.enable = false;
-      media.enable = false;
-      qutebrowser.enable = false;
-      zen-browser.enable = false;
-      nixcord.enable = false;
+      office.enable = true;
+      blender.enable = true;
+      dbeaver.enable = true;
+      obs.enable = true;
+      media.enable = true;
+      qutebrowser.enable = true;
+      zen-browser.enable = true;
+      nixcord.enable = true;
       redisinsight.enable = false;
-      chrome.enable = false;
-      firefox.enable = false;
-      rider.enable = false;
+      chrome.enable = true;
+      firefox.enable = true;
+      rider.enable = true;
     };
     wm = {
-      waybar.enable = false;
-      mangowc.enable = false;
-      wlogout.enable = false;
-      hyprland.enable = false;
+      waybar.enable = true;
+      mangowc.enable = true;
+      wlogout.enable = true;
+      hyprland.enable = true;
     };
     devkit = {
       nodejs.enable = true;
