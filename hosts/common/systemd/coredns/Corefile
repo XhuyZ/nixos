@@ -1,7 +1,7 @@
 .:53 {
     hosts {
-        192.168.1.18 app1.lab
-        192.168.1.18 app2.lab
+        127.0.0.1 app1.lab
+        127.0.0.1 app2.lab
         fallthrough
     }
 }
