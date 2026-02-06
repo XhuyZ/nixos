@@ -19,21 +19,7 @@
     linux-firmware
     sof-firmware
   ];
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  # hardware.nvidia.open = true;
-  hardware.nvidia = {
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    modesetting.enable = true;
-    prime = {
-      offload.enable = true;
-      offload.enableOffloadCmd = true;
-
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-  };
+  hardware.bluetooth.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
 
@@ -49,7 +35,7 @@
   boot.kernelModules = [ "iwlwifi" ];
 
   ## --- Host & Time ---
-  networking.hostName = "laptop-asus";
+  networking.hostName = "laptop-thinkpad";
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   ## --- Locale ---
@@ -69,16 +55,12 @@
   ## --- Networking ---
   networking.networkmanager.enable = true;
 
-  # ## --- GUI: GNOME Desktop --
-  # services.displayManager.gdm.enable = true;
-  # services.desktopManager.gnome.enable = true;
-  # services.displayManager.gdm.wayland = true;
+  ## --- GUI: GNOME Desktop --
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
   services.libinput.enable = true;
-  ## --- NVIDIA
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
@@ -87,7 +69,7 @@
 
   ## --- Printing ---
   # services.printing.enable = true;
-  hardware.bluetooth.enable = true;
+
   ## --- Sound (PipeWire) ---
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -99,7 +81,7 @@
   security.rtkit.enable = true;
 
   #   ## --- User ---
-  # users.mutableUsers = false;
+  users.mutableUsers = false;
   users.users = {
     xhuyz = {
       isNormalUser = true;
@@ -107,6 +89,7 @@
       extraGroups = [
         "wheel"
         "networkmanager"
+        "video"
       ];
       packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };
@@ -137,20 +120,7 @@
   };
 
   ## --- Firewall ---
-  networking.firewall.allowedTCPPorts = [
-    # ssh
-    22
-    # open webui
-    11111
-    # prometheus
-    9090
-    # grafana
-    3000
-    # n8n
-    5678
-    # postgresql
-    5432
-  ];
+  networking.firewall.allowedTCPPorts = [ 22 ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
