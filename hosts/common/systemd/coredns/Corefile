@@ -1,8 +1,17 @@
-.:53 {
+lab:53 {
     hosts {
-        127.0.0.1 app1.lab
-        127.0.0.1 app2.lab
+        192.168.1.18 app1.lab app2.lab
         fallthrough
     }
+
+    log
+    errors
+}
+
+.:53 {
+    forward . 192.168.1.1
+    cache 30
+    log
+    errors
 }
 
