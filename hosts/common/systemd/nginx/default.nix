@@ -14,12 +14,18 @@ in
   config = mkIf cfg.enable {
     services.nginx = {
       enable = true;
-      virtualHosts.localhost = {
-        locations."/" = {
-          return = "200 '<html><body>It works</body></html>'";
-          extraConfig = ''
-            default_type text/html;
-          '';
+
+      virtualHosts = {
+        "app1.lab" = {
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:3000";
+          };
+        };
+
+        "app2.lab" = {
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:11111";
+          };
         };
       };
     };
