@@ -51,6 +51,9 @@
 
   ## --- Host & Time ---
   networking.hostName = "laptop-asus";
+  # networking.networkmanager.dns = "none";
+  networking.nameservers = [ "127.0.0.1" ];
+
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   ## --- Locale ---
