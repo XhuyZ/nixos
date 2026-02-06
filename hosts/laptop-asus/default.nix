@@ -8,6 +8,8 @@
   ];
 
   systemd = {
+    # Display Manager
+    greetd.enable = true;
     # LLM
     ollama.enable = true;
     # Container Management
