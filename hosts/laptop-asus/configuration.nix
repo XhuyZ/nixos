@@ -19,6 +19,21 @@
     linux-firmware
     sof-firmware
   ];
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  # hardware.nvidia.open = true;
+  hardware.nvidia = {
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    modesetting.enable = true;
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
   hardware.bluetooth.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
@@ -120,7 +135,20 @@
   };
 
   ## --- Firewall ---
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [
+    # ssh
+    22
+    # open webui
+    11111
+    # prometheus
+    9090
+    # grafana
+    3000
+    # n8n
+    5678
+    # postgresql
+    5432
+  ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
