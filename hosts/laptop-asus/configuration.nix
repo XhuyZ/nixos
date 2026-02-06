@@ -50,7 +50,7 @@
   boot.kernelModules = [ "iwlwifi" ];
 
   ## --- Host & Time ---
-  networking.hostName = "laptop-thinkpad";
+  networking.hostName = "laptop-asus";
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   ## --- Locale ---
