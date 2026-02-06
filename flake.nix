@@ -81,7 +81,7 @@
             ./hosts/laptop-asus
             ./modules/duckdns.nix
             inputs.disko.nixosModules.disko
-            nixos-hardware.nixosModules.asus-fx504gd
+            # nixos-hardware.nixosModules.asus-fx504gd
             agenix.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             {
