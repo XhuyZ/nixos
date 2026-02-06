@@ -153,6 +153,7 @@
     # postgresql
     5432
   ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
