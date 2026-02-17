@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.features.gui.grim-slurp;
+  cfg = config.features.wm.grim-slurp;
 in
 {
-  options.features.gui.blender.enable = mkEnableOption "Blender 3D";
+  options.features.wm.grim-slurp.enable = mkEnableOption "Blender 3D";
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
