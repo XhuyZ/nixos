@@ -1,6 +1,6 @@
 {
   description = ''
-    XhuyZ
+    XhuyZ multihost flake
   '';
   inputs = {
     nixpkgs-25-05.url = "github:NixOS/nixpkgs/nixos-25.05";
