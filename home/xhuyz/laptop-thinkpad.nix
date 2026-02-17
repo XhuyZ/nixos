@@ -57,6 +57,7 @@
       packettracer.enable = false;
       rustrover.enable = true;
       gns3.enable = true;
+      nautilus.enable = true;
     };
     wm = {
       mangowc.enable = true;

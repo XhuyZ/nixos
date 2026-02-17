@@ -18,5 +18,6 @@
     ./packet-tracer/default.nix
     ./rust-rover/default.nix
     ./gns3/default.nix
+    ./nautilus/default.nix
   ];
 }
