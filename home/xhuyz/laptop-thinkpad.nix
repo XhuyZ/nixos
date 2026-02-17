@@ -64,6 +64,7 @@
       wlogout.enable = true;
       rofi.enable = true;
       swaylock.enable = true;
+      grim-slurp.enable = true;
     };
     devkit = {
       nodejs.enable = true;

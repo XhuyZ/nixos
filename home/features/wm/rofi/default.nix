@@ -16,7 +16,6 @@ in
       enable = true;
       terminal = "kitty";
       location = "center";
-      # extraConfig = builtins.readFile ./config.rasi;
       extraConfig = {
         show-icons = true;
       };
