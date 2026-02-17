@@ -54,6 +54,9 @@
       firefox.enable = true;
       rider.enable = true;
       teams-for-linux.enable = true;
+      packettracer.enable = false;
+      rustrover.enable = true;
+      gns3.enable = true;
     };
     wm = {
       mangowc.enable = true;

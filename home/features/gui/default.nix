@@ -15,5 +15,8 @@
     ./rider/default.nix
     ./teams-for-linux/default.nix
     ./zen-browser/default.nix
+    ./packet-tracer/default.nix
+    ./rust-rover/default.nix
+    ./gns3/default.nix
   ];
 }
