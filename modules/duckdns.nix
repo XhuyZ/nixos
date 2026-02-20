@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   domain = "xhuyz"; # subdomain trên DuckDNS (không có .duckdns.org)
-  token  = "8fe46c8a-4f14-4516-8ee7-721a5a934965"; # token DuckDNS
+  token = "8fe46c8a-4f14-4516-8ee7-721a5a934965"; # token DuckDNS
 in
 {
   systemd.services.duckdns-update = {
@@ -23,4 +28,3 @@ in
     };
   };
 }
-

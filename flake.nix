@@ -78,6 +78,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/laptop-asus
+            ./modules/duckdns.nix
             inputs.disko.nixosModules.disko
             nixos-hardware.nixosModules.asus-fx504gd
             agenix.nixosModules.default
@@ -118,44 +119,28 @@
       };
       homeConfigurations = {
         "xhuyz@vps" = home-manager.lib.homeManagerConfiguration {
-          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/vps.nix
           ];
         };
         "xhuyz@laptop-asus" = home-manager.lib.homeManagerConfiguration {
-          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/laptop-asus.nix
           ];
         };
         "xhuyz@laptop-thinkpad" = home-manager.lib.homeManagerConfiguration {
-          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/laptop-thinkpad.nix
           ];
         };
         "xhuyz@wsl" = home-manager.lib.homeManagerConfiguration {
-          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/wsl.nix
