@@ -9,7 +9,7 @@
 
   systemd = {
     # Display Manager
-    greetd.enable = true;
+    greetd.enable = false;
     # LLM
     ollama.enable = true;
     # Container Management
