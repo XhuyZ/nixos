@@ -37,7 +37,7 @@
 
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {
-    nvim = "${inputs.my-nixvim.packages.${pkgs.system}.default}/bin/nvim";
-    vim = "${inputs.my-nixvim.packages.${pkgs.system}.default}/bin/nvim";
+    nvim = "${inputs.my-nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/nvim";
+    vim = "${inputs.my-nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/nvim";
   };
 }
