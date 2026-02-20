@@ -119,28 +119,44 @@
       homeConfigurations = {
         # Change networking.hostName option if want to change the hostname of the current system
         "xhuyz@vps" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/vps.nix
           ];
         };
         "xhuyz@laptop-asus" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/laptop-asus.nix
           ];
         };
         "xhuyz@laptop-thinkpad" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/laptop-thinkpad.nix
           ];
         };
         "xhuyz@wsl" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/wsl.nix
