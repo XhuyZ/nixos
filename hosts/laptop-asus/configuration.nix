@@ -19,20 +19,20 @@
     linux-firmware
     sof-firmware
   ];
-  # hardware.graphics.enable = true;
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  # hardware.nvidia = {
-  #   open = false;
-  #   package = config.boot.kernelPackages.nvidiaPackages.beta;
-  #   modesetting.enable = true;
-  #   prime = {
-  #     offload.enable = true;
-  #     offload.enableOffloadCmd = true;
-  #
-  #     intelBusId = "PCI:0:2:0";
-  #     nvidiaBusId = "PCI:1:0:0";
-  #   };
-  # };
+  hardware.nvidia = {
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    modesetting.enable = true;
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
   # hardware.bluetooth.enable = true;
   boot.loader = {
     efi.canTouchEfiVariables = false;
@@ -45,7 +45,7 @@
     };
   };
   ## --- Kernel ---
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
   boot.kernelModules = [ "iwlwifi" ];
 
   ## --- Host & Time ---
