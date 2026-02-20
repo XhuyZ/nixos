@@ -29,8 +29,8 @@
   nixpkgs.config.allowUnfree = true;
   ## --- System packages ---
   environment.systemPackages = with pkgs; [
-    inputs.my-nixvim.packages.${system}.default
-    inputs.agenix.packages.${system}.default
+    inputs.my-nixvim.packages.${stdenv.hostPlatform.system}.default
+    inputs.agenix.packages.${stdenv.hostPlatform.system}.default
     git
     neofetch
   ];

@@ -20,7 +20,7 @@ in
               inherit name;
               value =
                 let
-                  zen-browser = inputs.zen-browser.packages.${system}.twilight;
+                  zen-browser = inputs.zen-browser.packages.${stdenv.hostPlatform.system}.twilight;
                 in
                 zen-browser.meta.desktopFile;
             })
