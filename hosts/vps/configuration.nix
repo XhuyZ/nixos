@@ -30,6 +30,8 @@
     efiInstallAsRemovable = true;
   };
 
+  # core dns server
+  networking.nameservers = [ "127.0.0.1" ];
   networking.hostName = "vps"; # CHANGE ME.
   home-manager = {
     useUserPackages = true;

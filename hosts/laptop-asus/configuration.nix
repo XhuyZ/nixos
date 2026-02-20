@@ -51,6 +51,9 @@
 
   ## --- Host & Time ---
   networking.hostName = "laptop-asus";
+  networking.networkmanager.dns = "none";
+  networking.nameservers = [ "127.0.0.1" ];
+
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   ## --- Locale ---
@@ -136,6 +139,10 @@
 
   ## --- Firewall ---
   networking.firewall.allowedTCPPorts = [
+    # Http
+    # Udp
+    80
+    53
     # ssh
     22
     # open webui
@@ -149,6 +156,7 @@
     # postgresql
     5432
   ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
