@@ -56,15 +56,8 @@
       forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      # packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       packages = forAllSystems (
-        system:
-        import ./pkgs (
-          import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          }
-        )
+        system: import ./pkgs nixpkgs.legacyPackages.${stdenv.hostPlatform.system}
       );
 
       overlays = import ./hosts/overlays { inherit inputs; };
@@ -112,21 +105,20 @@
             mangowc.nixosModules.mango
           ];
         };
-        # wsl = nixpkgs.lib.nixosSystem {
-        #   system = "x86_64-linux";
-        #   specialArgs = { inherit inputs outputs; };
-        #   modules = [
-        #     ./hosts/wsl
-        #     inputs.home-manager.nixosModules.home-manager
-        #     inputs.nixos-wsl.nixosModules.wsl
-        #     {
-        #       home-manager.backupFileExtension = "backup";
-        #     }
-        #   ];
-        # };
+        wsl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/wsl
+            inputs.home-manager.nixosModules.home-manager
+            inputs.nixos-wsl.nixosModules.wsl
+            {
+              home-manager.backupFileExtension = "backup";
+            }
+          ];
+        };
       };
       homeConfigurations = {
-        # Change networking.hostName option if want to change the hostname of the current system
         "xhuyz@vps" = home-manager.lib.homeManagerConfiguration {
           # pkgs = nixpkgs.legacyPackages."x86_64-linux";
           pkgs = import nixpkgs {
@@ -160,17 +152,17 @@
             ./home/xhuyz/laptop-thinkpad.nix
           ];
         };
-        # "xhuyz@wsl" = home-manager.lib.homeManagerConfiguration {
-        #   # pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        #   pkgs = import nixpkgs {
-        #     system = "x86_64-linux";
-        #     config.allowUnfree = true;
-        #   };
-        #   extraSpecialArgs = { inherit inputs outputs; };
-        #   modules = [
-        #     ./home/xhuyz/wsl.nix
-        #   ];
-        # };
+        "xhuyz@wsl" = home-manager.lib.homeManagerConfiguration {
+          # pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home/xhuyz/wsl.nix
+          ];
+        };
       };
     };
 }
