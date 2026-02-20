@@ -54,6 +54,10 @@
       firefox.enable = true;
       rider.enable = true;
       teams-for-linux.enable = true;
+      packettracer.enable = false;
+      rustrover.enable = true;
+      gns3.enable = true;
+      nautilus.enable = true;
     };
     wm = {
       mangowc.enable = true;
@@ -61,6 +65,7 @@
       wlogout.enable = true;
       rofi.enable = true;
       swaylock.enable = true;
+      grim-slurp.enable = true;
     };
     devkit = {
       nodejs.enable = true;

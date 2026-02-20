@@ -7,6 +7,7 @@
     ./wlogout.nix
     ./rofi/default.nix
     ./swaylock.nix
+    ./grim-slurp/default.nix
   ];
 
 }

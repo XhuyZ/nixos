@@ -8,28 +8,29 @@ on:
 
 jobs:
   flake-check:
+    name: Flake Check
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Nix
-        uses: cachix/install-nix-action@v23
+      - name: Install Nix (latest)
+        uses: cachix/install-nix-action@v25
         with:
+          nix_version: latest
           extra_nix_config: |
             experimental-features = nix-command flakes
-            sandbox = relaxed
+            accept-flake-config = true
 
-      - name: Setup Cache (Cachix)
-        uses: cachix/cachix-action@v14
-        with:
-          name: nix-cache
+      - name: Show Nix version
+        run: nix --version
 
-      - name: Flake Check
+      - name: Flake check
         run: nix flake check --no-write-lock-file --show-trace
 
   build-systems:
+    name: Build NixOS Systems
     needs: flake-check
     runs-on: ubuntu-latest
 
@@ -46,20 +47,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Nix
-        uses: cachix/install-nix-action@v23
+      - name: Install Nix (latest)
+        uses: cachix/install-nix-action@v25
         with:
+          nix_version: latest
           extra_nix_config: |
             experimental-features = nix-command flakes
-            sandbox = relaxed
+            accept-flake-config = true
 
-      - name: Setup Cache (Cachix)
-        uses: cachix/cachix-action@v14
-        with:
-          name: nix-cache
-
-      - name: Build NixOS System
-        run: |
-          nix build \
-            .#nixosConfigurations.${{ matrix.system }}.config.system.build.toplevel \
-            --print-build-logs
+      # - name: Setup Cachix
+      #   uses: cachix/cachix-action@v14
+      #   with:
+      #     name: nix-cache
+      #     skipPush: true
+      #
+      # - name: Build ${{ matrix.system }}
+      #   run: |
+      #     nix build \
+      #       .#nixosConfigurations.${{ matrix.system }}.config.system.build.toplevel \
+      #       --print-build-logs \
+      #       --show-trace

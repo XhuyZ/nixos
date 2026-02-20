@@ -40,27 +40,27 @@
       copyq.enable = true;
       opencode.enable = true;
     };
-    gui = {
-      office.enable = true;
-      blender.enable = true;
-      dbeaver.enable = true;
-      obs.enable = true;
-      media.enable = true;
-      qutebrowser.enable = true;
-      zen-browser.enable = true;
-      nixcord.enable = true;
-      redisinsight.enable = false;
-      chrome.enable = true;
-      firefox.enable = true;
-      rider.enable = true;
-    };
-    wm = {
-      mangowc.enable = true;
-      waybar.enable = true;
-      wlogout.enable = true;
-      rofi.enable = true;
-      swaylock.enable = true;
-    };
+    # gui = {
+    #   office.enable = false;
+    #   blender.enable = true;
+    #   dbeaver.enable = true;
+    #   obs.enable = true;
+    #   media.enable = true;
+    #   qutebrowser.enable = true;
+    #   zen-browser.enable = true;
+    #   nixcord.enable = true;
+    #   redisinsight.enable = false;
+    #   chrome.enable = true;
+    #   firefox.enable = true;
+    #   rider.enable = true;
+    # };
+    # wm = {
+    #   mangowc.enable = true;
+    #   waybar.enable = true;
+    #   wlogout.enable = true;
+    #   rofi.enable = true;
+    #   swaylock.enable = true;
+    # };
     devkit = {
       nodejs.enable = true;
       dotnet_10.enable = true;

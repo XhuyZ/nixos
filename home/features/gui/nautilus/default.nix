@@ -6,14 +6,14 @@
 }:
 with lib;
 let
-  cfg = config.features.devkit.rust;
+  cfg = config.features.gui.nautilus;
 in
 {
-  options.features.devkit.rust.enable = mkEnableOption "Rust";
+  options.features.gui.nautilus.enable = mkEnableOption "Blender 3D";
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      rustup
+      nautilus
     ];
   };
 }

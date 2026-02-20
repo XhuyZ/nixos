@@ -104,6 +104,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "gradle-7.6.6"
+    "ciscoPacketTracer8"
   ];
   ## --- System packages ---
   environment.systemPackages = with pkgs; [
