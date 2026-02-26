@@ -22,16 +22,8 @@ in
         g = "https://www.google.com/search?q={}";
       };
       aliases = {
-        xhuyz = ''
-          open -t https://github.com ;;
-          open -t https://github.com/NixOS/nixpkgs ;;
-          open -t https://wiki.nixos.org ;;
-          open -t https://chatgpt.com ;;
-          open -t https://hub.docker.com ;;
-          open -t https://drive.google.com ;;
-          open -t https://mail.google.com
-        '';
-
+        # -- WORKFLOW
+        xhuyz = "open -t https://github.com ;; open -t https://github.com/NixOS/nixpkgs ;; open -t https://wiki.nixos.org ;; open -t https://chatgpt.com ;; open -t https://hub.docker.com ;; open -t https://drive.google.com ;; open -t https://mail.google.com";
         q = "quit";
         w = "session-save";
         wq = "quit --save";
