@@ -32,7 +32,7 @@ in
         ggd = "open https://drive.google.com";
         e = "open https://mail.google.com";
       };
-      programs.qutebrowser.quickmarks = {
+      quickmarks = {
         gh = "https://github.com";
         fb = "https://facebook.com";
         nixpkgs = "https://github.com/NixOS/nixpkgs";
