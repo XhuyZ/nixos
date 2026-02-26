@@ -35,6 +35,8 @@ in
         dh = "open https://hub.docker.com";
       };
       settings = {
+        content.blocking.enabled = true;
+        content.blocking.method = "adblock";
         tabs = {
           position = mkForce "left";
         };
