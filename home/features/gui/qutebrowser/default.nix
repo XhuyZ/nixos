@@ -27,24 +27,76 @@ in
         wq = "quit --save";
         gh = "open https://github.com";
         fb = "open https://facebook.com";
+        yt = "open https://youtube.com";
+        nt = "open https://www.notion.so";
+        ggd = "open https://drive.google.com";
+        e = "open https://mail.google.com";
       };
 
       settings = {
         colors = {
+          webpage = {
+            bg = "#002b36";
+          };
+
           hints = {
-            bg = mkForce "#000000";
-            fg = mkForce "#ffffff";
+            bg = "#b58900";
+            fg = "#002b36";
+          };
+
+          statusbar = {
+            normal = {
+              bg = "#002b36";
+              fg = "#839496";
+            };
+            insert = {
+              bg = "#268bd2";
+              fg = "#002b36";
+            };
+            command = {
+              bg = "#073642";
+              fg = "#839496";
+            };
           };
 
           tabs = {
-            bar = {
-              bg = mkForce "#000000";
+            bar.bg = "#002b36";
+
+            even = {
+              bg = "#073642";
+              fg = "#839496";
+            };
+
+            odd = {
+              bg = "#073642";
+              fg = "#839496";
+            };
+
+            selected = {
+              bg = "#268bd2";
+              fg = "#002b36";
             };
           };
         };
 
-        tabs.tabs_are_windows = false;
+        tabs.tabs_are_windows = true;
       };
+      # settings = {
+      #   colors = {
+      #     hints = {
+      #       bg = mkForce "#000000";
+      #       fg = mkForce "#ffffff";
+      #     };
+      #
+      #     tabs = {
+      #       bar = {
+      #         bg = mkForce "#000000";
+      #       };
+      #     };
+      #   };
+      #
+      #   tabs.tabs_are_windows = false;
+      # };
     };
   };
 }
