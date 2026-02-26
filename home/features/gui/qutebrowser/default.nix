@@ -22,17 +22,35 @@ in
         g = "https://www.google.com/search?q={}";
       };
       aliases = {
+        # ===== WORKFLOW MODE =====
+        xhuyz = ''
+          open - t https://facebook.com ;;
+          open -t https://youtube.com ;;
+          open -t https://www.notion.so ;;
+          open -t https://github.com ;;
+          open -t https://mail.google.com ;;
+          open -t https://github.com/NixOS/nixpkgs ;;
+          open -t https://wiki.nixos.org ;;
+          open -t https://chatgpt.com ;;
+          open -t https://hub.docker.com ;;
+          open -t https://drive.google.com ;;
+
+        '';
+
+        # ===== BASIC =====
         q = "quit";
         w = "session-save";
         wq = "quit --save";
-        gh = "open https://github.com";
-        fb = "open https://facebook.com";
-        yt = "open https://youtube.com";
-        nt = "open https://www.notion.so";
-        ggd = "open https://drive.google.com";
-        e = "open https://mail.google.com";
-        gpt = "open https://chatgpt.com";
-        dh = "open https://hub.docker.com";
+
+        # ===== SINGLE OPEN =====
+        gh = "open -t https://github.com";
+        fb = "open -t https://facebook.com";
+        yt = "open -t https://youtube.com";
+        nt = "open -t https://www.notion.so";
+        ggd = "open -t https://drive.google.com";
+        e = "open -t https://mail.google.com";
+        gpt = "open -t https://chatgpt.com";
+        dh = "open -t https://hub.docker.com";
       };
       settings = {
         content.blocking.enabled = true;
