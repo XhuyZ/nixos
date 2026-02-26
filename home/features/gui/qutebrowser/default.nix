@@ -35,6 +35,9 @@ in
         dh = "open https://hub.docker.com";
       };
       settings = {
+        tabs = {
+          position = mkForce "left";
+        };
         colors = {
           hints = {
             bg = mkForce "#b58900";
@@ -42,7 +45,6 @@ in
           };
 
           tabs = {
-            position = mkForce "left";
             bar = {
               bg = mkForce "#002b36";
             };
