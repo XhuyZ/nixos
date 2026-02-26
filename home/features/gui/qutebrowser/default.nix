@@ -35,68 +35,16 @@ in
 
       settings = {
         colors = {
-          webpage = {
-            bg = "#002b36";
-          };
-
           hints = {
             bg = "#b58900";
             fg = "#002b36";
           };
-
-          statusbar = {
-            normal = {
-              bg = "#002b36";
-              fg = "#839496";
-            };
-            insert = {
-              bg = "#268bd2";
-              fg = "#002b36";
-            };
-            command = {
-              bg = "#073642";
-              fg = "#839496";
-            };
-          };
-
           tabs = {
             bar.bg = "#002b36";
-
-            even = {
-              bg = "#073642";
-              fg = "#839496";
-            };
-
-            odd = {
-              bg = "#073642";
-              fg = "#839496";
-            };
-
-            selected = {
-              bg = "#268bd2";
-              fg = "#002b36";
-            };
           };
+          tabs.tabs_are_windows = true;
         };
-
-        tabs.tabs_are_windows = true;
       };
-      # settings = {
-      #   colors = {
-      #     hints = {
-      #       bg = mkForce "#000000";
-      #       fg = mkForce "#ffffff";
-      #     };
-      #
-      #     tabs = {
-      #       bar = {
-      #         bg = mkForce "#000000";
-      #       };
-      #     };
-      #   };
-      #
-      #   tabs.tabs_are_windows = false;
-      # };
     };
   };
 }
