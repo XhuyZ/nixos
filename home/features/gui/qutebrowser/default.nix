@@ -32,18 +32,20 @@ in
         ggd = "open https://drive.google.com";
         e = "open https://mail.google.com";
       };
-
       settings = {
         colors = {
           hints = {
-            bg = "#b58900";
-            fg = "#002b36";
+            bg = mkForce "#b58900";
+            fg = mkForce "#002b36";
           };
+
           tabs = {
-            bar.bg = "#002b36";
+            bar = {
+              bg = mkForce "#002b36";
+            };
           };
-          tabs.tabs_are_windows = true;
         };
+        tabs.tabs_are_windows = false;
       };
     };
   };
