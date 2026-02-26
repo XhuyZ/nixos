@@ -31,16 +31,8 @@ in
         nt = "open https://www.notion.so";
         ggd = "open https://drive.google.com";
         e = "open https://mail.google.com";
-      };
-      quickmarks = {
-        gh = "https://github.com";
-        fb = "https://facebook.com";
-        nixpkgs = "https://github.com/NixOS/nixpkgs";
-        yt = "https://youtube.com";
-        drive = "https://drive.google.com";
-        mail = "https://mail.google.com";
-        notion = "https://notion.so";
-        dh = "https://hub.docker.com";
+        gpt = "open https://chatgpt.com";
+        dh = "open https://hub.docker.com";
       };
       settings = {
         colors = {
@@ -50,6 +42,7 @@ in
           };
 
           tabs = {
+            position = mkForce "left";
             bar = {
               bg = mkForce "#002b36";
             };
