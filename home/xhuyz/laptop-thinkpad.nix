@@ -46,7 +46,7 @@
       dbeaver.enable = true;
       obs.enable = true;
       media.enable = false;
-      qutebrowser.enable = false;
+      qutebrowser.enable = true;
       zen-browser.enable = true;
       nixcord.enable = true;
       redisinsight.enable = false;
