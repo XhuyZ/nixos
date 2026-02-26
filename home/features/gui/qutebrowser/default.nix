@@ -22,27 +22,20 @@ in
         g = "https://www.google.com/search?q={}";
       };
       aliases = {
-        # ===== WORKFLOW MODE =====
         xhuyz = ''
-          open - t https://facebook.com ;;
-          open -t https://youtube.com ;;
-          open -t https://www.notion.so ;;
           open -t https://github.com ;;
-          open -t https://mail.google.com ;;
           open -t https://github.com/NixOS/nixpkgs ;;
           open -t https://wiki.nixos.org ;;
           open -t https://chatgpt.com ;;
           open -t https://hub.docker.com ;;
           open -t https://drive.google.com ;;
-
+          open -t https://mail.google.com
         '';
 
-        # ===== BASIC =====
         q = "quit";
         w = "session-save";
         wq = "quit --save";
 
-        # ===== SINGLE OPEN =====
         gh = "open -t https://github.com";
         fb = "open -t https://facebook.com";
         yt = "open -t https://youtube.com";
