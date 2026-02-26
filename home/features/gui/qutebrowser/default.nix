@@ -18,7 +18,7 @@ in
       searchEngines = {
         w = "https://en.wikipedia.org/wiki/Special:Search?search={}";
         aw = "https://wiki.archlinux.org/?search={}";
-        nw = "https://wiki.nixos.org/index.php?search={}";
+        nw = "https://search.nixos.org/packages?channel=25.11&query={}";
         g = "https://www.google.com/search?q={}";
       };
 
@@ -36,7 +36,7 @@ in
           };
         };
 
-        tabs.tabs_are_windows = true;
+        tabs.tabs_are_windows = false;
       };
     };
   };
