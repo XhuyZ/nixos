@@ -47,7 +47,7 @@
       obs.enable = true;
       media.enable = false;
       qutebrowser.enable = true;
-      zen-browser.enable = true;
+      zen-browser.enable = false;
       nixcord.enable = true;
       redisinsight.enable = false;
       chrome.enable = true;
