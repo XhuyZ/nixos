@@ -23,7 +23,7 @@ in
       };
       aliases = {
         # -- WORKFLOW
-        xhuyz = "open -t https://github.com ;; open -t https://github.com/NixOS/nixpkgs ;; open -t https://wiki.nixos.org ;; open -t https://chatgpt.com ;; open -t https://hub.docker.com ;; open -t https://drive.google.com ;; open -t https://mail.google.com";
+        xhuyz = "open -t https://facebook.com ;; open -t https://youtube.com ;; open -t https://drive.google.com ;; open -t https://mail.google.com ;; open -t https://github.com ;; open -t https://search.nixos.org ;; open -t https://chatgpt.com ;; open -t https://hub.docker.com";
         q = "quit";
         w = "session-save";
         wq = "quit --save";
