@@ -21,6 +21,13 @@ in
         nw = "https://search.nixos.org/packages?channel=25.11&query={}";
         g = "https://www.google.com/search?q={}";
       };
+      aliases = {
+        q = "quit";
+        w = "session-save";
+        wq = "quit --save";
+        gh = "open https://github.com";
+        fb = "open https://facebook.com";
+      };
 
       settings = {
         colors = {
