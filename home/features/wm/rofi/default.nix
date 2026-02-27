@@ -23,6 +23,7 @@ in
         "drun"
         "window"
         "ssh"
+        "run"
       ];
       plugins = [
         pkgs.rofi-emoji
