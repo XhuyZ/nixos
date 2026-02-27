@@ -14,6 +14,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       wleave # has nicer images that wlogout
+      gtk3
     ];
     programs.wlogout = {
       enable = true;
