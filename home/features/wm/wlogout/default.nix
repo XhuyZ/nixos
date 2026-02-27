@@ -46,46 +46,47 @@ in
 
       style = ''
         * {
-          background-image: none;
-          box-shadow: none;
+        	background-image: none;
+        	box-shadow: none;
         }
 
         window {
-          background-color: rgba(12, 12, 12, 0.6);
+        	background-color: rgba(0, 43, 54, 0.92);
         }
 
         button {
-          border-radius: 0;
-          border-color: black;
-          text-decoration-color: #FFFFFF;
-          color: #FFFFFF;
-          background-color: #141414;
-          border-style: solid;
-          border-width: 1px;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 25%;
+        	border-radius: 8px;
+        	border-color: #073642;
+        	text-decoration-color: #FFFFFF;
+        	color: #FFFFFF;
+        	background-color: #002b36;
+        	border-style: solid;
+        	border-width: 2px;
+        	background-repeat: no-repeat;
+        	background-position: center;
+        	background-size: 28%;
         }
 
-        button:focus, button:active, button:hover {
-          outline-style: none;
-          background-color: #282828;
-        }
+        				button:focus, button:active, button:hover {
+        				outline-style: none;
+        				background-color: #073642; /* base02 */
+        				border-color: #268bd2; /* blue */
+        				color: #93a1a1; /* base1 */}
 
         #lock {
-          background-image: image(url("${pkgs.wleave}/share/wleave/icons/lock.svg")); 
+        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/lock.png")); 
         }
 
         #logout {
-          background-image: image(url("${pkgs.wleave}/share/wleave/icons/logout.svg"));
+        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/logout.png"));
         }
 
         #shutdown {
-          background-image: image(url("${pkgs.wleave}/share/wleave/icons/shutdown.svg"));
+        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/shutdown.png"));
         }
 
         #reboot {
-          background-image: image(url("${pkgs.wleave}/share/wleave/icons/reboot.svg"));
+        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/reboot.png"));
         }      
       '';
 
