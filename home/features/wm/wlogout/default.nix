@@ -74,19 +74,19 @@ in
         				color: #93a1a1; /* base1 */}
 
         #lock {
-        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/lock.png")); 
+        	background-image: image(url("/home/xhuyz/nixos/home/features/wm/wlogout/assets/lock.png")); 
         }
 
         #logout {
-        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/logout.png"));
+        	background-image: image(url("/home/xhuyz/nixos/home/features/wm/wlogout/assets/logout.png"));
         }
 
         #shutdown {
-        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/shutdown.png"));
+        	background-image: image(url("/home/xhuyz/nixos/home/features/wm/wlogout/assets/shutdown.png"));
         }
 
         #reboot {
-        	background-image: image(url("~/nixos/home/features/wm/wlogout/assets/reboot.png"));
+        	background-image: image(url("/home/xhuyz/nixos/home/features/wm/wlogout/assets/reboot.png"));
         }      
       '';
 
