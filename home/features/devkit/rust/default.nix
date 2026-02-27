@@ -16,6 +16,9 @@ in
       rustup
       wasm-pack
       python314
+      crates-tui
+      cargo-info
+      crate2nix
     ];
   };
 }
