@@ -21,6 +21,7 @@
     pkgs.brightnessctl
     pkgs.swaybg
     pkgs.nest-cli
+    pkgs.openssl
     pkgs.dig
     pkgs.wlr-randr
   ];
