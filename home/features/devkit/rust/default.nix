@@ -20,6 +20,7 @@ in
       crates-tui
       cargo-info
       crate2nix
+      trunk
     ];
   };
 }
