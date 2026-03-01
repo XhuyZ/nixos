@@ -21,6 +21,7 @@
     pkgs.brightnessctl
     pkgs.swaybg
     pkgs.nest-cli
+    pkgs.python313Packages.prisma
     pkgs.openssl
     pkgs.dig
     pkgs.wlr-randr
