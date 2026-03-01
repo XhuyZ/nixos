@@ -58,6 +58,7 @@
       rustrover.enable = true;
       gns3.enable = true;
       nautilus.enable = true;
+      cursor.enable = true;
     };
     wm = {
       mangowc.enable = true;

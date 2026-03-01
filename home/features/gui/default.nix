@@ -19,5 +19,6 @@
     ./rust-rover/default.nix
     ./gns3/default.nix
     ./nautilus/default.nix
+    ./cursor/default.nix
   ];
 }
