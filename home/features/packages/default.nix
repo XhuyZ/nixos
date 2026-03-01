@@ -25,6 +25,7 @@
     pkgs.openssl
     pkgs.dig
     pkgs.wlr-randr
-    # pkgs.prisma_7
+    pkgs.prisma_7
+    pkgs.prisma-engines_7
   ];
 }
