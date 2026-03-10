@@ -59,6 +59,7 @@
       gns3.enable = true;
       nautilus.enable = true;
       cursor.enable = false;
+      godot.enable = true;
     };
     wm = {
       mangowc.enable = true;

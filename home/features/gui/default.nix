@@ -20,5 +20,6 @@
     ./gns3/default.nix
     ./nautilus/default.nix
     ./cursor/default.nix
+    ./godot/default.nix
   ];
 }
