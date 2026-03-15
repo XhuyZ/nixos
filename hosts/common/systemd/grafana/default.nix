@@ -53,7 +53,7 @@ in
           # serve_from_sub_path = true;
         };
         security = {
-          disable_initial_admin_creation = true;
+          disable_initial_admin_creation = false;
         };
       };
 
