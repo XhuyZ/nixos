@@ -2,7 +2,7 @@ nmtui
 ping google.com
 nix-shell -p git
 git clone https://github.com/XhuyZ/nixos
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount /tmp/disk-config.nix
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ~/nixos/hosts/xxx/disk-config.nix
 cd ~
 cd nixos
 sudo nixos-install --flake .#machine
