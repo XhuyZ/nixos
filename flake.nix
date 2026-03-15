@@ -73,11 +73,11 @@
             }
           ];
         };
-        laptop-asus = nixpkgs.lib.nixosSystem {
+        orion = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ./hosts/laptop-asus
+            ./hosts/orion
             # ./modules/duckdns.nix
             inputs.disko.nixosModules.disko
             # nixos-hardware.nixosModules.asus-fx504gd
@@ -86,7 +86,6 @@
             {
               home-manager.backupFileExtension = "backup";
             }
-            mangowc.nixosModules.mango
           ];
         };
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
@@ -123,6 +122,13 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/vps.nix
+          ];
+        };
+        "xhuyz@orion" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home/xhuyz/orion.nix
           ];
         };
         "xhuyz@laptop-asus" = home-manager.lib.homeManagerConfiguration {
