@@ -55,7 +55,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH0yDi7KEb3BJ+K4WXscZDV/iuGGnoMNhClzEEz/iDtT laptop-thinkpad"
     ];
     hostKeys = [
-      "/etc/secrets/initrd/ssh_host_rsa_key"
+      # "/etc/secrets/initrd/ssh_host_rsa_key"
       "/etc/secrets/initrd/ssh_host_ed25519_key"
     ];
   };
