@@ -46,7 +46,6 @@
   };
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelModules = [ "iwlwifi" ];
   boot.initrd.network.enable = true;
   boot.initrd.network.ssh = {
     enable = true;
@@ -63,6 +62,7 @@
   networking.hostName = "orion";
   networking.useDHCP = false;
 
+  ## ip a to show which interfaces
   networking.interfaces.eno1 = {
     ipv4.addresses = [
       {
