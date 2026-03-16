@@ -46,6 +46,7 @@
   };
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "e1000e" ];
   boot.initrd.network.enable = true;
   boot.initrd.network.udhcpc.enable = true;
   boot.initrd.network.ssh = {
