@@ -68,6 +68,8 @@
     "1.1.1.1"
     "8.8.8.8"
   ];
+  # networking.networkmanager.dns = "none";
+  networking.networkmanager.enable = false;
   ## --- Firewall ---
   networking.firewall.allowedTCPPorts = [
     # Http
