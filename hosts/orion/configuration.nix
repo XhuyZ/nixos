@@ -48,11 +48,47 @@
   boot.kernelPackages = pkgs.linuxPackages_6_18;
   boot.kernelModules = [ "iwlwifi" ];
 
-  ## --- Host & Time ---
+  ## --- Networking ---
   networking.hostName = "orion";
-  networking.networkmanager.dns = "none";
-  networking.nameservers = [ "127.0.0.1" ];
+  networking.useDHCP = false;
 
+  networking.interfaces.eno1 = {
+    ipv4.addresses = [
+      {
+        address = "192.168.1.50";
+        prefixLength = 24;
+      }
+    ];
+  };
+
+  networking.defaultGateway = "192.168.1.1";
+
+  networking.nameservers = [
+    "127.0.0.1"
+    "1.1.1.1"
+    "8.8.8.8"
+  ];
+  ## --- Firewall ---
+  networking.firewall.allowedTCPPorts = [
+    # Http
+    # Udp
+    80
+    53
+    # ssh
+    22
+    # open webui
+    11111
+    # prometheus
+    9090
+    # grafana
+    3000
+    # n8n
+    5678
+    # postgresql
+    5432
+  ];
+  networking.firewall.allowedUDPPorts = [ 53 ];
+  ## --- Host & Time ---
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   ## --- Locale ---
@@ -68,9 +104,6 @@
     LC_TELEPHONE = "vi_VN";
     LC_TIME = "vi_VN";
   };
-
-  ## --- Networking ---
-  networking.networkmanager.enable = true;
 
   ## --- GUI: GNOME Desktop --
   services.xserver.xkb = {
@@ -135,27 +168,6 @@
     enable = true;
     settings.PermitRootLogin = "yes";
   };
-
-  ## --- Firewall ---
-  networking.firewall.allowedTCPPorts = [
-    # Http
-    # Udp
-    80
-    53
-    # ssh
-    22
-    # open webui
-    11111
-    # prometheus
-    9090
-    # grafana
-    3000
-    # n8n
-    5678
-    # postgresql
-    5432
-  ];
-  networking.firewall.allowedUDPPorts = [ 53 ];
 
   ## --- Sudo config ---
   security.sudo.extraRules = [
