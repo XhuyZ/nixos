@@ -48,9 +48,10 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "iwlwifi" ];
   boot.initrd.network.enable = true;
+  boot.initrd.network.interfaces.eno1.useDHCP = true;
   boot.initrd.network.ssh = {
     enable = true;
-    port = 22;
+    port = 2222;
     authorizedKeys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH0yDi7KEb3BJ+K4WXscZDV/iuGGnoMNhClzEEz/iDtT laptop-thinkpad"
     ];
