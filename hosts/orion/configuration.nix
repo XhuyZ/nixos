@@ -48,7 +48,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "iwlwifi" ];
   boot.initrd.network.enable = true;
-  boot.initrd.network.interfaces.eno1.useDHCP = true;
   boot.initrd.network.ssh = {
     enable = true;
     port = 2222;
