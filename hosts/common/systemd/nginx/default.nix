@@ -16,13 +16,13 @@ in
       enable = true;
 
       virtualHosts = {
-        "app1.lab" = {
+        "xhuyz.grafana" = {
           locations."/" = {
             proxyPass = "http://127.0.0.1:3000";
           };
         };
 
-        "app2.lab" = {
+        "xhuyz.openwebui" = {
           locations."/" = {
             proxyPass = "http://127.0.0.1:11111";
           };
