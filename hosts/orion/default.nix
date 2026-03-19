@@ -22,7 +22,7 @@
     # Automation workflows
     n8n.enable = true;
     # VMs + System container
-    incus.enable = false;
+    incus.enable = true;
     qemu.enable = true;
     # VPN
     wireguard.enable = true;
