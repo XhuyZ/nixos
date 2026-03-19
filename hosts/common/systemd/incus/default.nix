@@ -55,5 +55,15 @@ in
       };
     };
     networking.nftables.enable = true;
+    networking.firewall.interfaces.incusbr0 = {
+      allowedTCPPorts = [
+        53
+        67
+      ];
+      allowedUDPPorts = [
+        53
+        67
+      ];
+    };
   };
 }
