@@ -1,4 +1,6 @@
 lab:53 {
+    bind 127.0.0.1
+
     hosts {
         192.168.1.50 app1.lab app2.lab
         fallthrough
@@ -9,9 +11,10 @@ lab:53 {
 }
 
 .:53 {
+    bind 127.0.0.1
+
     forward . 192.168.1.1
     cache 30
     log
     errors
 }
-
