@@ -55,7 +55,7 @@
       rider.enable = true;
       teams-for-linux.enable = true;
       packettracer.enable = false;
-      rustrover.enable = true;
+      rustrover.enable = false;
       gns3.enable = true;
       nautilus.enable = true;
       cursor.enable = false;
