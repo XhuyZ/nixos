@@ -39,6 +39,7 @@
       fcitx5.enable = true;
       copyq.enable = true;
       opencode.enable = true;
+      bluetui.enable = true;
     };
     # gui = {
     #   office.enable = false;

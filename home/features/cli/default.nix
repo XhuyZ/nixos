@@ -12,5 +12,6 @@
     ./fcitx5/default.nix
     ./copyq/default.nix
     ./opencode/default.nix
+    ./bluetui/default.nix
   ];
 }

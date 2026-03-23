@@ -39,6 +39,7 @@
       git.enable = true;
       fcitx5.enable = true;
       copyq.enable = true;
+      bluetui.enable = true;
     };
     gui = {
       office.enable = true;
