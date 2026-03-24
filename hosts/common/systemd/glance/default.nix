@@ -16,6 +16,7 @@ in
   config = mkIf cfg.enable {
     services.glance = {
       enable = true;
+      extraArgs = [ "-w" ];
     };
     networking.firewall.allowedTCPPorts = [ 61208 ];
   };
