@@ -159,6 +159,9 @@
         "video"
         "incus"
       ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLhI8f9r78Jebj3OB9IWlPTDlygHXAznFqxGzULuqdq deploy-rs"
+      ];
       packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };
   };
@@ -180,7 +183,6 @@
     git
     neofetch
   ];
-
 
   ## --- Sudo config ---
   # security.sudo.extraRules = [
