@@ -188,12 +188,15 @@
   };
 
   ## --- Sudo config ---
-  security.sudo.extraRules = [
-    {
-      groups = [ "sudo" ];
-      commands = [ "ALL" ];
-    }
-  ];
+  # security.sudo.extraRules = [
+  #   {
+  #     groups = [ "sudo" ];
+  #     commands = [ "ALL" ];
+  #   }
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
 
   ## --- Required for upgrades ---
   system.stateVersion = "25.11";
