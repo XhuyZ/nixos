@@ -181,11 +181,6 @@
     neofetch
   ];
 
-  ## --- SSH ---
-  services.openssh = {
-    enable = true;
-    settings.PermitRootLogin = "yes";
-  };
 
   ## --- Sudo config ---
   # security.sudo.extraRules = [

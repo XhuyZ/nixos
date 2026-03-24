@@ -16,5 +16,6 @@
     ./coredns/default.nix
     ./glance/default.nix
     ./netdata/default.nix
+    ./openssh/default.nix
   ];
 }
