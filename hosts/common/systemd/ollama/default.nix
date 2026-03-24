@@ -54,5 +54,9 @@ in
       cudaSupport = false;
       rocmSupport = false;
     };
+
+    networking.firewall.allowedTCPPorts = [
+      11111
+    ];
   };
 }

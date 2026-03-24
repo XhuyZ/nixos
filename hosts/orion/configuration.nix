@@ -98,21 +98,11 @@
   ## --- Firewall ---
   networking.firewall.allowedTCPPorts = [
     # Http
-    # Udp
     80
+    # Udp
     53
     # ssh
     22
-    # open webui
-    11111
-    # prometheus
-    9090
-    # grafana
-    3000
-    # n8n
-    5678
-    # postgresql
-    5432
   ];
   networking.firewall.allowedUDPPorts = [ 53 ];
   ## --- Host & Time ---

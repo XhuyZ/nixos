@@ -14,6 +14,9 @@ in
 {
   options.systemd.grafana.enable = mkEnableOption "enable grafana";
   config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [
+      3000
+    ];
     services.grafana = {
       enable = true;
       openFirewall = true;

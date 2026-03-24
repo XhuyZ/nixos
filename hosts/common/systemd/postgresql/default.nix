@@ -14,6 +14,10 @@ in
 {
   options.systemd.postgresql.enable = mkEnableOption "enable postgresql";
   config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [
+      5432
+    ];
+
     services.postgresql = {
       enable = true;
       package = pkgs.postgresql_18;

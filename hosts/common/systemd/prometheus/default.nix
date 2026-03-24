@@ -14,6 +14,9 @@ in
 {
   options.systemd.prometheus.enable = mkEnableOption "enable prometheus";
   config = mkIf cfg.enable {
+    networking.firewall.allowedTCPPorts = [
+      9090
+    ];
     services.prometheus = {
       enable = true;
       port = 9090;
