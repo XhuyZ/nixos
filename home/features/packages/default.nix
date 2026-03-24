@@ -26,5 +26,6 @@
     pkgs.dig
     pkgs.wlr-randr
     pkgs.pciutils
+    pkgs.deploy-rs
   ];
 }
