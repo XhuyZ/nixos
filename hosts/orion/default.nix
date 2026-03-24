@@ -32,7 +32,7 @@
     # DNS server
     pihole.enable = false;
     coredns.enable = true;
-    glance.enable = true;
-    netdata.enable = true;
+    # glance.enable = true;
+    # netdata.enable = true;
   };
 }
