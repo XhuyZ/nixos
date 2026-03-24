@@ -14,5 +14,7 @@
     ./wireguard/default.nix
     ./pihole/default.nix
     ./coredns/default.nix
+    ./glance/default.nix
+    ./netdata/default.nix
   ];
 }
