@@ -16,6 +16,7 @@
     my-nixvim.url = "github:XhuyZ/nixvim";
     agenix.url = "github:ryantm/agenix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    deploy-rs.url = "github:serokell/deploy-rs";
     mangowc = {
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -45,6 +46,7 @@
       nixvim,
       my-nixvim,
       agenix,
+      deploy-rs,
       mangowc,
       ...
     }@inputs:
@@ -59,20 +61,9 @@
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
 
       overlays = import ./hosts/overlays { inherit inputs; };
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
       nixosConfigurations = {
-        vps = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/vps
-            inputs.disko.nixosModules.disko
-            agenix.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "backup";
-            }
-          ];
-        };
+        # Homelab
         orion = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
@@ -88,6 +79,7 @@
             }
           ];
         };
+        # My laptop
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
@@ -103,6 +95,7 @@
             mangowc.nixosModules.mango
           ];
         };
+        # WSL version
         wsl = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
@@ -114,6 +107,23 @@
               home-manager.backupFileExtension = "backup";
             }
           ];
+        };
+      };
+      # Deploy-rs works here
+      # deploy.nodes.orion = {
+      #   hostname = "orion";
+      #   profiles.system = {
+      #     user = "xhuyz";
+      #     path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.orion;
+      #   };
+      # };
+      deploy.nodes.orion = {
+        hostname = "192.168.1.50";
+        profiles.system = {
+          user = "root";
+          sshUser = "xhuyz";
+
+          path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.orion;
         };
       };
       homeConfigurations = {
