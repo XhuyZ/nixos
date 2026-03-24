@@ -17,5 +17,6 @@ in
     services.glance = {
       enable = true;
     };
+    networking.firewall.allowedTCPPorts = [ 61208 ];
   };
 }
