@@ -33,7 +33,7 @@
     pihole.enable = false;
     coredns.enable = true;
     openssh.enable = true;
-    # glance.enable = true;
-    # netdata.enable = true;
+    glance.enable = true;
+    netdata.enable = true;
   };
 }
