@@ -55,6 +55,9 @@
   ## --- Networking ---
   networking.networkmanager.enable = true;
 
+  networking.networkmanager.dns = "none";
+  networking.nameservers = [ "192.168.1.50" ];
+
   ## --- GUI: GNOME Desktop --
   services.xserver.xkb = {
     layout = "us";
