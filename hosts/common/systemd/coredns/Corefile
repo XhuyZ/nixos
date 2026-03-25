@@ -1,17 +1,10 @@
-lab:53 {
+.:53 {
     bind 0.0.0.0
 
     hosts {
         192.168.1.50 xhuyz.grafana
         fallthrough
     }
-
-    log
-    errors
-}
-
-.:53 {
-    bind 0.0.0.0
 
     forward . 192.168.1.1
     cache 30
