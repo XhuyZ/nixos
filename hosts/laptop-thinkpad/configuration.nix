@@ -54,10 +54,17 @@
 
   ## --- Networking ---
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
 
-  networking.networkmanager.dns = "none";
-  networking.nameservers = [ "192.168.1.50" ];
+  services.resolved = {
+    enable = true;
+    dnssec = "false";
 
+    extraConfig = ''
+      DNS=192.168.1.50
+      Domains=~grafana
+    '';
+  };
   ## --- GUI: GNOME Desktop --
   services.xserver.xkb = {
     layout = "us";
