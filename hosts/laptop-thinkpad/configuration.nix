@@ -60,8 +60,8 @@
     enable = true;
     dnssec = "false";
 
+    # DNS=192.168.1.50
     extraConfig = ''
-      DNS=192.168.1.50
       Domains=~xhuyz ~lab
     '';
   };
