@@ -35,5 +35,6 @@
     openssh.enable = true;
     glance.enable = true;
     netdata.enable = true;
+    networking.enable = true;
   };
 }
