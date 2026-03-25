@@ -56,7 +56,7 @@
     enable = true;
     port = 2222;
     authorizedKeys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH0yDi7KEb3BJ+K4WXscZDV/iuGGnoMNhClzEEz/iDtT laptop-thinkpad"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLhI8f9r78Jebj3OB9IWlPTDlygHXAznFqxGzULuqdq deploy-rs"
     ];
     hostKeys = [
       # "/etc/secrets/initrd/ssh_host_rsa_key"
