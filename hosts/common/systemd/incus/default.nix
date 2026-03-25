@@ -54,7 +54,7 @@ in
       #   ];
       # };
     };
-    # networking.nftables.enable = true;
+    networking.nftables.enable = true;
     # networking.firewall.interfaces.incusbr0 = {
     #   allowedTCPPorts = [
     #     53
