@@ -57,7 +57,6 @@ in
     ];
     networking.firewall.allowedUDPPorts = [
       53
-      1053
     ];
   };
 }
