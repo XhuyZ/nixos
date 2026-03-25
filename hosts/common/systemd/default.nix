@@ -19,5 +19,6 @@
     ./openssh/default.nix
     ./networking/default.nix
     ./wireguard/default.nix
+    ./adguard/default.nix
   ];
 }
