@@ -62,7 +62,7 @@
 
     extraConfig = ''
       DNS=192.168.1.50
-      Domains=~grafana
+      Domains=~xhuyz ~lab
     '';
   };
   ## --- GUI: GNOME Desktop --
