@@ -36,6 +36,6 @@
     glance.enable = true;
     netdata.enable = true;
     networking.enable = true;
-    adguard.enable = true;
+    adguard.enable = false;
   };
 }
