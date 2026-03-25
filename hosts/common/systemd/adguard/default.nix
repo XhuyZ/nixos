@@ -16,7 +16,7 @@ in
       openFirewall = true;
       enable = true;
       # You can select any ip and port, just make sure to open firewalls where needed
-      host = "127.0.0.1";
+      host = "0.0.0.0";
       port = 3003;
       settings = {
         dns = {
