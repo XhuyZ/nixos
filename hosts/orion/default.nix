@@ -31,7 +31,7 @@
     traefik.enable = false;
     # DNS server
     pihole.enable = false;
-    coredns.enable = true;
+    coredns.enable = false;
     openssh.enable = true;
     glance.enable = true;
     netdata.enable = true;
