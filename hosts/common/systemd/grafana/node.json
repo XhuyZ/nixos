@@ -23,7 +23,7 @@
     },
     {
       "type": "stat",
-      "title": "Storage Usage %",
+      "title": "Disk Usage %",
       "targets": [
         {
           "expr": "node:disk_usage:percent{mountpoint=\"/mnt/storage\"}",
@@ -33,7 +33,7 @@
     },
     {
       "type": "timeseries",
-      "title": "Disk Read",
+      "title": "Disk Read (bytes/sec)",
       "targets": [
         {
           "expr": "node:disk_read_bytes:rate",
@@ -43,7 +43,7 @@
     },
     {
       "type": "timeseries",
-      "title": "Disk Write",
+      "title": "Disk Write (bytes/sec)",
       "targets": [
         {
           "expr": "node:disk_write_bytes:rate",
@@ -53,7 +53,57 @@
     },
     {
       "type": "timeseries",
-      "title": "Network RX",
+      "title": "Disk Read IOPS",
+      "targets": [
+        {
+          "expr": "node:disk_read_iops:rate",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Disk Write IOPS",
+      "targets": [
+        {
+          "expr": "node:disk_write_iops:rate",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Disk IO Utilization %",
+      "targets": [
+        {
+          "expr": "node:disk_io_util:percent",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Disk Read Latency (s)",
+      "targets": [
+        {
+          "expr": "node:disk_read_latency:seconds",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Disk Write Latency (s)",
+      "targets": [
+        {
+          "expr": "node:disk_write_latency:seconds",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Network RX (bytes/sec)",
       "targets": [
         {
           "expr": "node:network_receive_bytes:rate",
@@ -63,7 +113,7 @@
     },
     {
       "type": "timeseries",
-      "title": "Network TX",
+      "title": "Network TX (bytes/sec)",
       "targets": [
         {
           "expr": "node:network_transmit_bytes:rate",
