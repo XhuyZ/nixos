@@ -23,6 +23,7 @@
   #     "x-systemd.device-timeout=10s"
   #   ];
   # };
+  environment.etc."grafana-dashboards/node_raid_dashboard.json".source = ./node_raid_dashboard.json;
   fileSystems."/mnt/storage" = {
     device = "UUID=2bef0e82-a4d9-457a-8318-b80bb5df52ec";
     fsType = "btrfs";
