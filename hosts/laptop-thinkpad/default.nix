@@ -32,6 +32,6 @@
     podman.enable = true;
     greetd.enable = true;
     postgresql.enable = true;
-    adguard.enable = true;
+    adguard.enable = false;
   };
 }
