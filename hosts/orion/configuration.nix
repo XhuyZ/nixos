@@ -13,14 +13,16 @@
     ./disko-config.nix
     ./secrets.nix
   ];
-  fileSystems."/mnt/storage" = {
-    device = "UUID=41ec7247-4e14-448a-b6c8-1ac2449dae7e";
-    fsType = "btrfs";
-    options = [
-      "compress=zstd"
-      "noatime"
-    ];
-  };
+  # fileSystems."/mnt/storage" = {
+  #   device = "UUID=41ec7247-4e14-448a-b6c8-1ac2449dae7e";
+  #   fsType = "btrfs";
+  #   options = [
+  #     "compress=zstd"
+  #     "noatime"
+  #     "nofail"
+  #     "x-systemd.device-timeout=10s"
+  #   ];
+  # };
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   hardware.firmware = with pkgs; [
