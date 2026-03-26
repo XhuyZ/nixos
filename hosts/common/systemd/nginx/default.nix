@@ -32,6 +32,11 @@ in
             proxyPass = "http://127.0.0.1:11111";
           };
         };
+        "netdata.lab" = {
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:19999";
+          };
+        };
       };
     };
   };

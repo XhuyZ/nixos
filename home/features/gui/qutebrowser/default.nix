@@ -34,7 +34,7 @@ in
       aliases = {
         # -- WORKFLOW
         xhuyz = "open -t https://facebook.com ;; open -t https://youtube.com ;;  open -t https://www.reddit.com ;;open -t https://www.notion.so ;; open -t https://drive.google.com ;; open -t https://mail.google.com ;; open -t https://github.com ;; open -t https://search.nixos.org ;; open -t https://chatgpt.com ;; open -t https://hub.docker.com ;; open -t https://crates.io";
-        lab = "open -t http://grafana.lab ;; open -t http://prometheus.lab ;; open -t http://openwebui.lab";
+        lab = "open -t http://grafana.lab ;; open -t http://prometheus.lab ;; open -t http://openwebui.lab ;; open -t http://netdata.lab";
         q = "quit";
         w = "session-save";
         wq = "quit --save";
