@@ -35,3 +35,12 @@ groups:
               node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}
             )
           )
+
+      # =========================
+      # Network throughput
+      # =========================
+      - record: node:network_receive_bytes:rate
+        expr: rate(node_network_receive_bytes_total[1m])
+
+      - record: node:network_transmit_bytes:rate
+        expr: rate(node_network_transmit_bytes_total[1m])
