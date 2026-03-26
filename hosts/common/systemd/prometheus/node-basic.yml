@@ -37,6 +37,46 @@ groups:
           )
 
       # =========================
+      # Disk IO (read/write bytes per second)
+      # =========================
+      - record: node:disk_read_bytes:rate
+        expr: rate(node_disk_read_bytes_total[1m])
+
+      - record: node:disk_write_bytes:rate
+        expr: rate(node_disk_written_bytes_total[1m])
+
+      # =========================
+      # Disk IO operations (IOPS)
+      # =========================
+      - record: node:disk_read_iops:rate
+        expr: rate(node_disk_reads_completed_total[1m])
+
+      - record: node:disk_write_iops:rate
+        expr: rate(node_disk_writes_completed_total[1m])
+
+      # =========================
+      # Disk IO time (% utilization)
+      # =========================
+      - record: node:disk_io_util:percent
+        expr: |
+          100 * rate(node_disk_io_time_seconds_total[1m])
+
+      # =========================
+      # Disk latency (approx)
+      # =========================
+      - record: node:disk_read_latency:seconds
+        expr: |
+          rate(node_disk_read_time_seconds_total[1m])
+          /
+          rate(node_disk_reads_completed_total[1m])
+
+      - record: node:disk_write_latency:seconds
+        expr: |
+          rate(node_disk_write_time_seconds_total[1m])
+          /
+          rate(node_disk_writes_completed_total[1m])
+
+      # =========================
       # Network throughput
       # =========================
       - record: node:network_receive_bytes:rate
