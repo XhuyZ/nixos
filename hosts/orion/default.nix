@@ -34,7 +34,7 @@
     coredns.enable = true;
     openssh.enable = true;
     glance.enable = true;
-    netdata.enable = true;
+    netdata.enable = false;
     networking.enable = true;
     adguard.enable = false;
   };

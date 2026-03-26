@@ -20,7 +20,7 @@ in
     services.prometheus = {
       enable = true;
       port = 9090;
-      globalConfig.scrape_interval = "2s"; # "1m"
+      globalConfig.scrape_interval = "5s"; # "1m"
       ruleFiles = [
         ./node-basic.yml
       ];
@@ -36,7 +36,7 @@ in
       ];
       exporters.node = {
         enable = true;
-        port = 9000;
+        port = 9100;
         # For the list of available collectors, run, depending on your install:
         # - Flake-based: nix run nixpkgs#prometheus-node-exporter -- --help
         # - Classic: nix-shell -p prometheus-node-exporter --run "node_exporter --help"
