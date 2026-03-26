@@ -1,87 +1,87 @@
 {
-  "title": "Node + RAID + Storage Overview",
-  "schemaVersion": 38,
-  "version": 1,
-  "panels": [
-    {
-      "type": "stat",
-      "title": "CPU Usage %",
-      "targets": [
-        {
-          "expr": "node:cpu_usage:percent",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "type": "stat",
-      "title": "Memory Usage %",
-      "targets": [
-        {
-          "expr": "node:memory_usage:percent",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "type": "stat",
-      "title": "Storage Usage %",
-      "targets": [
-        {
-          "expr": "node:disk_usage:percent{mountpoint=\"/mnt/storage\"}",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "type": "stat",
-      "title": "RAID Health %",
-      "targets": [
-        {
-          "expr": "btrfs_usage_percent{mountpoint=\"/mnt/storage\"}",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "type": "timeseries",
-      "title": "Disk Read (bytes/s)",
-      "targets": [
-        {
-          "expr": "node:disk_read_bytes:rate",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "type": "timeseries",
-      "title": "Disk Write (bytes/s)",
-      "targets": [
-        {
-          "expr": "node:disk_write_bytes:rate",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "type": "timeseries",
-      "title": "Network RX (bytes/s)",
-      "targets": [
-        {
-          "expr": "node:network_receive_bytes:rate",
-          "refId": "A"
-        }
-      ]
-    },
-    {
-      "type": "timeseries",
-      "title": "Network TX (bytes/s)",
-      "targets": [
-        {
-          "expr": "node:network_transmit_bytes:rate",
-          "refId": "A"
-        }
-      ]
-    }
-  ]
+	"title": "Node + RAID + Storage Overview",
+	"schemaVersion": 38,
+	"version": 1,
+	"panels": [
+		{
+			"type": "stat",
+			"title": "CPU Usage %",
+			"targets": [
+				{
+					"expr": "node:cpu_usage:percent",
+					"refId": "A"
+				}
+			]
+		},
+		{
+			"type": "stat",
+			"title": "Memory Usage %",
+			"targets": [
+				{
+					"expr": "node:memory_usage:percent",
+					"refId": "A"
+				}
+			]
+		},
+		{
+			"type": "stat",
+			"title": "Storage Usage %",
+			"targets": [
+				{
+					"expr": "node:disk_usage:percent{mountpoint=\"/mnt/storage\"}",
+					"refId": "A"
+				}
+			]
+		},
+		{
+			"type": "stat",
+			"title": "RAID Health %",
+			"targets": [
+				{
+					"expr": "btrfs_usage_percent{mountpoint=\"/mnt/storage\"}",
+					"refId": "A"
+				}
+			]
+		},
+		{
+			"type": "timeseries",
+			"title": "Disk Read (bytes/s)",
+			"targets": [
+				{
+					"expr": "node:disk_read_bytes:rate",
+					"refId": "A"
+				}
+			]
+		},
+		{
+			"type": "timeseries",
+			"title": "Disk Write (bytes/s)",
+			"targets": [
+				{
+					"expr": "node:disk_write_bytes:rate",
+					"refId": "A"
+				}
+			]
+		},
+		{
+			"type": "timeseries",
+			"title": "Network RX (bytes/s)",
+			"targets": [
+				{
+					"expr": "node:network_receive_bytes:rate",
+					"refId": "A"
+				}
+			]
+		},
+		{
+			"type": "timeseries",
+			"title": "Network TX (bytes/s)",
+			"targets": [
+				{
+					"expr": "node:network_transmit_bytes:rate",
+					"refId": "A"
+				}
+			]
+		}
+	]
 }

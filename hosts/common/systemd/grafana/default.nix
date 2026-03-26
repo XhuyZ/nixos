@@ -22,6 +22,7 @@ in
       openFirewall = true;
       provision = {
         enable = true;
+
         datasources = {
           settings = {
             apiVersion = 1;
