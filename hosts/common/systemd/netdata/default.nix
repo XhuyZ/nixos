@@ -17,6 +17,9 @@ in
     ## --- Netdata service ---
     services.netdata = {
       enable = true;
+      package = pkgs.netdata.override {
+        withCloudUi = true; # UI mới, maintained
+      };
 
       # Minimal WebUI, no extra plugins
       config = {
@@ -30,6 +33,8 @@ in
         # optional: web UI default settings
         web = {
           mode = "full"; # enable WebUI
+          "bind to" = "0.0.0.0"; # bind to all interfaces
+          "port" = 19999; # port WebUI
         };
       };
     };
