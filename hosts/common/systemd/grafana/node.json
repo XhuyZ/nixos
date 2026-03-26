@@ -1,0 +1,77 @@
+{
+  "title": "Node + RAID Overview",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "CPU Usage %",
+      "targets": [
+        {
+          "expr": "node:cpu_usage:percent",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Memory Usage %",
+      "targets": [
+        {
+          "expr": "node:memory_usage:percent",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Storage Usage %",
+      "targets": [
+        {
+          "expr": "node:disk_usage:percent{mountpoint=\"/mnt/storage\"}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Disk Read",
+      "targets": [
+        {
+          "expr": "node:disk_read_bytes:rate",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Disk Write",
+      "targets": [
+        {
+          "expr": "node:disk_write_bytes:rate",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Network RX",
+      "targets": [
+        {
+          "expr": "node:network_receive_bytes:rate",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Network TX",
+      "targets": [
+        {
+          "expr": "node:network_transmit_bytes:rate",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "version": 1
+}
