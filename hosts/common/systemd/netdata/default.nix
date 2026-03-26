@@ -18,7 +18,7 @@ in
     services.netdata = {
       enable = true;
       package = pkgs.netdata.override {
-        withCloudUi = true; # UI mới, maintained
+        withCloud = true; # UI mới, maintained
       };
 
       # Minimal WebUI, no extra plugins
