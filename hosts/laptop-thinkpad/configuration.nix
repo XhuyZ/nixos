@@ -62,7 +62,9 @@
 
     # DNS=192.168.1.50
     extraConfig = ''
-      Domains=~xhuyz ~lab
+      Domains=~lab
+        DNS=1.1.1.1
+        FallbackDNS=8.8.8.8
     '';
   };
   ## --- GUI: GNOME Desktop --

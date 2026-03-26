@@ -10,7 +10,11 @@ lab:53 {
 .:53 {
     bind 0.0.0.0
 
-    forward . 1.1.1.1
+forward . 1.1.1.1 {
+  prefer_udp
+  max_fails 2
+  health_check 5s
+}
     cache 30
     log
     errors
