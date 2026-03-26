@@ -38,6 +38,23 @@ in
           };
         };
 
+        dashboards = {
+          settings = {
+            apiVersion = 1;
+            providers = [
+              {
+                name = "default";
+                orgId = 1;
+                folder = "";
+                type = "file";
+                disableDeletion = true;
+                options = {
+                  path = "/etc/grafana-dashboards";
+                };
+              }
+            ];
+          };
+        };
       };
       settings = {
         user = {
