@@ -1,4 +1,5 @@
 nmtui
+
 ping google.com
 nix-shell -p git
 git clone https://github.com/XhuyZ/nixos
@@ -7,3 +8,5 @@ cd ~
 cd nixos
 sudo nixos-install --flake .#machine
 
+sudo mkfs.btrfs -f -d raid1 -m raid1 \
+  /dev/sda /dev/sdb /dev/sdc /dev/sdd
