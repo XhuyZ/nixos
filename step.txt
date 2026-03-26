@@ -21,3 +21,4 @@ sudo mkfs.btrfs -f -d raid1 -m raid1 \
 
 	sudo mount /dev/sda /mnt/storage
 	df -h /mnt/storage
+	osudo btrfs filesystem show
