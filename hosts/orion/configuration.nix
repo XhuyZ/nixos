@@ -23,6 +23,15 @@
   #     "x-systemd.device-timeout=10s"
   #   ];
   # };
+  fileSystems."/mnt/storage" = {
+    device = "UUID=2bef0e82-a4d9-457a-8318-b80bb5df52ec";
+    fsType = "btrfs";
+    options = [
+      "compress=zstd"
+      "noatime"
+      "nofail"
+    ];
+  };
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   hardware.firmware = with pkgs; [
