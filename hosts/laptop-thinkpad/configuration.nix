@@ -62,9 +62,12 @@
 
     # DNS=192.168.1.50
     extraConfig = ''
+      # .lab domain queries đi tới CoreDNS orion
       Domains=~lab
-        DNS=1.1.1.1
-        FallbackDNS=8.8.8.8
+      DNS=192.168.1.50
+
+      # Internet queries
+      FallbackDNS=1.1.1.1 8.8.8.8
     '';
   };
   ## --- GUI: GNOME Desktop --
