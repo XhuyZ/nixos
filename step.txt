@@ -8,6 +8,12 @@ cd ~
 cd nixos
 sudo nixos-install --flake .#machine
 
+STEP 4 — Storage RAID (IMPORTANT)
+
+👉 làm sau khi system đã boot
+
+sudo wipefs -a /dev/sd[a-d]
+
 sudo mkfs.btrfs -f -d raid1 -m raid1 \
   /dev/sda /dev/sdb /dev/sdc /dev/sdd
 
