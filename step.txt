@@ -10,3 +10,8 @@ sudo nixos-install --flake .#machine
 
 sudo mkfs.btrfs -f -d raid1 -m raid1 \
   /dev/sda /dev/sdb /dev/sdc /dev/sdd
+
+	sudo mkdir -p /mnt/storage
+
+	sudo mount /dev/sda /mnt/storage
+	df -h /mnt/storage
