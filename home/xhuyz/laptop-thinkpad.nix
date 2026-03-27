@@ -61,6 +61,7 @@
       nautilus.enable = true;
       cursor.enable = false;
       godot.enable = true;
+      antigravity.enable = true;
     };
     wm = {
       mangowc.enable = true;

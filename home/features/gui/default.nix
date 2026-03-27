@@ -21,5 +21,6 @@
     ./nautilus/default.nix
     ./cursor/default.nix
     ./godot/default.nix
+    ./antigravity/default.nix
   ];
 }
