@@ -22,5 +22,6 @@
     ./cursor/default.nix
     ./godot/default.nix
     ./antigravity/default.nix
+    ./zoom/default.nix
   ];
 }

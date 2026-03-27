@@ -62,6 +62,7 @@
       cursor.enable = false;
       godot.enable = true;
       antigravity.enable = true;
+      zoom.enable = true;
     };
     wm = {
       mangowc.enable = true;
