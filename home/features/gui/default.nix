@@ -23,5 +23,6 @@
     ./godot/default.nix
     ./antigravity/default.nix
     ./zoom/default.nix
+    ./aseprite/default.nix
   ];
 }

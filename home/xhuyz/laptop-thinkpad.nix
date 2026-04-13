@@ -63,6 +63,7 @@
       godot.enable = true;
       antigravity.enable = true;
       zoom.enable = true;
+      aseprite.enable = true;
     };
     wm = {
       mangowc.enable = true;
