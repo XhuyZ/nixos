@@ -40,6 +40,7 @@
       fcitx5.enable = true;
       copyq.enable = true;
       bluetui.enable = true;
+      opencode.enable = true;
     };
     gui = {
       office.enable = true;
