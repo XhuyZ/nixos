@@ -126,7 +126,7 @@
   environment.systemPackages = with pkgs; [
     inputs.my-nixvim.packages.${stdenv.hostPlatform.system}.default
     inputs.agenix.packages.${stdenv.hostPlatform.system}.default
-    inputs.HyprQuickFrame.packages.${pkgs.system}.default
+    inputs.HyprQuickFrame.packages.${stdenv.hostPlatform.system}.default
     neofetch
   ];
 
