@@ -27,5 +27,6 @@
     pkgs.wlr-randr
     pkgs.pciutils
     pkgs.deploy-rs
+    pkgs.quickshell
   ];
 }
