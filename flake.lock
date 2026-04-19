@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "HyprQuickFrame": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776514314,
+        "narHash": "sha256-Ye2HxH8RYNJzwoAryWMpp8GkE4GlFFTerbyrxvBHU2w=",
+        "owner": "Ronin-CK",
+        "repo": "HyprQuickFrame",
+        "rev": "8171e71d96f868cc9c3aa4133436e01b08ebe6cc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Ronin-CK",
+        "repo": "HyprQuickFrame",
+        "type": "github"
+      }
+    },
     "agenix": {
       "inputs": {
         "darwin": "darwin",
@@ -848,6 +868,7 @@
     },
     "root": {
       "inputs": {
+        "HyprQuickFrame": "HyprQuickFrame",
         "agenix": "agenix",
         "deploy-rs": "deploy-rs",
         "disko": "disko",
