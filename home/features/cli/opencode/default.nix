@@ -21,7 +21,7 @@ in
       };
       commands = {
         branch = ./commands/branch.md;
-        changelog = /commands/changelog.md;
+        changelog = ./commands/changelog.md;
         commit = ./commands/commit.md;
         explain = ./commands/explain.md;
         next = ./commands/next.md;
