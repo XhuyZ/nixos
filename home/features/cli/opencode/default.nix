@@ -14,27 +14,24 @@ in
   config = mkIf cfg.enable {
     programs.opencode = {
       enable = true;
-      web = {
-        enable = true;
-        extraArgs = [
-          "--hostname"
-          "0.0.0.0"
-          "--port"
-          "4096"
-          "--mdns"
-          "--cors"
-          "https://example.com"
-          "--cors"
-          "http://localhost:3000"
-          "--print-logs"
-          "--log-level"
-          "DEBUG"
-        ];
-      };
       settings = {
         model = "deepseek-r1:8b";
         # autoshare = false;
         # autoupdate = true;
+      };
+      commands = {
+        branch = ./commands/branch.md;
+        changelog = /commands/changelog.md;
+        commit = ./commands/commit.md;
+        explain = ./commands/explain.md;
+        next = ./commands/next.md;
+        plan = ./commands/plan.md;
+        pr = ./commands/pr.md;
+        refactor = ./commands/refactor.md;
+        review = ./commands/review.md;
+        spec = ./commands/review.md;
+        task = ./commands/task.md;
+        test = ./commands/test.md;
       };
       agents = {
         code-reviewer = ''

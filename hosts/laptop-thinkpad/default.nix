@@ -33,5 +33,6 @@
     greetd.enable = true;
     postgresql.enable = true;
     adguard.enable = false;
+    ollama.enable = true;
   };
 }
