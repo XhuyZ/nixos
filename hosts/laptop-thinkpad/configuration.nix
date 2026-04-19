@@ -146,7 +146,19 @@
       commands = [ "ALL" ];
     }
   ];
+  xdg.portal = {
+    enable = true;
 
+    config = {
+      common = {
+        default = "*";
+      };
+    };
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+  };
   ## --- Required for upgrades ---
   system.stateVersion = "25.11";
 }
