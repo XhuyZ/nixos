@@ -29,5 +29,6 @@
     pkgs.deploy-rs
     pkgs.quickshell
     pkgs.libnotify
+    pkgs.mako
   ];
 }
