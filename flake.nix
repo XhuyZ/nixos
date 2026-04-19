@@ -35,6 +35,10 @@
     nixcord = {
       url = "github:kaylorben/nixcord";
     };
+    HyprQuickFrame = {
+      url = "github:Ronin-CK/HyprQuickFrame";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -48,6 +52,7 @@
       agenix,
       deploy-rs,
       mangowc,
+      HyprQuickFrame,
       ...
     }@inputs:
     let
