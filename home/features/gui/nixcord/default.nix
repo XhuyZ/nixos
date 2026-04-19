@@ -19,8 +19,6 @@ in
         # equicord.enable = true;  # Or use Equicord instead (cannot enable both)
       };
       vesktop.enable = true; # Vesktop
-      equibop.enable = true; # Equibop
-      dorion.enable = true; # Dorion
       quickCss = "some CSS"; # quickCSS file
       config = {
         useQuickCss = true; # use out quickCSS
