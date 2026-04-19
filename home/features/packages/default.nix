@@ -28,5 +28,6 @@
     pkgs.pciutils
     pkgs.deploy-rs
     pkgs.quickshell
+    pkgs.libnotify
   ];
 }
