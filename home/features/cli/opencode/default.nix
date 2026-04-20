@@ -15,7 +15,8 @@ in
     programs.opencode = {
       enable = true;
       settings = {
-        model = "deepseek-r1:8b";
+        # model = "deepseek-r1:8b";
+        model = "ollama/qwen2.5:3b";
         # autoshare = false;
         # autoupdate = true;
       };
