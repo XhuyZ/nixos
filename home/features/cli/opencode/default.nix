@@ -31,15 +31,8 @@ in
             name = "Ollama Local";
             options.baseURL = "http://127.0.0.1:11434/v1";
             models = {
-              "qwen2.5-coder:7b" = {
-                name = "Qwen 2.5 Coder 7B";
-                limit = {
-                  context = 32768;
-                  output = 8192;
-                };
-              };
-              "deepseek-r1:8b" = {
-                name = "DeepSeek R1 8B";
+              "qwen2.5:3b" = {
+                name = "Qwen 2.5 3B";
                 limit = {
                   context = 32768;
                   output = 8192;
