@@ -24,7 +24,7 @@ in
       stateDir = "/var/lib/litellm";
 
       # 🔐 load API key từ file (khuyến nghị)
-      environmentFile = "/var/lib/secrets/litellm.env";
+      # environmentFile = "/var/lib/secrets/litellm.env";
 
       environment = {
         LITELLM_LOG = "DEBUG";
