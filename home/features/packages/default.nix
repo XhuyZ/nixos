@@ -30,5 +30,6 @@
     pkgs.quickshell
     pkgs.libnotify
     pkgs.mako
+    pkgs.lsof
   ];
 }
