@@ -41,7 +41,7 @@ in
             };
           };
         };
-        model = "ollama/qwen2.5-coder:7b";
+        model = "ollama/qwen2.5:3b";
       };
     };
   };
