@@ -31,7 +31,7 @@
     };
   };
   ## --- Kernel ---
-  boot.kernelPackages = pkgs.linuxPackages_lts;
+  boot.kernelPackages = pkgs.linuxPackages;
   boot.kernelModules = [ "iwlwifi" ];
 
   ## --- Host & Time ---
