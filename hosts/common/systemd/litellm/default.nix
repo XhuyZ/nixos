@@ -15,8 +15,8 @@ in
   options.systemd.litellm.enable = mkEnableOption "enable litellm";
 
   config = mkIf cfg.enable {
-		services.litellm = {
-			enable = true;
-		};
+    services.litellm = {
+      enable = true;
+    };
   };
 }
