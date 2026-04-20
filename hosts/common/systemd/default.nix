@@ -20,5 +20,6 @@
     ./networking/default.nix
     ./wireguard/default.nix
     ./adguard/default.nix
+    ./litellm/default.nix
   ];
 }
