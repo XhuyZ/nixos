@@ -14,7 +14,7 @@ in
   config = mkIf cfg.enable {
     wayland.windowManager.mango = {
       enable = true;
-      settings = builtins.readFile ./config.conf;
+      extraConfig = builtins.readFile ./config.conf;
     };
   };
 }
