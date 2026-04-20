@@ -16,7 +16,7 @@ in
       enable = true;
       settings = {
         # model = "deepseek-r1:8b";
-        model = "ollama/qwen2.5:3b";
+        model = "ollama/qwen2.5-coder:7b";
         # autoshare = false;
         # autoupdate = true;
       };
