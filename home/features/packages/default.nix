@@ -31,5 +31,6 @@
     pkgs.libnotify
     pkgs.mako
     pkgs.lsof
+    pkgs.claude-code
   ];
 }
