@@ -40,7 +40,7 @@ in
     networking.defaultGateway = "192.168.1.1";
 
     networking.nameservers = [
-      "127.0.0.1"
+      # "127.0.0.1"
       "1.1.1.1"
       "8.8.8.8"
     ];

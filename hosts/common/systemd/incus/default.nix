@@ -14,55 +14,51 @@ in
   config = mkIf cfg.enable {
     virtualisation.incus = {
       enable = true;
-      # preseed = {
-      #   networks = [
-      #     {
-      #       config = {
-      #         "ipv4.address" = "10.0.100.1/24";
-      #         "ipv4.nat" = "true";
-      #         "dns.mode" = "none";
-      #       };
-      #       name = "incusbr0";
-      #       type = "bridge";
-      #     }
-      #   ];
-      #   profiles = [
-      #     {
-      #       devices = {
-      #         eth0 = {
-      #           name = "eth0";
-      #           network = "incusbr0";
-      #           type = "nic";
-      #         };
-      #         root = {
-      #           path = "/";
-      #           pool = "default";
-      #           size = "35GiB";
-      #           type = "disk";
-      #         };
-      #       };
-      #       name = "default";
-      #     }
-      #   ];
-      #   storage_pools = [
-      #     {
-      #       config = {
-      #         source = "/var/lib/incus/storage-pools/default";
-      #       };
-      #       driver = "dir";
-      #       name = "default";
-      #     }
-      #   ];
-      # };
+
+      preseed = {
+        networks = [
+          {
+            name = "incusbr0";
+            type = "bridge";
+            config = {
+              "ipv4.address" = "10.10.10.1/24";
+              "ipv4.nat" = "true";
+              "ipv4.dhcp" = "true";
+              "dns.mode" = "managed";
+            };
+          }
+        ];
+
+        storage_pools = [
+          {
+            name = "default";
+            driver = "dir";
+            config = {
+              source = "/var/lib/incus/storage-pools/default";
+            };
+          }
+        ];
+
+        profiles = [
+          {
+            name = "default";
+            devices = {
+              eth0 = {
+                type = "nic";
+                network = "incusbr0";
+                name = "eth0";
+              };
+
+              root = {
+                type = "disk";
+                path = "/";
+                pool = "default";
+                size = "20GiB";
+              };
+            };
+          }
+        ];
+      };
     };
-    networking.nftables.enable = true;
-    # networking.firewall.interfaces.incusbr0 = {
-    #   allowedTCPPorts = [
-    #     67
-    #   ];
-    #   allowedUDPPorts = [
-    #     67
-    #   ];
-    # };
   };
 }
