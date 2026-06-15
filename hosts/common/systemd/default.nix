@@ -22,5 +22,6 @@
     ./adguard/default.nix
     ./litellm/default.nix
     ./tailscale/default.nix
+    ./forgejo/default.nix
   ];
 }

@@ -38,5 +38,6 @@
     networking.enable = true;
     adguard.enable = false;
     tailscale.enable = true;
+    forgejo.enable = true;
   };
 }
