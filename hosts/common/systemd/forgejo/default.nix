@@ -13,6 +13,7 @@ in
 {
   options.systemd.forgejo = {
     enable = mkEnableOption "Enable Forgejo Git service";
+
     domain = mkOption {
       type = types.str;
       default = "git.example.com";
@@ -32,19 +33,24 @@ in
       default = "postgres";
     };
 
-    lfs = {
-      enable = mkEnableOption "Enable Git LFS support";
+    lfsEnable = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Enable Git LFS support";
     };
   };
 
   config = mkIf cfg.enable {
 
+    # =========================
+    # FORGEJO SERVICE
+    # =========================
     services.forgejo = {
       enable = true;
 
       database.type = cfg.dbType;
 
-      lfs.enable = cfg.lfs.enable;
+      lfs.enable = cfg.lfsEnable;
 
       settings = {
         server = {
@@ -64,6 +70,9 @@ in
       };
     };
 
+    # =========================
+    # NGINX REVERSE PROXY
+    # =========================
     services.nginx = {
       virtualHosts.${cfg.domain} = {
         forceSSL = true;
