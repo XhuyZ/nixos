@@ -35,5 +35,6 @@
     adguard.enable = false;
     ollama.enable = true;
     litellm.enable = true;
+    tailscale.enable = true;
   };
 }
