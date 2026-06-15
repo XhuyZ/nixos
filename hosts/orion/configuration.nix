@@ -168,6 +168,10 @@
   #     groups = [ "sudo" ];
   #     commands = [ "ALL" ];
   #   }
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "xhuyzdev@gmail.com";
+  };
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
