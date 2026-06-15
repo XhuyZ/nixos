@@ -13,6 +13,28 @@ in
 {
   options.systemd.forgejo = {
     enable = mkEnableOption "Enable Forgejo Git service";
+    domain = mkOption {
+      type = types.str;
+      default = "git.example.com";
+    };
+
+    httpPort = mkOption {
+      type = types.port;
+      default = 3000;
+    };
+
+    dbType = mkOption {
+      type = types.enum [
+        "postgres"
+        "sqlite3"
+        "mysql"
+      ];
+      default = "postgres";
+    };
+
+    lfs = {
+      enable = mkEnableOption "Enable Git LFS support";
+    };
   };
 
   config = mkIf cfg.enable {
