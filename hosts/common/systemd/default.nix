@@ -21,5 +21,6 @@
     ./wireguard/default.nix
     ./adguard/default.nix
     ./litellm/default.nix
+    ./tailscale/default.nix
   ];
 }

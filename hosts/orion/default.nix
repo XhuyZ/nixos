@@ -37,5 +37,6 @@
     netdata.enable = false;
     networking.enable = true;
     adguard.enable = false;
+    tailscale.enable = true;
   };
 }
