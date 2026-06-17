@@ -16,12 +16,12 @@ in
 
     domain = mkOption {
       type = types.str;
-      default = "git.example.com";
+      default = "forgejo.lab";
     };
 
     httpPort = mkOption {
       type = types.port;
-      default = 3000;
+      default = 3001;
     };
 
     dbType = mkOption {

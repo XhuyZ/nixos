@@ -2,7 +2,7 @@ lab:53 {
     bind 0.0.0.0
 
     hosts {
-        192.168.1.50 grafana.lab prometheus.lab openwebui.lab netdata.lab
+        192.168.1.50 grafana.lab forgejo.lab prometheus.lab openwebui.lab netdata.lab
         fallthrough
     }
 }
