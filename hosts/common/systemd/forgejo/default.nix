@@ -47,6 +47,7 @@ in
     # =========================
     services.forgejo = {
       enable = true;
+      service.DISABLE_REGISTRATION = true;
 
       database.type = cfg.dbType;
 
