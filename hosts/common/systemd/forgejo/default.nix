@@ -75,8 +75,8 @@ in
     # =========================
     services.nginx = {
       virtualHosts.${cfg.domain} = {
-        forceSSL = true;
-        enableACME = true;
+        forceSSL = false;
+        enableACME = false;
 
         extraConfig = ''
           client_max_body_size 512M;
