@@ -36,7 +36,8 @@ in
     ];
 
     serviceConfig = {
-      ExecStart = "${cfg.package}/bin/tailscaled";
+      # ExecStart = "${cfg.package}/bin/tailscaled";
+      ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state";
       Environment = [
         "PORT=41641"
         "TS_DEBUG_FIREWALL_MODE=nftables"

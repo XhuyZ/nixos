@@ -31,6 +31,9 @@
       "compress=zstd"
       "noatime"
     ];
+    WantedBy = [
+      "initrd.target"
+    ];
   };
   environment.etc."grafana-dashboards/node_raid_dashboard.json".source = ./node_raid_dashboard.json;
   fileSystems."/mnt/storage" = {
