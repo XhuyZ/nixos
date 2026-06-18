@@ -31,7 +31,7 @@
       "compress=zstd"
       "noatime"
     ];
-    WantedBy = [
+    wantedBy = [
       "initrd.target"
     ];
   };
