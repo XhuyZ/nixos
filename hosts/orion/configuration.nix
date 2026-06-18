@@ -77,7 +77,7 @@
     port = 2222;
     authorizedKeys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLhI8f9r78Jebj3OB9IWlPTDlygHXAznFqxGzULuqdq deploy-rs"
-      "sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmZeHieg2fNiH50P1CIRXWcGKCIbNLZjNIpIOdl4fRm"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmZeHieg2fNiH50P1CIRXWcGKCIbNLZjNIpIOdl4fRm"
     ];
     hostKeys = [
       # "/etc/secrets/initrd/ssh_host_rsa_key"
@@ -140,7 +140,7 @@
       ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLhI8f9r78Jebj3OB9IWlPTDlygHXAznFqxGzULuqdq deploy-rs"
-        "sh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmZeHieg2fNiH50P1CIRXWcGKCIbNLZjNIpIOdl4fRm"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmZeHieg2fNiH50P1CIRXWcGKCIbNLZjNIpIOdl4fRm"
       ];
       packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };
