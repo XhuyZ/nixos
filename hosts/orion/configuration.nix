@@ -76,7 +76,7 @@
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.systemd.enable = true;
-  boot.initrd.network.boot.initrd.systemd.mounts = [
+  boot.initrd.systemd.mounts = [
     {
       what = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
       where = "/srv";
