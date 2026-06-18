@@ -46,8 +46,12 @@ in
 
       after = [
         "network-online.target"
+        "srv.mount"
       ];
 
+      requires = [
+        "srv.mount"
+      ];
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state";
 

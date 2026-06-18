@@ -31,9 +31,6 @@
       "compress=zstd"
       "noatime"
     ];
-    wantedBy = [
-      "initrd.target"
-    ];
   };
   environment.etc."grafana-dashboards/node_raid_dashboard.json".source = ./node_raid_dashboard.json;
   fileSystems."/mnt/storage" = {
@@ -79,6 +76,15 @@
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.mounts = [
+    {
+      what = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
+      where = "/srv";
+      type = "btrfs";
+      options = "subvol=srv";
+      wantedBy = [ "initrd.target" ];
+    }
+  ];
   boot.initrd.network.enable = true;
   # boot.initrd.network.udhcpc.enable = true;
   # boot.initrd.network.postCommands = ''
