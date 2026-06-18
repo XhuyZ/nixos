@@ -53,7 +53,10 @@ in
         "srv.mount"
       ];
       serviceConfig = {
-        ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state";
+        ExecStart = [
+          "${cfg.package}/bin/tailscaled"
+          "--state=/srv/tailscale/tailscaled.state"
+        ];
 
         Environment = [
           "PORT=41641"
