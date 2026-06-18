@@ -28,18 +28,16 @@ in
 
     boot.initrd.systemd.initrdBin = [
       pkgs.iproute2
-      pkgs.iptables
       cfg.package
     ];
 
     boot.initrd.availableKernelModules = [
       "tun"
-      "nft_chain_nat"
     ];
 
     boot.initrd.systemd.services.tailscaled = {
 
-      description = "Tailscale in initrd";
+      description = "Tailscale initrd";
 
       wantedBy = [
         "initrd.target"
@@ -58,8 +56,9 @@ in
 
         ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state";
 
-      };
+        Restart = "on-failure";
 
+      };
     };
   };
 }
