@@ -82,9 +82,6 @@
       Where = "/srv";
       Type = "btrfs";
       Options = "subvol=srv";
-      WantedBy = [
-        "initrd.target"
-      ];
     }
   ];
   boot.initrd.network.enable = true;
