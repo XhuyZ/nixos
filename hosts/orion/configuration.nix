@@ -78,11 +78,13 @@
   boot.initrd.systemd.enable = true;
   boot.initrd.systemd.mounts = [
     {
-      what = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
-      where = "/srv";
-      type = "btrfs";
-      options = "subvol=srv";
-      wantedBy = [ "initrd.target" ];
+      What = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
+      Where = "/srv";
+      Type = "btrfs";
+      Options = "subvol=srv";
+      WantedBy = [
+        "initrd.target"
+      ];
     }
   ];
   boot.initrd.network.enable = true;

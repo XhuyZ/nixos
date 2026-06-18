@@ -38,6 +38,7 @@ in
     ];
 
     boot.initrd.systemd.services.tailscaled = {
+
       description = "Tailscale in initrd";
 
       wantedBy = [
@@ -45,25 +46,20 @@ in
       ];
 
       after = [
-        "network-online.target"
         "srv.mount"
+        "network-online.target"
       ];
 
       requires = [
         "srv.mount"
       ];
+
       serviceConfig = {
-        ExecStart = [
-          "${cfg.package}/bin/tailscaled"
-          "--state=/srv/tailscale/tailscaled.state"
-        ];
 
-        Environment = [
-          "PORT=41641"
-          "TS_DEBUG_FIREWALL_MODE=nftables"
-        ];
+        ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state";
+
       };
-    };
 
+    };
   };
 }
