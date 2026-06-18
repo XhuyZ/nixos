@@ -92,7 +92,7 @@
       ];
     }
   ];
-  enable = true;
+  boot.initrd.network.enable = true;
   # boot.initrd.network.udhcpc.enable = true;
   # boot.initrd.network.postCommands = ''
   #   ip addr add 192.168.1.50/24 dev eno1
