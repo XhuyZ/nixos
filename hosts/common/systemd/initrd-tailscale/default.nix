@@ -6,7 +6,7 @@
 }:
 
 let
-  cfg = config.services.tailscale;
+  cfg = config.systemd.initrd-tailscale;
 in
 {
   boot.initrd.systemd.packages = [
