@@ -78,10 +78,23 @@
   boot.initrd.systemd.enable = true;
   boot.initrd.network.enable = true;
   boot.initrd.network.udhcpc.enable = true;
-  boot.initrd.network.postCommands = ''
-    ip addr add 192.168.1.50/24 dev eno1
-    ip route add default via 192.168.1.1
-  '';
+  # boot.initrd.network.postCommands = ''
+  #   ip addr add 192.168.1.50/24 dev eno1
+  #   ip route add default via 192.168.1.1
+  # '';
+  boot.initrd.systemd.network.networks."20-eno1" = {
+    matchConfig.Name = "eno1";
+
+    address = [
+      "192.168.1.50/24"
+    ];
+
+    routes = [
+      {
+        Gateway = "192.168.1.1";
+      }
+    ];
+  };
   boot.initrd.network.ssh = {
     enable = true;
     port = 2222;
