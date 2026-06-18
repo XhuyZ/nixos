@@ -76,15 +76,15 @@
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.systemd.enable = true;
-  boot.initrd.systemd.mounts = [
+  boot.boot.initrd.systemd.mounts = [
     {
-      What = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
-      Where = "/srv";
-      Type = "btrfs";
-      Options = "subvol=srv";
+      what = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
+      where = "/srv";
+      type = "btrfs";
+      options = "subvol=srv";
     }
   ];
-  boot.initrd.network.enable = true;
+  initrd.network.enable = true;
   # boot.initrd.network.udhcpc.enable = true;
   # boot.initrd.network.postCommands = ''
   #   ip addr add 192.168.1.50/24 dev eno1
