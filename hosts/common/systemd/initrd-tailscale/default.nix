@@ -1,0 +1,46 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+
+let
+  cfg = config.services.tailscale;
+in
+{
+  boot.initrd.systemd.packages = [
+    cfg.package
+  ];
+
+  boot.initrd.systemd.initrdBin = [
+    pkgs.iproute2
+    pkgs.iptables
+    cfg.package
+  ];
+
+  boot.initrd.availableKernelModules = [
+    "tun"
+    "nft_chain_nat"
+  ];
+
+  boot.initrd.systemd.services.tailscaled = {
+    description = "Tailscale in initrd";
+
+    wantedBy = [
+      "initrd.target"
+    ];
+
+    after = [
+      "network-online.target"
+    ];
+
+    serviceConfig = {
+      ExecStart = "${cfg.package}/bin/tailscaled";
+      Environment = [
+        "PORT=41641"
+        "TS_DEBUG_FIREWALL_MODE=nftables"
+      ];
+    };
+  };
+}

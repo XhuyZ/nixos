@@ -23,6 +23,15 @@
   #     "x-systemd.device-timeout=10s"
   #   ];
   # };
+  fileSystems."/srv" = {
+    device = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
+    fsType = "btrfs";
+    options = [
+      "subvol=srv"
+      "compress=zstd"
+      "noatime"
+    ];
+  };
   environment.etc."grafana-dashboards/node_raid_dashboard.json".source = ./node_raid_dashboard.json;
   fileSystems."/mnt/storage" = {
     device = "UUID=2bef0e82-a4d9-457a-8318-b80bb5df52ec";
@@ -66,6 +75,7 @@
   };
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.systemd.enable = true;
   boot.initrd.network.enable = true;
   boot.initrd.network.udhcpc.enable = true;
   boot.initrd.network.postCommands = ''
