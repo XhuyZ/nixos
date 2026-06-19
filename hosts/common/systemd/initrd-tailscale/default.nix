@@ -22,10 +22,6 @@ in
 
   config = mkIf cfg.enable {
 
-    boot.initrd.systemd.packages = [
-      cfg.package
-    ];
-
     boot.initrd.systemd.initrdBin = [
       pkgs.iproute2
       cfg.package
@@ -35,17 +31,15 @@ in
       "tun"
     ];
 
-    boot.initrd.systemd.services.tailscaled = {
+    boot.initrd.systemd.services.initrd-tailscaled = {
 
-      description = "Tailscale initrd";
+      description = "Initrd Tailscale";
 
-      wantedBy = [
-        "initrd.target"
-      ];
+      wantedBy = [ "initrd.target" ];
 
       after = [
-        "srv.mount"
         "network-online.target"
+        "srv.mount"
       ];
 
       requires = [
@@ -53,13 +47,11 @@ in
       ];
 
       serviceConfig = {
+        Type = "simple";
 
-        ExecStart = [
-          ""
-          "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state"
-        ];
+        ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state";
+
         Restart = "on-failure";
-
       };
     };
   };
