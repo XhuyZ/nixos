@@ -26,6 +26,9 @@ in
       pkgs.iproute2
       cfg.package
     ];
+    boot.initrd.systemd.tmpfiles.rules = [
+      "d /run/tailscale 0755 root root -"
+    ];
 
     boot.initrd.availableKernelModules = [
       "tun"
