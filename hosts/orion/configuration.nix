@@ -64,7 +64,7 @@
     };
   };
   ## --- Kernel ---
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
   boot.initrd.systemd.enable = true;
   boot.initrd.systemd.mounts = [
     {
