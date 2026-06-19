@@ -28,7 +28,6 @@ in
 
     boot.initrd.systemd.initrdBin = [
       pkgs.iproute2
-      pkgs.util-linux
       cfg.package
     ];
 
@@ -45,8 +44,8 @@ in
       ];
 
       after = [
-        "srv.mount"
         "network-online.target"
+        "srv.mount"
       ];
 
       requires = [
@@ -55,14 +54,12 @@ in
 
       serviceConfig = {
 
-        Type = "simple";
-
         ExecStart =
           "${cfg.package}/bin/tailscaled "
           + "--state=/srv/tailscale/tailscaled.state "
           + "--socket=/run/tailscale/tailscaled.sock";
 
-        Restart = "always";
+        Restart = "on-failure";
 
       };
     };
