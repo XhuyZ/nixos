@@ -12,14 +12,12 @@ let
 in
 {
   options.systemd.initrd-tailscale = {
-
-    enable = mkEnableOption "tailscale in initrd";
+    enable = mkEnableOption "Enable Tailscale in initrd";
 
     package = mkOption {
       type = types.package;
       default = pkgs.tailscale;
     };
-
   };
 
   config = mkIf cfg.enable {
@@ -38,17 +36,17 @@ in
       "tun"
     ];
 
-    boot.initrd.systemd.services.initrd-tailscaled = {
+    boot.initrd.systemd.services.tailscaled = {
 
-      description = "Tailscale in initrd";
+      description = "Tailscale initrd";
 
       wantedBy = [
         "initrd.target"
       ];
 
       after = [
-        "network-online.target"
         "srv.mount"
+        "network-online.target"
       ];
 
       requires = [
@@ -59,39 +57,14 @@ in
 
         Type = "simple";
 
-        ExecStartPre = [
-          "/bin/mkdir -p /run/tailscale"
-        ];
-
-        ExecStart = ''
-          ${cfg.package}/bin/tailscaled \
-          --state=/srv/tailscale/tailscaled.state \
-          --socket=/run/tailscale/tailscaled.sock \
-          --port=41641
-        '';
+        ExecStart =
+          "${cfg.package}/bin/tailscaled "
+          + "--state=/srv/tailscale/tailscaled.state "
+          + "--socket=/run/tailscale/tailscaled.sock";
 
         Restart = "always";
 
-        RestartSec = "2s";
-
       };
     };
-
-    boot.initrd.systemd.tmpfiles.settings = {
-
-      "tailscale-initrd" = {
-
-        "/run/tailscale" = {
-          d = {
-            mode = "0755";
-            user = "root";
-            group = "root";
-          };
-        };
-
-      };
-
-    };
-
   };
 }

@@ -13,16 +13,6 @@
     ./disko-config.nix
     ./secrets.nix
   ];
-  # fileSystems."/mnt/storage" = {
-  #   device = "UUID=41ec7247-4e14-448a-b6c8-1ac2449dae7e";
-  #   fsType = "btrfs";
-  #   options = [
-  #     "compress=zstd"
-  #     "noatime"
-  #     "nofail"
-  #     "x-systemd.device-timeout=10s"
-  #   ];
-  # };
   fileSystems."/srv" = {
     device = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
     fsType = "btrfs";
@@ -89,6 +79,10 @@
       wantedBy = [
         "initrd.target"
       ];
+
+      before = [
+        "tailscaled.service"
+      ];
     }
   ];
   boot.initrd.network.enable = true;
@@ -124,7 +118,6 @@
   };
   ## --- Host & Time ---
   time.timeZone = "Asia/Ho_Chi_Minh";
-
   ## --- Locale ---
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
