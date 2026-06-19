@@ -33,19 +33,30 @@ in
       "tun"
       "nft_chain_nat"
     ];
-
     boot.initrd.systemd.services.tailscaled = {
-
       unitConfig.DefaultDependencies = false;
 
       wantedBy = [
         "initrd.target"
       ];
 
-      serviceConfig.Environment = [
-        "PORT=41641"
-        "FLAGS=--tun tailscale0"
+      after = [
+        "srv.mount"
+        "network-online.target"
       ];
+
+      requires = [
+        "srv.mount"
+      ];
+
+      serviceConfig = {
+        ExecStart = [
+          ""
+          "${pkgs.tailscale}/bin/tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/run/tailscale/tailscaled.sock"
+        ];
+
+        Restart = "on-failure";
+      };
     };
 
     # /var/lib/tailscale trong initrd
