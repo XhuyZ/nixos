@@ -47,9 +47,16 @@ in
       ];
 
       serviceConfig = {
+
         Type = "simple";
 
-        ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state";
+        RuntimeDirectory = "tailscale";
+
+        ExecStart =
+          "${cfg.package}/bin/tailscaled "
+          + "--state=/srv/tailscale/tailscaled.state "
+          + "--socket=/run/tailscale/tailscaled.sock "
+          + "--port=41641";
 
         Restart = "on-failure";
       };
