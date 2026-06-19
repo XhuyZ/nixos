@@ -60,13 +60,9 @@ in
         Type = "simple";
 
         RuntimeDirectory = "tailscale";
+        RuntimeDirectoryMode = "0755";
 
-        ExecStart = [
-          "${cfg.package}/bin/tailscaled"
-          "--state=/srv/tailscale/tailscaled.state"
-          "--socket=/run/tailscale/tailscaled.sock"
-          "--port=41641"
-        ];
+        ExecStart = "${cfg.package}/bin/tailscaled --state=/srv/tailscale/tailscaled.state --socket=/run/tailscale/tailscaled.sock --port=41641";
 
         Restart = "on-failure";
       };
