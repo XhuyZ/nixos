@@ -16,7 +16,7 @@ in
 
     domain = mkOption {
       type = types.str;
-      default = "forgejo.lab";
+      default = "git.xhuyz.me";
     };
 
     httpPort = mkOption {

@@ -32,11 +32,11 @@ in
             proxyPass = "http://127.0.0.1:3000";
           };
         };
-        "forgejo.lab" = {
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:3001";
-          };
-        };
+        # "forgejo.lab" = {
+        #   locations."/" = {
+        #     proxyPass = "http://127.0.0.1:3001";
+        #   };
+        # };
         "prometheus.lab" = {
           locations."/" = {
             proxyPass = "http://127.0.0.1:9090";
