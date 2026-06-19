@@ -16,30 +16,16 @@ in
       enable = true;
 
       virtualHosts = {
-        "git.xhuyz.me" = {
-          forceSSL = true;
-          enableACME = true;
-
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:3001";
-
-            extraConfig = ''
-              proxy_set_header Host $host;
-              proxy_set_header X-Forwarded-Proto https;
-              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            '';
-          };
-        };
         "grafana.lab" = {
           locations."/" = {
             proxyPass = "http://127.0.0.1:3000";
           };
         };
-        # "forgejo.lab" = {
-        #   locations."/" = {
-        #     proxyPass = "http://127.0.0.1:3001";
-        #   };
-        # };
+        "forgejo.lab" = {
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:3001";
+          };
+        };
         "prometheus.lab" = {
           locations."/" = {
             proxyPass = "http://127.0.0.1:9090";
