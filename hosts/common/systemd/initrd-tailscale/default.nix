@@ -12,25 +12,29 @@ let
 in
 {
   options.systemd.initrd-tailscale = {
+
     enable = mkEnableOption "Enable Tailscale in initrd";
 
     package = mkOption {
       type = types.package;
       default = pkgs.tailscale;
     };
+
   };
 
   config = mkIf cfg.enable {
 
-    boot.initrd.systemd.initrdBin = [
-      pkgs.iproute2
+    boot.initrd.systemd.packages = [
       cfg.package
     ];
-    boot.initrd.systemd.tmpfiles.rules = [
-      "d /run/tailscale 0755 root root -"
+
+    boot.initrd.systemd.initrdBin = [
+      pkgs.iproute2
+      pkgs.iputils
+      cfg.package
     ];
 
-    boot.initrd.availableKernelModules = [
+    boot.initrd.kernelModules = [
       "tun"
     ];
 
@@ -38,11 +42,13 @@ in
 
       description = "Initrd Tailscale";
 
-      wantedBy = [ "initrd.target" ];
+      wantedBy = [
+        "initrd.target"
+      ];
 
       after = [
-        "network-online.target"
         "srv.mount"
+        "network-online.target"
       ];
 
       requires = [
@@ -55,11 +61,12 @@ in
 
         RuntimeDirectory = "tailscale";
 
-        ExecStart =
-          "${cfg.package}/bin/tailscaled "
-          + "--state=/srv/tailscale/tailscaled.state "
-          + "--socket=/run/tailscale/tailscaled.sock "
-          + "--port=41641";
+        ExecStart = [
+          "${cfg.package}/bin/tailscaled"
+          "--state=/srv/tailscale/tailscaled.state"
+          "--socket=/run/tailscale/tailscaled.sock"
+          "--port=41641"
+        ];
 
         Restart = "on-failure";
       };
