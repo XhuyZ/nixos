@@ -54,6 +54,7 @@ in
       53
       # ssh
       22
+      443
     ];
     networking.firewall.allowedUDPPorts = [
       53
