@@ -54,11 +54,11 @@ in
 
       serviceConfig = {
 
-        ExecStart =
-          "${cfg.package}/bin/tailscaled "
-          + "--state=/srv/tailscale/tailscaled.state "
-          + "--socket=/run/tailscale/tailscaled.sock";
-
+        ExecStart = [
+          "${cfg.package}/bin/tailscaled"
+          "--state=/srv/tailscale/tailscaled.state"
+          "--socket=/run/tailscale/tailscaled.sock"
+        ];
         Restart = "on-failure";
 
       };
