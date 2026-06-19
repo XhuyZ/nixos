@@ -88,7 +88,7 @@
       ];
 
       before = [
-        "tailscaled.service"
+        "initrd-tailscaled.service"
       ];
     }
   ];
