@@ -24,5 +24,6 @@
     ./tailscale/default.nix
     ./initrd-tailscale/default.nix
     ./forgejo/default.nix
+    ./forgejo-runner/default.nix
   ];
 }

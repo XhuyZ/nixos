@@ -39,5 +39,6 @@
     adguard.enable = false;
     tailscale.enable = true;
     forgejo.enable = true;
+    forgejo-runner.enable = true;
   };
 }

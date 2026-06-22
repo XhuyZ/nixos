@@ -4,26 +4,21 @@
   pkgs,
   ...
 }:
-
 with lib;
-
 let
   cfg = config.systemd.forgejo;
 in
 {
   options.systemd.forgejo = {
     enable = mkEnableOption "Enable Forgejo Git service";
-
     domain = mkOption {
       type = types.str;
       default = "git.xhuyz.me";
     };
-
     httpPort = mkOption {
       type = types.port;
       default = 3001;
     };
-
     dbType = mkOption {
       type = types.enum [
         "postgres"
@@ -32,33 +27,27 @@ in
       ];
       default = "postgres";
     };
-
     lfsEnable = mkOption {
       type = types.bool;
       default = true;
       description = "Enable Git LFS support";
     };
   };
-
   config = mkIf cfg.enable {
-
     # =========================
     # FORGEJO SERVICE
     # =========================
     services.forgejo = {
       enable = true;
-
       database.type = cfg.dbType;
-
       lfs.enable = cfg.lfsEnable;
-
       settings = {
         server = {
           DOMAIN = cfg.domain;
           ROOT_URL = "https://${cfg.domain}/";
           HTTP_PORT = cfg.httpPort;
+          SSH_PORT = lib.head config.services.openssh.ports;
         };
-
         service = {
           DISABLE_REGISTRATION = false;
         };
@@ -69,7 +58,6 @@ in
         };
       };
     };
-
     # =========================
     # NGINX REVERSE PROXY
     # =========================
@@ -77,11 +65,9 @@ in
       virtualHosts.${cfg.domain} = {
         forceSSL = false;
         enableACME = false;
-
         extraConfig = ''
           client_max_body_size 512M;
         '';
-
         locations."/".proxyPass = "http://127.0.0.1:${toString cfg.httpPort}";
       };
     };
