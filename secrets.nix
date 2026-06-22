@@ -20,4 +20,5 @@ in
 {
   "secrets/grafana-username.age".publicKeys = systems ++ users;
   "secrets/grafana-password.age".publicKeys = systems ++ users;
+  "secrets/forgejo-runner-token.age".publicKeys = systems ++ users;
 }
