@@ -1,7 +1,8 @@
 {
   age = {
-    identityPaths = [ "/home/xhuyz/.ssh/id_ed25519" ];
-
+    age.identityPaths = [
+      "/etc/ssh/ssh_host_ed25519_key"
+    ];
     secrets = {
       grafana-username = {
         file = ../../secrets/grafana-username.age;
