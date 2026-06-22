@@ -32,8 +32,6 @@ in
 
         labels = [
           "native:host"
-
-          "ubuntu-latest:docker://node:22-bookworm"
         ];
       };
     };
