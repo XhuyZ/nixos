@@ -50,7 +50,7 @@
       media.enable = false;
       qutebrowser.enable = true;
       zen-browser.enable = false;
-      nixcord.enable = true;
+      nixcord.enable = false;
       redisinsight.enable = false;
       chrome.enable = true;
       firefox.enable = true;
