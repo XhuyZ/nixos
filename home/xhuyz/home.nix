@@ -24,11 +24,15 @@
     inputs.nixcord.homeModules.nixcord
     inputs.mangowc.hmModules.mango
   ];
-  stylix.enable = true;
-  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
-  stylix.image = ../../assets/wallpaper16-9.jpg;
-  stylix.polarity = "dark";
-  stylix.targets.dconf.enable = false;
+ stylix = {
+  enable = true;
+
+  targets.gtk.enable = false;
+  targets.qt.enable = false;
+
+  image = ../../assets/wallpaper16-9.jpg;
+  polarity = "dark";
+};
   stylix.targets.zen-browser.profileNames = [
     "default"
   ];
