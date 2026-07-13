@@ -14,12 +14,8 @@
     ../features/packages
     ../features/devkit
     ./home.nix
-    ./features/desktop
   ];
   features = {
-    desktop = {
-      gnome.enable = false;
-    };
     terminal = {
       nushell.enable = true;
       starship.enable = true;
