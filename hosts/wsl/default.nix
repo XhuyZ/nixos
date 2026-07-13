@@ -20,7 +20,8 @@
     podman.enable = true;
     postgresql.enable = true;
     tailscale.enable = true;
-    # forgejo.enable = true;
-    # nginx.enable = true;
+    incus.enable = true;
+    forgejo.enable = true;
+    nginx.enable = true;
   };
 }
