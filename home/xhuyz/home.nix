@@ -20,22 +20,22 @@
   };
   imports = [
     inputs.zen-browser.homeModules.beta
-    inputs.stylix.homeModules.stylix
+    # inputs.stylix.homeModules.stylix
     inputs.nixcord.homeModules.nixcord
     inputs.mangowc.hmModules.mango
   ];
- stylix = {
-  enable = true;
-
-  targets.gtk.enable = false;
-  targets.qt.enable = false;
-
-  image = ../../assets/wallpaper16-9.jpg;
-  polarity = "dark";
-};
-  stylix.targets.zen-browser.profileNames = [
-    "default"
-  ];
+  #  stylix = {
+  #   enable = true;
+  #
+  #   targets.gtk.enable = false;
+  #   targets.qt.enable = false;
+  #
+  #   image = ../../assets/wallpaper16-9.jpg;
+  #   polarity = "dark";
+  # };
+  #   stylix.targets.zen-browser.profileNames = [
+  #     "default"
+  #   ];
   # stylix.targets = {
   #   gtk.enable = false;
   # };
