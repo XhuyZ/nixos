@@ -20,7 +20,7 @@
     grafana.enable = true;
     prometheus.enable = true;
     # Automation workflows
-    n8n.enable = true;
+    n8n.enable = false;
     # VMs + System container
     incus.enable = false;
     qemu.enable = true;
