@@ -24,6 +24,7 @@
     "qemu-libvirtd"
     "adbusers"
     "incus-admin"
+    "incus"
   ];
   packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
 }

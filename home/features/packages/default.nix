@@ -32,5 +32,6 @@
     pkgs.mako
     pkgs.lsof
     pkgs.claude-code
+    pkgs.nixos-generators
   ];
 }

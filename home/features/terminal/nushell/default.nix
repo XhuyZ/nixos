@@ -72,6 +72,7 @@ in
                                       alias xhuyz-asus = sudo nixos-rebuild switch --flake .#laptop-asus
                                       alias xhuyz-thinkpad = sudo nixos-rebuild switch --flake .#laptop-thinkpad
                                       alias xhuyz-orion = sudo nixos-rebuild switch --flake .#orion
+                                      alias xhuyz-wsl = sudo nixos-rebuild switch --flake .#wsl
 
                                 #fastfetch
                                       alias ff = fastfetch

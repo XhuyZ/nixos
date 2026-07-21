@@ -14,6 +14,7 @@ in
   config = mkIf cfg.enable {
     virtualisation.incus = {
       enable = true;
+      package = pkgs.incus;
 
       preseed = {
         networks = [

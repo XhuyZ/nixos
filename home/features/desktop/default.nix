@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./gnome/default.nix
+    # ./gnome/default.nix
   ];
 
 }

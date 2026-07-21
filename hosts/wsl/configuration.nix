@@ -14,6 +14,10 @@
   wsl.defaultUser = "xhuyz";
   ## --- Host & Time ---
   networking.hostName = "wsl";
+  networking = {
+    nftables.enable = true;
+    firewall.enable = true;
+  };
   time.timeZone = "Asia/Ho_Chi_Minh";
   ## --- Locale ---
   systemd.targets.sleep.enable = false;
