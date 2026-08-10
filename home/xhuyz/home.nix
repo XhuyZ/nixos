@@ -24,21 +24,18 @@
     inputs.nixcord.homeModules.nixcord
     inputs.mangowc.hmModules.mango
   ];
-  #  stylix = {
-  #   enable = true;
-  #
-  #   targets.gtk.enable = false;
-  #   targets.qt.enable = false;
-  #
-  #   image = ../../assets/wallpaper16-9.jpg;
-  #   polarity = "dark";
-  # };
-  #   stylix.targets.zen-browser.profileNames = [
-  #     "default"
-  #   ];
-  # stylix.targets = {
-  #   gtk.enable = false;
-  # };
+  stylix = {
+    enable = true;
+
+    targets.gtk.enable = false;
+    targets.qt.enable = false;
+
+    image = ../../assets/wallpaper16-9.jpg;
+    polarity = "dark";
+  };
+  stylix.targets.zen-browser.profileNames = [
+    "default"
+  ];
 
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {
