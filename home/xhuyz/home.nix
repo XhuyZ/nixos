@@ -26,16 +26,9 @@
   ];
   stylix = {
     enable = true;
-
-    targets.gtk.enable = false;
-    targets.qt.enable = false;
-
     image = ../../assets/wallpaper16-9.jpg;
     polarity = "dark";
   };
-  stylix.targets.zen-browser.profileNames = [
-    "default"
-  ];
 
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {
