@@ -54,7 +54,7 @@
       redisinsight.enable = false;
       chrome.enable = true;
       firefox.enable = true;
-      rider.enable = true;
+      rider.enable = false;
       teams-for-linux.enable = true;
       packettracer.enable = false;
       rustrover.enable = false;
