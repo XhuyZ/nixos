@@ -55,16 +55,16 @@
       chrome.enable = true;
       firefox.enable = true;
       rider.enable = false;
-      teams-for-linux.enable = true;
+      teams-for-linux.enable = false;
       packettracer.enable = false;
       rustrover.enable = false;
-      gns3.enable = true;
+      gns3.enable = false;
       nautilus.enable = true;
       cursor.enable = false;
-      godot.enable = true;
-      antigravity.enable = true;
-      zoom.enable = true;
-      aseprite.enable = true;
+      godot.enable = false;
+      antigravity.enable = false;
+      zoom.enable = false;
+      aseprite.enable = false;
     };
     wm = {
       mangowc.enable = true;
