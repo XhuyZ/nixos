@@ -18,7 +18,7 @@
     ./home.nix
     ../features/desktop
   ];
-  dconf.enable = false;
+  # dconf.enable = false;
   features = {
     desktop = {
       gnome.enable = true;
