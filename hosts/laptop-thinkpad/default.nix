@@ -30,7 +30,7 @@
 
   systemd = {
     podman.enable = true;
-    greetd.enable = true;
+    greetd.enable = false;
     postgresql.enable = true;
     adguard.enable = false;
     litellm.enable = true;
