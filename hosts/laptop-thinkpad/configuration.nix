@@ -55,9 +55,6 @@
   ## --- Networking ---
   networking.networkmanager.enable = true;
   networking.networkmanager.dns = "systemd-resolved";
-  ##GNOME
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
 
   services.resolved = {
     enable = true;
@@ -73,7 +70,6 @@
       FallbackDNS=1.1.1.1 8.8.8.8
     '';
   };
-  ## --- GUI: GNOME Desktop --
   services.xserver.xkb = {
     layout = "us";
     variant = "";

@@ -21,7 +21,7 @@
   dconf.enable = false;
   features = {
     desktop = {
-      gnome.enable = false;
+      gnome.enable = true;
     };
     terminal = {
       kitty.enable = true;

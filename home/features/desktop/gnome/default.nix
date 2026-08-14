@@ -19,18 +19,18 @@ in
     ];
 
     # GNOME configuration via dconf
-    dconf.enable = false;
+    dconf.enable = true;
     dconf.settings = {
       # Shell configuration
       "org/gnome/shell" = {
-        # favorite-apps = [
-        #   "org.gnome.Nautilus.desktop"
-        #   "org.gnome.Console.desktop"
-        # ];
-        disable-user-extensions = false;
-        enabled-extensions = [
-          "paperwm@paperwm.github.com"
+        favorite-apps = [
+          "org.gnome.Nautilus.desktop"
+          "org.gnome.Console.desktop"
         ];
+        disable-user-extensions = false;
+        # enabled-extensions = [
+        #   "paperwm@paperwm.github.com"
+        # ];
       };
 
       # Touchpad
