@@ -25,7 +25,7 @@
     inputs.mangowc.hmModules.mango
   ];
   stylix = {
-    enable = true;
+    enable = false;
     targets.gtk.enable = false;
     image = ../../assets/laptop-thinkpad.png;
     polarity = "dark";
