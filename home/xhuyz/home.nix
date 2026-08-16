@@ -30,11 +30,6 @@
     image = ../../assets/laptop-thinkpad.png;
     polarity = "dark";
   };
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
-    style.name = "kvantum";
-  };
 
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {
