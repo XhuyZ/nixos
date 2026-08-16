@@ -7,7 +7,6 @@
 }:
 {
   home.packages = with pkgs; [
-    pkgs.neofetch
     pkgs.pfetch
     pkgs.htop
     pkgs.cmatrix

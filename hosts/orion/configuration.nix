@@ -192,7 +192,6 @@
     inputs.my-nixvim.packages.${stdenv.hostPlatform.system}.default
     inputs.agenix.packages.${stdenv.hostPlatform.system}.default
     git
-    neofetch
   ];
 
   ## --- Sudo config ---

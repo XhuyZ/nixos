@@ -58,7 +58,6 @@
     inputs.agenix.packages.${stdenv.hostPlatform.system}.default
     inputs.my-nixvim.packages.${stdenv.hostPlatform.system}.default
     git
-    neofetch
   ];
 
   # Enable the OpenSSH daemon.
