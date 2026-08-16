@@ -159,5 +159,16 @@
     ];
   };
   ## --- Required for upgrades ---
+  ## KDE
+  services = {
+    desktopManager.plasma6.enable = true;
+
+    # Default display manager for Plasma
+    displayManager.plasma-login-manager.enable = true;
+
+    # Optionally enable xserver
+    # xserver.enable = true;
+  };
+
   system.stateVersion = "25.11";
 }
