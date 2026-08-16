@@ -87,9 +87,9 @@
             nixos-hardware.nixosModules.lenovo-thinkpad-t14s
             agenix.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "backup";
-            }
+            # {
+            #   home-manager.backupFileExtension = "backup";
+            # }
             mangowc.nixosModules.mango
           ];
         };
