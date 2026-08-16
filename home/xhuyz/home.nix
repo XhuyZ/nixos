@@ -26,8 +26,8 @@
   ];
   stylix = {
     enable = true;
-    targets.gtk.enable = true;
-    image = ../../assets/wallpaper16-9.jpg;
+    targets.gtk.enable = false;
+    image = ../../assets/laptop-thinkpad.jpg;
     polarity = "dark";
   };
 
