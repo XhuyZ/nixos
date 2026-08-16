@@ -26,6 +26,12 @@
   ];
   stylix = {
     enable = true;
+
+    cursor = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+      size = 24;
+    };
     # targets.gtk.enable = false;
     # targets.qt.enable = false;
     targets.gnome.colors.enable = false;
