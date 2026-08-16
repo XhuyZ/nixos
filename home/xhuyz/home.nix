@@ -26,6 +26,7 @@
   ];
   stylix = {
     enable = true;
+    gtk.enable = true;
     image = ../../assets/wallpaper16-9.jpg;
     polarity = "dark";
   };
