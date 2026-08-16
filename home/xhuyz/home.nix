@@ -25,7 +25,7 @@
     inputs.mangowc.hmModules.mango
   ];
   stylix = {
-    enable = true;
+    enable = false;
     gtk.enable = true;
     image = ../../assets/wallpaper16-9.jpg;
     polarity = "dark";
