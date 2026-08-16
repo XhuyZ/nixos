@@ -24,13 +24,12 @@
     inputs.nixcord.homeModules.nixcord
     inputs.mangowc.hmModules.mango
   ];
-  # stylix = {
-  #   enable = false;
-  #   targets.gtk.enable = false;
-  #   targets.qt.enable = false;
-  #   image = ../../assets/laptop-thinkpad.png;
-  #   polarity = "dark";
-  # };
+  stylix = {
+    enable = true;
+    targets.gtk.enable = false;
+    image = ../../assets/laptop-thinkpad.png;
+    polarity = "dark";
+  };
 
   programs.home-manager.enable = true;
   programs.bash.shellAliases = {
