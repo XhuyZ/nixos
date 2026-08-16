@@ -164,6 +164,7 @@
 
     # Default display manager for Plasma
     displayManager.plasma-login-manager.enable = true;
+    displayManager.sddm.wayland.enable = true;
 
     # Optionally enable xserver
     # xserver.enable = true;
