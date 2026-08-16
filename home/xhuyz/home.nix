@@ -6,7 +6,7 @@
   ...
 }:
 {
-  home.stateVersion = "26.05";
+  home.stateVersion = "25.11";
   home.file = {
   };
   home.username = lib.mkDefault "xhuyz";
