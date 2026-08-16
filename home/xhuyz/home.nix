@@ -20,7 +20,7 @@
   };
   imports = [
     # inputs.zen-browser.homeModules.beta
-    inputs.stylix.homeModules.stylix
+    # inputs.stylix.homeModules.stylix
     inputs.nixcord.homeModules.nixcord
     inputs.mangowc.hmModules.mango
   ];
