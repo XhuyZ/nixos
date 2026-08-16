@@ -19,7 +19,7 @@
     DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = "1";
   };
   imports = [
-    inputs.zen-browser.homeModules.beta
+    # inputs.zen-browser.homeModules.beta
     inputs.stylix.homeModules.stylix
     inputs.nixcord.homeModules.nixcord
     inputs.mangowc.hmModules.mango
