@@ -27,7 +27,7 @@
   stylix = {
     enable = true;
     targets.gtk.enable = false;
-    image = ../../assets/laptop-thinkpad.jpg;
+    image = ../../assets/laptop-thinkpad.png;
     polarity = "dark";
   };
 
