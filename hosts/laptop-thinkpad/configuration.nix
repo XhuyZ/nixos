@@ -54,22 +54,22 @@
 
   ## --- Networking ---
   networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "systemd-resolved";
-
-  services.resolved = {
-    enable = true;
-    dnssec = "false";
-
-    # DNS=192.168.1.50
-    extraConfig = ''
-      # .lab domain queries đi tới CoreDNS orion
-      Domains=~lab
-      DNS=192.168.1.50
-
-      # Internet queries
-      FallbackDNS=1.1.1.1 8.8.8.8
-    '';
-  };
+  # networking.networkmanager.dns = "systemd-resolved";
+  #
+  # services.resolved = {
+  #   enable = true;
+  #   dnssec = "false";
+  #
+  #   # DNS=192.168.1.50
+  #   extraConfig = ''
+  #     # .lab domain queries đi tới CoreDNS orion
+  #     Domains=~lab
+  #     DNS=192.168.1.50
+  #
+  #     # Internet queries
+  #     FallbackDNS=1.1.1.1 8.8.8.8
+  #   '';
+  # };
   services.xserver.xkb = {
     layout = "us";
     variant = "";
