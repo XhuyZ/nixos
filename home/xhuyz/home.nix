@@ -10,6 +10,8 @@
   home.file = {
   };
   home.username = lib.mkDefault "xhuyz";
+  home.backupFileExtension = "backup";
+
   home.homeDirectory = lib.mkDefault "/home/${config.home.username}";
   home.sessionVariables = {
     EDITOR = "nvim";
