@@ -64,7 +64,7 @@
       antigravity.enable = false;
       zoom.enable = false;
       aseprite.enable = false;
-      vmware.enable = true;
+      vmware.enable = false;
     };
     # wm = {
     #   mangowc.enable = true;

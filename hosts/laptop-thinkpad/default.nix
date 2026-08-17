@@ -35,5 +35,6 @@
     adguard.enable = false;
     litellm.enable = true;
     tailscale.enable = true;
+    qemu.enable = true;
   };
 }
