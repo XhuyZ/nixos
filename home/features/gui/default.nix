@@ -23,5 +23,6 @@
     ./antigravity/default.nix
     ./zoom/default.nix
     ./aseprite/default.nix
+    ./vmware/default.nix
   ];
 }
