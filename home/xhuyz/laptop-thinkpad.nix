@@ -44,27 +44,15 @@
     };
     gui = {
       office.enable = true;
-      blender.enable = false;
       dbeaver.enable = true;
       obs.enable = true;
-      media.enable = false;
       qutebrowser.enable = true;
-      nixcord.enable = false;
-      redisinsight.enable = false;
       chrome.enable = true;
       firefox.enable = true;
-      rider.enable = false;
-      teams-for-linux.enable = false;
-      packettracer.enable = false;
-      rustrover.enable = false;
-      gns3.enable = false;
+      gns3.enable = true;
       nautilus.enable = true;
       cursor.enable = true;
-      godot.enable = false;
       antigravity.enable = true;
-      zoom.enable = false;
-      aseprite.enable = false;
-      vmware.enable = false;
     };
     # wm = {
     #   mangowc.enable = true;
