@@ -13,7 +13,7 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      nodejs_latest
+      nodejs_26
     ];
   };
 }
