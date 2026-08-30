@@ -55,13 +55,13 @@
       firefox.enable = true;
       rider.enable = false;
       teams-for-linux.enable = false;
-      packettracer.enable = false;
+      packettracer.enable = true;
       rustrover.enable = false;
       gns3.enable = false;
       nautilus.enable = true;
-      cursor.enable = false;
+      cursor.enable = true;
       godot.enable = false;
-      antigravity.enable = false;
+      antigravity.enable = true;
       zoom.enable = false;
       aseprite.enable = false;
       vmware.enable = false;

@@ -13,7 +13,7 @@ in
 
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      ciscoPacketTracer8
+      cisco-packet-tracer_9
     ];
   };
 }
