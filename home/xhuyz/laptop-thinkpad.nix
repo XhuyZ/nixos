@@ -53,6 +53,7 @@
       nautilus.enable = true;
       cursor.enable = true;
       antigravity.enable = true;
+      kdenlive.enable = true;
     };
     # wm = {
     #   mangowc.enable = true;
