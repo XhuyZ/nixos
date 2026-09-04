@@ -54,6 +54,7 @@
       cursor.enable = true;
       antigravity.enable = true;
       kdenlive.enable = true;
+      winbox.enable = true;
     };
     # wm = {
     #   mangowc.enable = true;
