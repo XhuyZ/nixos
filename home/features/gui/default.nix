@@ -24,5 +24,6 @@
     ./zoom/default.nix
     ./aseprite/default.nix
     ./vmware/default.nix
+    ./winbox/default.nix
   ];
 }
