@@ -22,6 +22,7 @@
 {
   imports = [
     ../common/systemd
+    ../common
     ./configuration.nix
     ./programs.nix
     # ./secrets.nix
