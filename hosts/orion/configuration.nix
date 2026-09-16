@@ -90,18 +90,18 @@
       }
     ];
   };
-  boot.initrd.network.ssh = {
-    enable = true;
-    port = 2222;
-    authorizedKeys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmZeHieg2fNiH50P1CIRXWcGKCIbNLZjNIpIOdl4fRm"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILBDtDroKCGlMCx5QwYlO809l56GppbDhKtzerFO0b+9 thinkpad"
-    ];
-    hostKeys = [
-      # "/etc/secrets/initrd/ssh_host_rsa_key"
-      "/etc/secrets/initrd/ssh_host_ed25519_key"
-    ];
-  };
+  # boot.initrd.network.ssh = {
+  #   enable = true;
+  #   port = 2222;
+  #   authorizedKeys = [
+  #     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmZeHieg2fNiH50P1CIRXWcGKCIbNLZjNIpIOdl4fRm"
+  #     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILBDtDroKCGlMCx5QwYlO809l56GppbDhKtzerFO0b+9 thinkpad"
+  #   ];
+  #   hostKeys = [
+  #     # "/etc/secrets/initrd/ssh_host_rsa_key"
+  #     "/etc/secrets/initrd/ssh_host_ed25519_key"
+  #   ];
+  # };
   ## --- Host & Time ---
   time.timeZone = "Asia/Ho_Chi_Minh";
   ## --- Locale ---
