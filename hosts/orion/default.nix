@@ -9,7 +9,7 @@
 
   systemd = {
     # LLM
-    ollama.enable = true;
+    ollama.enable = false;
     postgresql.enable = true;
     nginx.enable = true;
     coredns.enable = true;
@@ -17,8 +17,8 @@
     networking.enable = true;
     qemu.enable = true;
     podman.enable = true;
+    #ok
     grafana.enable = false;
-
     prometheus.enable = false;
     n8n.enable = false;
     incus.enable = false;
