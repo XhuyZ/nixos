@@ -8,37 +8,28 @@
   ];
 
   systemd = {
-    # Display Manager
-    greetd.enable = false;
     # LLM
     ollama.enable = true;
-    # Container Management
-    podman.enable = true;
-    # Databases
     postgresql.enable = true;
-    # Monitoring
-    grafana.enable = true;
-    prometheus.enable = true;
-    # Automation workflows
-    n8n.enable = false;
-    # VMs + System container
-    incus.enable = false;
-    qemu.enable = true;
-    # VPN
-    wireguard.enable = true;
-    # Reverse Proxy
     nginx.enable = true;
-    traefik.enable = false;
-    # DNS server
-    pihole.enable = false;
     coredns.enable = true;
     openssh.enable = true;
+    networking.enable = true;
+    qemu.enable = true;
+    podman.enable = true;
+    grafana.enable = false;
+
+    prometheus.enable = false;
+    n8n.enable = false;
+    incus.enable = false;
+    wireguard.enable = false;
+    traefik.enable = false;
+    pihole.enable = false;
     glance.enable = false;
     netdata.enable = false;
-    networking.enable = true;
     adguard.enable = false;
-    tailscale.enable = true;
-    forgejo.enable = true;
-    forgejo-runner.enable = true;
+    tailscale.enable = false;
+    forgejo.enable = false;
+    forgejo-runner.enable = false;
   };
 }
