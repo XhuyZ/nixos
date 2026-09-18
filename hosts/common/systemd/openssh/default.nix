@@ -22,7 +22,7 @@ in
 
       settings = {
         PermitRootLogin = "no";
-        PasswordAuthentication = yes;
+        PasswordAuthentication = true;
         PubkeyAuthentication = true;
       };
     };
