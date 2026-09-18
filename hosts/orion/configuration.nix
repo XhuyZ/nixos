@@ -32,57 +32,6 @@
   };
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages;
-e  boot.initrd.systemd.enable = true;
-  boot.initrd.systemd.mounts = [
-    {
-      what = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
-
-      where = "/srv";
-
-      type = "btrfs";
-
-      options = "subvol=srv";
-
-      wantedBy = [
-        "initrd.target"
-      ];
-
-      before = [
-        "tailscaled.service"
-      ];
-    }
-  ];
-  boot.initrd.network.enable = true;
-  # boot.initrd.network.udhcpc.enable = true;
-  # boot.initrd.network.postCommands = ''
-  #   ip addr add 192.168.1.50/24 dev eno1
-  #   ip route add default via 192.168.1.1
-  # '';
-  boot.initrd.systemd.network.networks."20-eno1" = {
-    matchConfig.Name = "eno1";
-
-    address = [
-      "192.168.1.50/24"
-    ];
-
-    routes = [
-      {
-        Gateway = "192.168.1.1";
-      }
-    ];
-  };
-  # boot.initrd.network.ssh = {
-  #   enable = true;
-  #   port = 2222;
-  #   authorizedKeys = [
-  #     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICmZeHieg2fNiH50P1CIRXWcGKCIbNLZjNIpIOdl4fRm"
-  #     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILBDtDroKCGlMCx5QwYlO809l56GppbDhKtzerFO0b+9 thinkpad"
-  #   ];
-  #   hostKeys = [
-  #     # "/etc/secrets/initrd/ssh_host_rsa_key"
-  #     "/etc/secrets/initrd/ssh_host_ed25519_key"
-  #   ];
-  # };
   ## --- Host & Time ---
   time.timeZone = "Asia/Ho_Chi_Minh";
   ## --- Locale ---
