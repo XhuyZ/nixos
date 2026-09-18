@@ -77,6 +77,21 @@
             }
           ];
         };
+        lydra = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/lydra
+            # ./modules/duckdns.nix
+            inputs.disko.nixosModules.disko
+            # nixos-hardware.nixosModules.asus-fx504gd
+            agenix.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.backupFileExtension = "backup";
+            }
+          ];
+        };
         # My laptop
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -137,6 +152,13 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/orion.nix
+          ];
+        };
+        "xhuyz@lydra" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home/xhuyz/lydra.nix
           ];
         };
         "xhuyz@laptop-asus" = home-manager.lib.homeManagerConfiguration {
