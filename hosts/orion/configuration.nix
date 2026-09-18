@@ -13,25 +13,25 @@
     ./disko-config.nix
     ./secrets.nix
   ];
-  fileSystems."/srv" = {
-    device = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
-    fsType = "btrfs";
-    options = [
-      "subvol=srv"
-      "compress=zstd"
-      "noatime"
-    ];
-  };
-  environment.etc."grafana-dashboards/node_raid_dashboard.json".source = ./node_raid_dashboard.json;
-  fileSystems."/mnt/storage" = {
-    device = "UUID=2bef0e82-a4d9-457a-8318-b80bb5df52ec";
-    fsType = "btrfs";
-    options = [
-      "compress=zstd"
-      "noatime"
-      "nofail"
-    ];
-  };
+  # fileSystems."/srv" = {
+  #   device = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
+  #   fsType = "btrfs";
+  #   options = [
+  #     "subvol=srv"
+  #     "compress=zstd"
+  #     "noatime"
+  #   ];
+  # };
+  # environment.etc."grafana-dashboards/node_raid_dashboard.json".source = ./node_raid_dashboard.json;
+  # fileSystems."/mnt/storage" = {
+  #   device = "UUID=2bef0e82-a4d9-457a-8318-b80bb5df52ec";
+  #   fsType = "btrfs";
+  #   options = [
+  #     "compress=zstd"
+  #     "noatime"
+  #     "nofail"
+  #   ];
+  # };
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   hardware.firmware = with pkgs; [
