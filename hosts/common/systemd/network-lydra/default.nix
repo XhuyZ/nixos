@@ -12,10 +12,10 @@ let
 
 in
 {
-  options.systemd.networking.enable = mkEnableOption "enable networking";
+  options.systemd.network-lydra.enable = mkEnableOption "enable networking";
   config = mkIf cfg.enable {
     ## --- Networking ---
-    networking.hostName = "orion";
+    networking.hostName = "lydra";
     networking.useDHCP = false;
 
     ## ip a to show which interfaces
