@@ -14,7 +14,7 @@
     nginx.enable = true;
     coredns.enable = true;
     openssh.enable = true;
-    networking.enable = true;
+    network-lydra.enable = true;
     qemu.enable = true;
     podman.enable = true;
     #ok
