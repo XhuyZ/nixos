@@ -26,3 +26,6 @@ sudo mkfs.btrfs -f -d raid1 -m raid1 \
 
 	systemd-tty-ask-password-agent
 	cryptsetup-askpass
+sudo ip link set enp1s0 up
+sudo ip addr add 192.168.1.50/24 dev enp1s0
+sudo ip route add default via 192.168.1.1

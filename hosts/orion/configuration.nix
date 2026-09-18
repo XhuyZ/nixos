@@ -32,7 +32,7 @@
   };
   ## --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages;
-  boot.initrd.systemd.enable = true;
+e  boot.initrd.systemd.enable = true;
   boot.initrd.systemd.mounts = [
     {
       what = "/dev/disk/by-uuid/755d137c-1f05-4113-a3ae-7fc2c56c57da";
