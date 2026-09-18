@@ -19,7 +19,7 @@ in
     networking.useDHCP = false;
 
     ## ip a to show which interfaces
-    networking.interfaces.eno1 = {
+    networking.interfaces.enp1s0 = {
       ipv4.addresses = [
         {
           address = "192.168.1.50";
