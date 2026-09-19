@@ -21,13 +21,13 @@
   ];
   hardware.graphics.enable = true;
   boot.loader = {
-    efi.canTouchEfiVariables = false;
+    efi.canTouchEfiVariables = true;
 
     grub = {
       enable = true;
       efiSupport = true;
       devices = [ "nodev" ];
-      efiInstallAsRemovable = true;
+      efiInstallAsRemovable = false;
     };
   };
   ## --- Kernel ---
