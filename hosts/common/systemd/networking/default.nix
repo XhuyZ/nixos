@@ -22,7 +22,7 @@ in
     networking.interfaces.enp1s0 = {
       ipv4.addresses = [
         {
-          address = "192.168.1.50";
+          address = "10.10.30.20";
           prefixLength = 24;
         }
       ];
@@ -37,7 +37,7 @@ in
     #   ];
     # };
 
-    networking.defaultGateway = "192.168.1.1";
+    networking.defaultGateway = "10.10.30.1";
 
     networking.nameservers = [
       # "127.0.0.1"
