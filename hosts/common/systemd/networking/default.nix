@@ -19,7 +19,7 @@ in
     networking.useDHCP = false;
 
     ## ip a to show which interfaces
-    networking.interfaces.enp1s0 = {
+    networking.interfaces.enp2s0 = {
       ipv4.addresses = [
         {
           address = "10.10.30.20";
