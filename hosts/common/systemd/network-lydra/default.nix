@@ -19,7 +19,7 @@ in
     networking.useDHCP = false;
 
     ## ip a to show which interfaces
-    networking.interfaces.enp1s0 = {
+    networking.interfaces.eno1 = {
       ipv4.addresses = [
         {
           address = "10.10.30.10";
@@ -28,14 +28,14 @@ in
       ];
     };
     # open module
-    networking.interfaces.eno1 = {
-      ipv4.addresses = [
-        {
-          address = "192.168.1.10";
-          prefixLength = 24;
-        }
-      ];
-    };
+    # networking.interfaces.eno1 = {
+    #   ipv4.addresses = [
+    #     {
+    #       address = "192.168.1.10";
+    #       prefixLength = 24;
+    #     }
+    #   ];
+    # };
 
     networking.defaultGateway = "10.10.30.1";
 
