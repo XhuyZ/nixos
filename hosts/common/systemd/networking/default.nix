@@ -27,6 +27,14 @@ in
         }
       ];
     };
+    networking.interfaces.enp1s0 = {
+      ipv4.addresses = [
+        {
+          address = "192.168.1.20";
+          prefixLength = 24;
+        }
+      ];
+    };
     ## open module
     # networking.interfaces.enp3s0 = {
     #   ipv4.addresses = [
