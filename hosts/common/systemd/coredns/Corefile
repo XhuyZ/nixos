@@ -2,6 +2,9 @@ lab:53 {
     bind 0.0.0.0
 
     hosts {
+		    10.10.10.1 router.lab
+				10.10.10.2 switch.lab
+				10.10.20.10 nas.lab
         10.10.30.20 grafana.lab forgejo.lab prometheus.lab openwebui.lab netdata.lab
         fallthrough
     }
