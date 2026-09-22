@@ -131,7 +131,7 @@
       #   };
       # };
       deploy.nodes.orion = {
-        hostname = "192.168.1.50";
+        hostname = "10.10.30.20";
         profiles.system = {
           user = "root";
           sshUser = "xhuyz";
