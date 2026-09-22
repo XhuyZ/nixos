@@ -18,7 +18,7 @@
     qemu.enable = true;
     podman.enable = true;
     #ok
-    grafana.enable = true;
+    grafana.enable = false;
     prometheus.enable = true;
     n8n.enable = false;
     incus.enable = false;
