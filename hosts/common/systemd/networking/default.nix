@@ -53,7 +53,7 @@ in
       "8.8.8.8"
     ];
     # networking.networkmanager.dns = "none";
-    networking.networkmanager.enable = false;
+    networking.networkmanager.enable = true;
     ## --- Firewall ---
     networking.firewall.allowedTCPPorts = [
       # Http
