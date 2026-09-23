@@ -37,6 +37,6 @@
     litellm.enable = true;
     tailscale.enable = true;
     qemu.enable = true;
-    wireguard.enable = false;
+    wireguard.enable = true;
   };
 }
