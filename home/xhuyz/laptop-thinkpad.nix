@@ -56,14 +56,14 @@
       kdenlive.enable = true;
       winbox.enable = true;
     };
-    # wm = {
-    #   mangowc.enable = true;
-    #   waybar.enable = true;
-    #   wlogout.enable = true;
-    #   rofi.enable = true;
-    #   swaylock.enable = true;
-    #   grim-slurp.enable = true;
-    # };
+    wm = {
+      mangowc.enable = true;
+      waybar.enable = true;
+      wlogout.enable = true;
+      rofi.enable = true;
+      swaylock.enable = true;
+      grim-slurp.enable = true;
+    };
     devkit = {
       nodejs.enable = true;
       dotnet_10.enable = false;
