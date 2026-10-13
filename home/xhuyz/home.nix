@@ -40,6 +40,8 @@
   };
 
   programs.home-manager.enable = true;
+  programs.mango.enable = true;
+  programs.mango.addLoginEntry = true;
   programs.bash.shellAliases = {
     nvim = "${inputs.my-nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/nvim";
     vim = "${inputs.my-nixvim.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/nvim";
