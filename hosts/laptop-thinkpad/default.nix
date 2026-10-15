@@ -38,5 +38,6 @@
     tailscale.enable = true;
     qemu.enable = true;
     wireguard.enable = true;
+    uptime-kuma.enable = true;
   };
 }
