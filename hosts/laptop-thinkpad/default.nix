@@ -39,5 +39,6 @@
     qemu.enable = true;
     wireguard.enable = true;
     uptime-kuma.enable = true;
+    cockpit.enable = true;
   };
 }

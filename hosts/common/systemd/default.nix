@@ -27,5 +27,6 @@
     ./forgejo-runner/default.nix
     ./network-lydra/default.nix
     ./uptime-kuma/default.nix
+    ./cockpit/default.nix
   ];
 }
