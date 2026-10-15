@@ -20,7 +20,7 @@ in
         pkgs.cockpit-podman
         pkgs.cockpit-machines
       ];
-      # openFirewall = true; # Please see the comments section
+      openFirewall = true; # Please see the comments section
       settings = {
         WebService = {
           # AllowUnencrypted = true; # 2026-08-04: Not needed anymore?
