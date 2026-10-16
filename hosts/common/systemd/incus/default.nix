@@ -12,6 +12,15 @@ in
   options.systemd.incus.enable = mkEnableOption "enable incus";
 
   config = mkIf cfg.enable {
+    networking.nftables.enable = true;
+
+    networking.firewall.interfaces.incusbr0 = {
+      allowedUDPPorts = [
+        53
+        67
+      ];
+      allowedTCPPorts = [ 53 ];
+    };
     virtualisation.incus = {
       enable = true;
       package = pkgs.incus;
