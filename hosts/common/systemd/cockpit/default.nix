@@ -19,6 +19,7 @@ in
         pkgs.cockpit-files
         pkgs.cockpit-podman
         pkgs.cockpit-machines
+        pkgs.cockpit-zfs
       ];
       openFirewall = true; # Please see the comments section
       settings = {
