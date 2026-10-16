@@ -14,6 +14,7 @@ in
   config = mkIf cfg.enable {
     environment = {
       systemPackages = [
+        pkgs.cockpit
         pkgs.cockpit-machines
         pkgs.libvirt-dbus
       ];
