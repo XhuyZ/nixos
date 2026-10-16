@@ -91,7 +91,7 @@ in
           };
 
           "clock" = {
-            "format" = "{:%H:%M}";
+            "format" = "{:%d-%m-%Y %H:%M}";
             "tooltip-format" = "{:%Y-%m-%d}";
           };
 
