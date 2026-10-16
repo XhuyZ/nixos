@@ -1,7 +1,5 @@
 {
   imports = [
-    # Import some nix modules
+    ./virtcloud.nix
   ];
 }
-
-
