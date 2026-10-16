@@ -108,6 +108,7 @@
         "video"
         "libvirtd"
         "libvirt-dbus"
+        "incus"
       ];
       packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };
