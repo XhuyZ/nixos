@@ -12,7 +12,6 @@ in
   options.systemd.cockpit.enable = mkEnableOption "enable cockpit";
 
   config = mkIf cfg.enable {
-    packages = with pkgs; [ cockpit-machines ];
     services.cockpit = {
       enable = true;
       port = 9090;
