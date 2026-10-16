@@ -33,6 +33,5 @@
     pkgs.claude-code
     pkgs.nixos-generators
     pkgs.wireguard-tools
-    pkgs.cockpit-machines
   ];
 }

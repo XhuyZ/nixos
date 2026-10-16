@@ -12,6 +12,13 @@ in
   options.systemd.cockpit.enable = mkEnableOption "enable cockpit";
 
   config = mkIf cfg.enable {
+    environment = {
+      systemPackages = [
+        pkgs.cockpit-machines
+        pkgs.libvirt-dbus
+      ];
+    };
+
     services.cockpit = {
       enable = true;
       port = 9090;
