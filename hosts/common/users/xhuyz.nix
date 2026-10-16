@@ -25,6 +25,7 @@
     "adbusers"
     "incus-admin"
     "incus"
+    "libvirtd-dbus"
   ];
   packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
 }
