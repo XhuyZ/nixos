@@ -28,7 +28,7 @@ in
       searchEngines = {
         w = "https://en.wikipedia.org/wiki/Special:Search?search={}";
         aw = "https://wiki.archlinux.org/?search={}";
-        nw = "https://search.nixos.org/packages?channel=25.11&query={}";
+        nw = "https://search.nixos.org/packages?channel=26.05&query={}";
         g = "https://www.google.com/search?q={}";
       };
       aliases = {
