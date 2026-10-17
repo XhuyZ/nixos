@@ -32,7 +32,7 @@ in
       settings = {
         WebService = {
           # AllowUnencrypted = true; # 2026-08-04: Not needed anymore?
-          Origins = lib.mkForce "cockpit.lab";
+          Origins = lib.mkForce "http://cockpit.lab https://cockpit.lab";
         };
       };
     };
