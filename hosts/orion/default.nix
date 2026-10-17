@@ -17,11 +17,12 @@
     networking.enable = true;
     qemu.enable = true;
     podman.enable = true;
+    incus.enable = true;
+    cockpit.enable = true;
     #ok
     grafana.enable = false;
     prometheus.enable = true;
     n8n.enable = false;
-    incus.enable = false;
     wireguard.enable = false;
     traefik.enable = false;
     pihole.enable = false;
