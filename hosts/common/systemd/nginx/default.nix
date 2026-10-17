@@ -31,6 +31,11 @@ in
             proxyPass = "http://127.0.0.1:9090";
           };
         };
+        "cockpit.lab" = {
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:9091";
+          };
+        };
 
         "openwebui.lab" = {
           locations."/" = {

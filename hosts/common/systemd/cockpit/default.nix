@@ -22,7 +22,7 @@ in
 
     services.cockpit = {
       enable = true;
-      port = 9090;
+      port = 9091;
       plugins = [
         pkgs.cockpit-files
         pkgs.cockpit-podman
@@ -32,7 +32,7 @@ in
       settings = {
         WebService = {
           # AllowUnencrypted = true; # 2026-08-04: Not needed anymore?
-          Origins = lib.mkForce "http://localhost:9090 https://localhost:9090";
+          Origins = lib.mkForce "cockpit.lab";
         };
       };
     };
