@@ -77,20 +77,6 @@
             }
           ];
         };
-        lydra = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/lydra
-            # ./modules/duckdns.nix
-            inputs.disko.nixosModules.disko
-            agenix.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.backupFileExtension = "backup";
-            }
-          ];
-        };
         # My laptop
         laptop-thinkpad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -121,14 +107,6 @@
           ];
         };
       };
-      # Deploy-rs works here
-      # deploy.nodes.orion = {
-      #   hostname = "orion";
-      #   profiles.system = {
-      #     user = "xhuyz";
-      #     path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.orion;
-      #   };
-      # };
       deploy.nodes.orion = {
         hostname = "10.10.30.10";
         profiles.system = {
@@ -151,13 +129,6 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home/xhuyz/orion.nix
-          ];
-        };
-        "xhuyz@lydra" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [
-            ./home/xhuyz/lydra.nix
           ];
         };
         "xhuyz@laptop-asus" = home-manager.lib.homeManagerConfiguration {
