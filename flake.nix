@@ -84,7 +84,6 @@
             ./hosts/lydra
             # ./modules/duckdns.nix
             inputs.disko.nixosModules.disko
-            # nixos-hardware.nixosModules.asus-fx504gd
             agenix.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             {
@@ -131,7 +130,7 @@
       #   };
       # };
       deploy.nodes.orion = {
-        hostname = "10.10.30.20";
+        hostname = "10.10.30.10";
         profiles.system = {
           user = "root";
           sshUser = "xhuyz";
