@@ -18,7 +18,7 @@
   ];
 
   systemd = {
-    ollama.enable = true;
+    postgresql.enable = true;
     # virtualisation.enable = true;
     podman.enable = true;
   };

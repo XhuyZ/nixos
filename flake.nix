@@ -106,6 +106,19 @@
             }
           ];
         };
+        # VPS version
+        vps = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/vps
+            inputs.home-manager.nixosModules.home-manager
+            inputs.nixos-wsl.nixosModules.wsl
+            {
+              home-manager.backupFileExtension = "backup";
+            }
+          ];
+        };
       };
       deploy.nodes.orion = {
         hostname = "10.10.30.10";

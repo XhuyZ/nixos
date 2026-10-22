@@ -4,6 +4,7 @@
   outputs,
   lib,
   pkgs,
+  modulesPath,
   ...
 }:
 {
@@ -13,6 +14,39 @@
     ./secrets.nix
   ];
   users.mutableUsers = false;
+  system.build.qemuImage = import "${toString modulesPath}/../lib/make-disk-image.nix" {
+    inherit pkgs lib config;
+    partitionTableType = "legacy";
+    format = "qcow2-compressed";
+    copyChannel = true;
+  };
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/nixos";
+    autoResize = true;
+    fsType = "ext4";
+  };
+
+  boot = {
+    growPartition = true;
+    kernelParams = [ "console=ttyS0" ];
+    loader.grub = {
+      splashImage = null;
+      extraConfig = ''
+        serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1
+        terminal_input --append serial
+        terminal_output --append serial
+      '';
+      device = "/dev/sda";
+    };
+    loader.timeout = 0;
+    initrd.availableKernelModules = [
+      "uas"
+      "virtio_blk"
+      "virtio_pci"
+    ];
+  };
+
   users.users = {
     xhuyz = {
       isNormalUser = true;
