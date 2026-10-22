@@ -8,11 +8,11 @@
   ...
 }:
 {
-  imports = [
-    ./disko-config.nix
-    ./hardware-configuration.nix
-    ./secrets.nix
-  ];
+  # imports = [
+  #   ./disko-config.nix
+  #   ./hardware-configuration.nix
+  #   ./secrets.nix
+  # ];
   users.mutableUsers = false;
   system.build.qemuImage = import "${toString modulesPath}/../lib/make-disk-image.nix" {
     inherit pkgs lib config;
