@@ -30,16 +30,22 @@
   boot = {
     growPartition = true;
     kernelParams = [ "console=ttyS0" ];
+
     loader.grub = {
+      enable = true;
+      device = "/dev/sda";
+      efiSupport = false;
       splashImage = null;
+
       extraConfig = ''
         serial --unit=0 --speed=115200 --word=8 --parity=no --stop=1
         terminal_input --append serial
         terminal_output --append serial
       '';
-      device = "/dev/sda";
     };
+
     loader.timeout = 0;
+
     initrd.availableKernelModules = [
       "uas"
       "virtio_blk"
@@ -57,11 +63,6 @@
       ];
       packages = [ inputs.home-manager.packages.${pkgs.stdenv.hostPlatform.system}.default ];
     };
-  };
-  # Bootloader.
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
   };
 
   # core dns server
